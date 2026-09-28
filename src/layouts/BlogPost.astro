@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import BlogLeadscaptainPopup from "../components/BlogLeadscaptainPopup.astro";
 import ArticleSchema from "../components/ArticleSchema.astro";
 import BreadcrumbSchema from "../components/BreadcrumbSchema.astro";
 import ShareButtons from "../components/blog/ShareButtons.astro";
@@ -141,6 +142,7 @@ const {
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
     </svg>
   </button>
+  <BlogLeadscaptainPopup />
 </BaseLayout>
 
 <script>
