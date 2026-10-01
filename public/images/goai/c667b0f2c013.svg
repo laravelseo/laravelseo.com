@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="2550" viewBox="0 0 1200 2550" width="1200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&amp;family=Work+Sans:wght@400;700&amp;display=swap');
+    </style>
+<!-- Hexagon clip path -->
+<clipPath id="hex">
+<polygon points="0,-45 39,-22.5 39,22.5 0,45 -39,22.5 -39,-22.5"/>
+</clipPath>
+</defs>
+<!-- BACKGROUND -->
+<rect fill="#1a2127" height="2550" width="1200"/>
+<!-- BADGE -->
+<rect fill="#e9be62" height="30" rx="15" width="240" x="480" y="48"/>
+<text fill="#1a2127" font-family="'Work Sans', sans-serif" font-size="14" font-weight="700" letter-spacing="1.5" text-anchor="middle" x="600" y="69">COMPLETE GUIDE 2026</text>
+<!-- MAIN TITLE -->
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="62" font-weight="700" letter-spacing="2" text-anchor="middle" x="600" y="140">SEO FOR</text>
+<text fill="#f0ece4" font-family="'Big Shoulders Display', sans-serif" font-size="62" font-weight="700" letter-spacing="2" text-anchor="middle" x="600" y="210">ONLINE SHOPS</text>
+<!-- Decorative diamond line -->
+<line stroke="#b89a4a" stroke-width="1" x1="100" x2="570" y1="240" y2="240"/>
+<polygon fill="#e9be62" points="600,232 608,240 600,248 592,240"/>
+<line stroke="#b89a4a" stroke-width="1" x1="630" x2="1100" y1="240" y2="240"/>
+<!-- Subtitle -->
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="22" font-weight="400" text-anchor="middle" x="600" y="280">Proven strategies to grow organic traffic</text>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="22" font-weight="400" text-anchor="middle" x="600" y="308">and your online shop's sales</text>
+<!-- === STATS SECTION === -->
+<!-- Stat 1 -->
+<g transform="translate(200, 390)">
+<polygon fill="none" points="0,-48 42,-24 42,24 0,48 -42,24 -42,-24" stroke="#e9be62" stroke-width="2"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="48" font-weight="700" text-anchor="middle" x="0" y="12">68%</text>
+</g>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="15" font-weight="400" text-anchor="middle" x="200" y="458">of online experiences</text>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="15" font-weight="400" text-anchor="middle" x="200" y="476">start with a search</text>
+<!-- Separator -->
+<line stroke="#b89a4a" stroke-width="1" x1="373" x2="373" y1="350" y2="480"/>
+<!-- Stat 2 -->
+<g transform="translate(600, 390)">
+<polygon fill="none" points="0,-48 42,-24 42,24 0,48 -42,24 -42,-24" stroke="#e9be62" stroke-width="2"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="48" font-weight="700" text-anchor="middle" x="0" y="12">60%</text>
+</g>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="15" font-weight="400" text-anchor="middle" x="600" y="458">of clicks go</text>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="15" font-weight="400" text-anchor="middle" x="600" y="476">to the top 3 results</text>
+<!-- Separator -->
+<line stroke="#b89a4a" stroke-width="1" x1="827" x2="827" y1="350" y2="480"/>
+<!-- Stat 3 -->
+<g transform="translate(1000, 390)">
+<polygon fill="none" points="0,-48 42,-24 42,24 0,48 -42,24 -42,-24" stroke="#e9be62" stroke-width="2"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="48" font-weight="700" text-anchor="middle" x="0" y="12">3-6</text>
+</g>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="15" font-weight="400" text-anchor="middle" x="1000" y="458">months for</text>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="15" font-weight="400" text-anchor="middle" x="1000" y="476">visible results</text>
+<!-- Separator line -->
+<line stroke="#b89a4a" stroke-width="1" x1="60" x2="1140" y1="510" y2="510"/>
+<polygon fill="#e9be62" points="600,518 605,523 600,528 595,523"/>
+<!-- ============================================ -->
+<!-- SECTION 01 - CERCETAREA CUVINTELOR CHEIE     -->
+<!-- ============================================ -->
+<g transform="translate(0, 555)">
+<!-- Number circle -->
+<circle cx="120" cy="28" fill="none" r="35" stroke="#e9be62" stroke-width="3"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="42" font-weight="700" text-anchor="middle" x="120" y="44">01</text>
+<!-- Title -->
+<text fill="#f0ece4" font-family="'Big Shoulders Display', sans-serif" font-size="32" font-weight="700" letter-spacing="1" x="185" y="20">KEYWORD RESEARCH</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="17" font-weight="400" x="185" y="48">The foundation of any successful SEO strategy</text>
+<!-- Accent line -->
+<line stroke="#b89a4a" stroke-width="1" x1="185" x2="1120" y1="65" y2="65"/>
+<!-- Bullets -->
+<circle cx="196" cy="95" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="100">Informational and transactional keywords</text>
+<circle cx="196" cy="130" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="135">Analysis of users' search intent</text>
+<circle cx="196" cy="165" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="170">Tools: Keyword Planner, Ahrefs, Search Console</text>
+<circle cx="196" cy="200" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="205">Focus on long-tail keywords with high conversion rates</text>
+</g>
+<!-- Connector 01 → 02 -->
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="780" y2="783"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="790" y2="793"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="800" y2="803"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="810" y2="813"/>
+<polygon fill="#e9be62" points="600,790 605,795 600,800 595,795"/>
+<!-- ============================================ -->
+<!-- SECTION 02 - OPTIMIZARE ON-PAGE              -->
+<!-- ============================================ -->
+<g transform="translate(0, 835)">
+<circle cx="120" cy="28" fill="none" r="35" stroke="#e9be62" stroke-width="3"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="42" font-weight="700" text-anchor="middle" x="120" y="44">02</text>
+<text fill="#f0ece4" font-family="'Big Shoulders Display', sans-serif" font-size="32" font-weight="700" letter-spacing="1" x="185" y="20">ON-PAGE OPTIMISATION</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="17" font-weight="400" x="185" y="48">Optimised product and category pages</text>
+<line stroke="#b89a4a" stroke-width="1" x1="185" x2="1120" y1="65" y2="65"/>
+<circle cx="196" cy="95" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="100">Unique title tags with the primary keyword</text>
+<circle cx="196" cy="130" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="135">Compelling meta descriptions with a CTA</text>
+<circle cx="196" cy="165" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="170">Unique product descriptions, minimum 300 words</text>
+<circle cx="196" cy="200" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="205">Optimised images: WebP, alt text, lazy loading</text>
+<circle cx="196" cy="235" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="240">Clean URLs: /categorie/subcategorie/produs</text>
+</g>
+<!-- Connector 02 → 03 -->
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1095" y2="1098"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1105" y2="1108"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1115" y2="1118"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1125" y2="1128"/>
+<polygon fill="#e9be62" points="600,1105 605,1110 600,1115 595,1110"/>
+<!-- ============================================ -->
+<!-- SECTION 03 - SEO TEHNIC                      -->
+<!-- ============================================ -->
+<g transform="translate(0, 1150)">
+<circle cx="120" cy="28" fill="none" r="35" stroke="#e9be62" stroke-width="3"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="42" font-weight="700" text-anchor="middle" x="120" y="44">03</text>
+<text fill="#f0ece4" font-family="'Big Shoulders Display', sans-serif" font-size="32" font-weight="700" letter-spacing="1" x="185" y="20">TECHNICAL SEO</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="17" font-weight="400" x="185" y="48">The foundation of performance and correct indexing</text>
+<line stroke="#b89a4a" stroke-width="1" x1="185" x2="1120" y1="65" y2="65"/>
+<circle cx="196" cy="95" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="100">Optimised Core Web Vitals: LCP, FID, CLS</text>
+<circle cx="196" cy="130" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="135">Site architecture: the three-click rule</text>
+<circle cx="196" cy="165" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="170">Manage duplicate content with canonical tags</text>
+<circle cx="196" cy="200" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="205">Schema Markup: Product, Review, BreadcrumbList</text>
+</g>
+<!-- Connector 03 → 04 -->
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1375" y2="1378"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1385" y2="1388"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1395" y2="1398"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1405" y2="1408"/>
+<polygon fill="#e9be62" points="600,1390 605,1395 600,1400 595,1395"/>
+<!-- ============================================ -->
+<!-- SECTION 04 - CONȚINUT ȘI LINK BUILDING       -->
+<!-- ============================================ -->
+<g transform="translate(0, 1430)">
+<circle cx="120" cy="28" fill="none" r="35" stroke="#e9be62" stroke-width="3"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="42" font-weight="700" text-anchor="middle" x="120" y="44">04</text>
+<text fill="#f0ece4" font-family="'Big Shoulders Display', sans-serif" font-size="32" font-weight="700" letter-spacing="1" x="185" y="20">CONTENT AND LINK BUILDING</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="17" font-weight="400" x="185" y="48">Authority and visibility through valuable content</text>
+<line stroke="#b89a4a" stroke-width="1" x1="185" x2="1120" y1="65" y2="65"/>
+<circle cx="196" cy="95" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="100">Strategic blog: guides, comparisons, tutorials</text>
+<circle cx="196" cy="130" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="135">Quality links from relevant websites</text>
+<circle cx="196" cy="165" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="170">Contextual internal links to products</text>
+<circle cx="196" cy="200" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="205">Collaborations with niche bloggers and influencers</text>
+</g>
+<!-- Connector 04 → 05 -->
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1655" y2="1658"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1665" y2="1668"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1675" y2="1678"/>
+<line stroke="#b89a4a" stroke-dasharray="3,7" stroke-width="2" x1="600" x2="600" y1="1685" y2="1688"/>
+<polygon fill="#e9be62" points="600,1670 605,1675 600,1680 595,1675"/>
+<!-- ============================================ -->
+<!-- SECTION 05 - MONITORIZARE ȘI ANALIZĂ         -->
+<!-- ============================================ -->
+<g transform="translate(0, 1710)">
+<circle cx="120" cy="28" fill="none" r="35" stroke="#e9be62" stroke-width="3"/>
+<text fill="#e9be62" font-family="'Big Shoulders Display', sans-serif" font-size="42" font-weight="700" text-anchor="middle" x="120" y="44">05</text>
+<text fill="#f0ece4" font-family="'Big Shoulders Display', sans-serif" font-size="32" font-weight="700" letter-spacing="1" x="185" y="20">MONITORING AND ANALYSIS</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="17" font-weight="400" x="185" y="48">Measure, adapt and keep growing</text>
+<line stroke="#b89a4a" stroke-width="1" x1="185" x2="1120" y1="65" y2="65"/>
+<circle cx="196" cy="95" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="100">KPIs: organic traffic, rankings, conversions, revenue</text>
+<circle cx="196" cy="130" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="135">Google Search Console + Analytics 4</text>
+<circle cx="196" cy="165" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="170">Audit tehnic periodic cu Screaming Frog</text>
+<circle cx="196" cy="200" fill="#e9be62" r="4"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" x="212" y="205">Adapt the strategy based on real data</text>
+</g>
+<!-- ============================================ -->
+<!-- CTA SECTION                                   -->
+<!-- ============================================ -->
+<line stroke="#e9be62" stroke-width="2" x1="60" x2="1140" y1="1960" y2="1960"/>
+<!-- CTA Box -->
+<rect fill="none" height="210" rx="12" stroke="#e9be62" stroke-width="2" width="1080" x="60" y="2000"/>
+<rect fill="none" height="202" rx="10" stroke="#b89a4a" stroke-width="1" width="1072" x="64" y="2004"/>
+<!-- Inner subtle background -->
+<rect fill="#1e2830" height="194" opacity="0.6" rx="8" width="1064" x="68" y="2008"/>
+<text fill="#f0ece4" font-family="'Work Sans', sans-serif" font-size="24" font-weight="700" text-anchor="middle" x="600" y="2050">Need help with SEO?</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" text-anchor="middle" x="600" y="2085">The GO SEO Marketing team can help you</text>
+<text fill="#f2d48a" font-family="'Work Sans', sans-serif" font-size="20" font-weight="400" text-anchor="middle" x="600" y="2112">grow organic traffic and sales!</text>
+<text fill="#e9be62" font-family="'Work Sans', sans-serif" font-size="22" font-weight="700" text-anchor="middle" x="600" y="2152">0754 308 781  ·  contact@goai.ro</text>
+<text fill="#e9be62" font-family="'Work Sans', sans-serif" font-size="28" font-weight="700" text-anchor="middle" x="600" y="2186">www.goai.ro</text>
+<!-- ============================================ -->
+<!-- FOOTER                                        -->
+<!-- ============================================ -->
+<line stroke="#e9be62" stroke-width="2" x1="0" x2="1200" y1="2240" y2="2240"/>
+<line stroke="#b89a4a" stroke-width="1" x1="0" x2="1200" y1="2244" y2="2244"/>
+<text fill="#8a9199" font-family="'Work Sans', sans-serif" font-size="16" font-weight="400" text-anchor="middle" x="600" y="2278">© GO SEO Marketing · Alba Iulia · goai.ro</text>
+</svg>

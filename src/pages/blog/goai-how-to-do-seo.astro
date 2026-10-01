@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-do-seo.json";
+const title = "How to Do SEO";
+const description = "How to Do SEO : practical steps to bring your website to Google's organic results. If you have a website for your business and you're not receiving visitors from the Google search engine,...";
+const date = "2026-02-23";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

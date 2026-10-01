@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-effective-strategies-to-increase-organic-traffic.json";
+const title = "Effective strategies to increase organic traffic";
+const description = "Effective strategies to increase organic traffic , meaning visits from search that you do not pay for per click and that continue after you stop every campaign. This guide brings together...";
+const date = "2025-09-21";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

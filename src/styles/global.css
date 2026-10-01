@@ -281,3 +281,31 @@ body {
     display: none;
   }
 }
+/* GOAI imports use nested sanitized HTML rather than direct Astro children. */
+.goai-content { color: #cbd5e1; font-size: 1.0625rem; line-height: 1.8; overflow-wrap: anywhere; }
+.goai-content p { margin: 1.25rem 0; }
+.goai-content h2 { color: #f1f5f9; font-size: 1.75rem; font-weight: 700; margin: 3rem 0 1rem; line-height: 1.3; scroll-margin-top: 6rem; }
+.goai-content h3 { color: #e2e8f0; font-size: 1.35rem; font-weight: 600; margin: 2rem 0 .75rem; line-height: 1.4; }
+.goai-content ul, .goai-content ol { padding-left: 1.75rem; margin: 1.25rem 0; }
+.goai-content ul { list-style: disc; } .goai-content ol { list-style: decimal; }
+.goai-content li { margin: .5rem 0; }
+.goai-content a { color: #a78bfa; text-decoration: underline; }
+.goai-content strong { color: #e2e8f0; }
+.goai-content img { max-width: 100%; height: auto; border-radius: .75rem; margin: 1.5rem auto; }
+.goai-content pre { overflow-x: auto; background: #0f172a; border: 1px solid #334155; border-radius: .75rem; padding: 1.25rem; margin: 1.5rem 0; white-space: pre; }
+.goai-content code { font-size: .9em; background: #1e293b; color: #e2e8f0; }
+.goai-content table { display: block; overflow-x: auto; max-width: 100%; border-collapse: collapse; margin: 1.5rem 0; }
+.goai-content th, .goai-content td { padding: .75rem 1rem; border: 1px solid #334155; text-align: left; min-width: 8rem; }
+.goai-content th { color: #f1f5f9; background: #1e293b; }
+.goai-content blockquote { border-left: 3px solid #7c3aed; background: #7c3aed0d; padding: 1rem 1.5rem; margin: 1.5rem 0; }
+.goai-content details { border: 1px solid #334155; border-radius: .75rem; padding: 1rem; margin: 1rem 0; }
+.goai-content summary { cursor: pointer; font-weight: 600; color: #e2e8f0; }
+
+.goai-content h2 .anchor-link, .goai-content h3 .anchor-link { opacity: 0; margin-left: .5rem; font-size: .875em; text-decoration: none; }
+.goai-content h2:hover .anchor-link, .goai-content h3:hover .anchor-link, .goai-content .anchor-link:focus-visible { opacity: 1; }
+.goai-content { width: 100%; min-width: 0; }
+.goai-content pre { box-sizing: border-box; width: 100%; max-width: 100%; }
+.goai-content table { overflow-wrap: normal; word-break: normal; }
+.goai-content th, .goai-content td { min-width: 8rem; }
+article:has(.goai-content) > .article-header-glow { overflow: hidden; }
+.goai-content .code-block-wrapper { width: 100%; max-width: 100%; min-width: 0; }

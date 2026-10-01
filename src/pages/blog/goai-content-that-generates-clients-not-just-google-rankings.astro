@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-content-that-generates-clients-not-just-google-rankings.json";
+const title = "Content that generates clients, not just Google rankings";
+const description = "Currently, content that works is not the one written for keywords, but the one built around real client problems. Google rewards materials that solve concrete situations, and users only...";
+const date = "2025-12-31";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

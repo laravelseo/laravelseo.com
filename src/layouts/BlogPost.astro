@@ -18,6 +18,9 @@ export interface Props {
   image?: string;
   breadcrumbTitle?: string;
   relatedPosts?: RelatedPost[];
+  sourceAuthor?: string;
+  sourceUrl?: string;
+  sourceUpdatedAt?: string;
 }
 
 const {
@@ -30,11 +33,14 @@ const {
   image,
   breadcrumbTitle,
   relatedPosts,
+  sourceAuthor,
+  sourceUrl,
+  sourceUpdatedAt,
 } = Astro.props;
 ---
 
-<BaseLayout title={`${title} | Laravel Seo`} description={description} image={image}>
-  <ArticleSchema {title} {description} date={date} image={image} />
+<BaseLayout title={`${title} | Laravel Seo`} description={description} image={image} author={sourceAuthor}>
+  <ArticleSchema {title} {description} date={date} image={image} author={sourceAuthor} dateModified={sourceUpdatedAt} sourceUrl={sourceUrl} />
   <BreadcrumbSchema items={[
     { name: "Home", href: "/" },
     { name: "Blog", href: "/blog" },
@@ -94,12 +100,26 @@ const {
       </div>
     </header>
 
+    {sourceUrl && (
+      <aside class="mb-8 rounded-xl border border-slate-800 bg-slate-900/50 p-5 text-sm text-slate-400" aria-label="Article source">
+        <p>English translation of an article by {sourceAuthor ?? "GOAI"}, originally published on <a href={sourceUrl} class="text-violet-400 underline">GOAI</a>.</p>
+        {sourceUpdatedAt && <p class="mt-2">Source last updated: {sourceUpdatedAt}.</p>}
+        <p class="mt-2">The original examples, dates and claims are preserved. References to GOAI services refer to the source website.</p>
+      </aside>
+    )}
+    {image && sourceUrl && <img src={image} alt={title} width="1200" height="675" class="mb-10 w-full rounded-xl" />}
+
     <!-- Post Content (slot) -->
     <slot />
 
     <!-- Author Card -->
     <div class="mt-16">
-      <AuthorCard />
+      {sourceAuthor ? (
+        <div class="rounded-2xl border border-slate-800 bg-slate-900/50 p-8">
+          <p class="text-lg font-semibold text-white mb-1">{sourceAuthor}</p>
+          <p class="text-sm text-slate-400">Original author at GOAI. Published here in English with permission.</p>
+        </div>
+      ) : <AuthorCard />}
     </div>
 
     <!-- Related Posts -->
@@ -166,7 +186,7 @@ const {
 
       headings.forEach((h2, i) => {
         const text = h2.textContent || "";
-        const id = text
+        const id = h2.id || text
           .toLowerCase()
           .replace(/<[^>]*>/g, "")
           .replace(/[^a-z0-9]+/g, "-")

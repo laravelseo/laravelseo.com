@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-mobile-first-indexing-what-it-means-for-a-website.json";
+const title = "Mobile-first indexing: What it means for a website";
+const description = "Mobile-first indexing: What it means for a website , in the final form Google announced in 2023: all sites are crawled, indexed and ranked based on the phone version, using Googlebot...";
+const date = "2025-07-09";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

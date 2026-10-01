@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-much-seo-services-cost-in-2026-what-the-price-includes-and-why-it-differs-so-much.json";
+const title = "How much SEO services cost in 2026: what the price includes and why it differs so much";
+const description = "How much SEO services cost in 2026: what the price includes and why it differs so much. The short answer is that there is no single rate, because the price depends on the number of pages,...";
+const date = "2026-09-11";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

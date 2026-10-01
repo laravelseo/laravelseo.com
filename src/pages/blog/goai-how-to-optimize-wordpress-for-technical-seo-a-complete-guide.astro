@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-optimize-wordpress-for-technical-seo-a-complete-guide.json";
+const title = "How to optimize WordPress for technical SEO: a complete guide";
+const description = "WordPress SEO depends fundamentally on the website's technical optimization. Quality content is essential, but without a solid technical foundation, clean URLs, a correct heading structure,...";
+const date = "2026-04-19";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="8 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

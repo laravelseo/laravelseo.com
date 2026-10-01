@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-first-party-data-in-2026-why-your-own-data-is-becoming-your-most-valuable-marketing-asset.json";
+const title = "First-party data in 2026: why your own data is becoming your most valuable marketing asset";
+const description = "First-party data in 2026: why your own data is becoming your most valuable marketing asset : the data customers give you directly, with consent (forms, orders, accounts, on-site behavior,...";
+const date = "2026-05-31";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

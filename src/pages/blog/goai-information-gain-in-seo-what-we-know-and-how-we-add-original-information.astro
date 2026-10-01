@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-information-gain-in-seo-what-we-know-and-how-we-add-original-information.json";
+const title = "Information gain in SEO: what we know and how we add original information";
+const description = "Information gain in SEO: what we know and how we add original information explains a concept discussed in Google optimization and the limits of the available evidence. The existence of a...";
+const date = "2026-05-01";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="8 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

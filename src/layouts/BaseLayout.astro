@@ -10,11 +10,12 @@ interface Props {
   description?: string;
   image?: string;
   robots?: string;
+  author?: string;
 }
 
 const currentPathname = Astro.url.pathname;
 
-const { title = SITE.title, description = SITE.description, image = "/og-image.png", robots = "index, follow" } = Astro.props;
+const { title = SITE.title, description = SITE.description, image = "/og-image.png", robots = "index, follow", author = SITE.author } = Astro.props;
 ---
 
 <!doctype html>
@@ -32,7 +33,7 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://assets.calendly.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://assets.calendly.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://calendly.com; connect-src 'self' https://ai.izdrail.com https://*.google-analytics.com https://*.analytics.google.com https://*.hotjar.com wss://*.hotjar.com;"
     />
-    <meta name="author" content={SITE.author} />
+    <meta name="author" content={author} />
 
     <!-- Preconnect hints -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />

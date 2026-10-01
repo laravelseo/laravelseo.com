@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-marketing-automation-in-2026-from-scheduled-campaigns-to-real-time-responses.json";
+const title = "Marketing automation in 2026: from scheduled campaigns to real-time responses";
+const description = "Marketing automation in 2026: from scheduled campaigns to real-time responses , meaning the move from \"we send the newsletter on Tuesday\" to systems that react to what each customer does,...";
+const date = "2026-05-28";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

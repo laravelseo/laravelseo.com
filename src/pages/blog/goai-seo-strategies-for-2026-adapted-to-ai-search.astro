@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-seo-strategies-for-2026-adapted-to-ai-search.json";
+const title = "SEO Strategies for 2026 Adapted to AI Search";
+const description = "SEO strategies for 2026 adapted to artificial intelligence search. We have discussed in various materials how much artificial intelligence has advanced and how it affects organic traffic on...";
+const date = "2026-01-04";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

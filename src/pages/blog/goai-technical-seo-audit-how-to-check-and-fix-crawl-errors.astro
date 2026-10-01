@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-technical-seo-audit-how-to-check-and-fix-crawl-errors.json";
+const title = "Technical SEO audit: How to check and fix crawl errors";
+const description = "Technical SEO audit: how to check and fix crawl errors , meaning everything that prevents Google from accessing, understanding and correctly indexing pages: blocks in robots.txt, server...";
+const date = "2026-03-02";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

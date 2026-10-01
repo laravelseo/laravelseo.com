@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-google-consent-mode-v2-and-seo-optimization.json";
+const title = "Google Consent Mode v2 and SEO Optimization";
+const description = "Google Consent Mode v2 and SEO optimization: what you need to know as a business owner. Google Consent Mode v2 is an update to the protocol for managing user consent, officially launched by...";
+const date = "2026-02-28";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

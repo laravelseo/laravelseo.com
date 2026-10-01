@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-create-an-effective-seo-content-strategy-in-2026.json";
+const title = "How to create an effective SEO content strategy in 2026";
+const description = "How to create an effective SEO content strategy in 2026. Publishing content without a clear strategy is one of the most common mistakes website owners make. Articles written at random,...";
+const date = "2026-03-04";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="5 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

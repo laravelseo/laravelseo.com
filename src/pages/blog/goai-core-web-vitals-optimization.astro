@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-core-web-vitals-optimization.json";
+const title = "Core Web Vitals optimization";
+const description = "Core Web Vitals optimization: how to improve LCP , INP and CLS through SEO optimization. Core Web Vitals are a set of three metrics Google uses to evaluate the real user experience on your...";
+const date = "2026-03-07";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="9 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

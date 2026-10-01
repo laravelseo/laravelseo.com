@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-google-ai-overviews-organic-results.json";
+const title = "Google AI Overviews, organic results";
+const description = "Google AI Overviews is an advanced system through which Google provides users with synthesized answers generated with artificial intelligence directly on the search results page. These...";
+const date = "2026-01-02";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

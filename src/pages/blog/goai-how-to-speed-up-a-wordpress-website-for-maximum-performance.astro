@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-speed-up-a-wordpress-website-for-maximum-performance.json";
+const title = "How to speed up a WordPress website for maximum performance";
+const description = "The loading speed of a WordPress website directly affects user experience, the conversion rate and the page experience signals that Google uses when ranking search results. A website that...";
+const date = "2026-03-30";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="9 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

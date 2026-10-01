@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-claude-or-chatgpt-which-should-you-choose-for-a-business-in-romania.json";
+const title = "Claude or ChatGPT: which should you choose for a business in Romania?";
+const description = "Claude or ChatGPT: which should you choose for a business in Romania? The right answer is not a single name, but a shortlist of the team's real tasks, set against two sets of pricing plans...";
+const date = "2026-08-28";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

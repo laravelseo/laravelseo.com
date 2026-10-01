@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-schema-markup-a-guide-to-implementing-structured-data.json";
+const title = "Schema markup: a guide to implementing structured data";
+const description = "Structured data is a language you use to tell search engines precise information about the content of your pages. Without schema markup, Google has to work out on its own what a page is...";
+const date = "2026-03-25";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="9 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

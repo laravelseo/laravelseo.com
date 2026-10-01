@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-webmcp-what-web-model-context-protocol-is-and-why-it-matters-for-your-website.json";
+const title = "WebMCP: what Web Model Context Protocol is and why it matters for your website";
+const description = "WebMCP: what Web Model Context Protocol is and why it matters for your website. WebMCP (Web Model Context Protocol) is a new standard that lets a website provide AI agents directly with a...";
+const date = "2026-06-27";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="9 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

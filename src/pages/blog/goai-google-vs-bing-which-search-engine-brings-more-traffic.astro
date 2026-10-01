@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-google-vs-bing-which-search-engine-brings-more-traffic.json";
+const title = "Google vs Bing: Which search engine brings more traffic?";
+const description = "Google vs Bing: Which search engine brings more traffic? Google, by far, in Romania and almost everywhere: over 90% of desktop searches and over 95% on mobile. The useful question is...";
+const date = "2025-07-07";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

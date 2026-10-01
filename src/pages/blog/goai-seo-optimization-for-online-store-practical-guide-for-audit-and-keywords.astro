@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-seo-optimization-for-online-store-practical-guide-for-audit-and-keywords.json";
+const title = "SEO Optimization for Online Store: Practical Guide for Audit and Keywords";
+const description = "An initial SEO audit is the map that guides your entire SEO optimization strategy for an online store . Don't view it as a boring technical task. See it as an investigation that uncovers...";
+const date = "2026-01-12";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="21 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

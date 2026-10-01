@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-complete-claude-guide-installation-use-and-optimisation-for-maximum-results.json";
+const title = "Complete Claude guide: installation, use and optimisation for maximum results";
+const description = "Artificial intelligence has become a daily work tool for millions of people around the world. The transformation brought by artificial intelligence affects every field, from programming to...";
+const date = "2026-04-16";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="21 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

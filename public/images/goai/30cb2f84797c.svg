@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" height="2650" viewBox="0 0 800 2650" width="800" xmlns="http://www.w3.org/2000/svg">
+<!-- Background -->
+<rect fill="#f1f7f5" height="2650" width="800"/>
+<!-- Header -->
+<rect fill="#1b2028" height="160" width="800" x="0" y="0"/>
+<text fill="#ccac65" font-size="14" font-weight="600" letter-spacing="3" text-anchor="middle" x="400" y="45">INFOGRAPHIC</text>
+<text fill="#ffffff" font-size="26" font-weight="700" text-anchor="middle" x="400" y="82">Examples of good reviews</text>
+<text fill="#ffffff" font-size="18" font-weight="400" text-anchor="middle" x="400" y="115">How to build trust through authentic feedback</text>
+<text fill="#ccac65" font-size="13" opacity="0.85" text-anchor="middle" x="400" y="142">29 real examples for businesses in Romania</text>
+<rect fill="#ccac65" height="3" rx="1.5" width="200" x="300" y="153"/>
+<!-- Section 1: Stat bar - why reviews matter -->
+<g transform="translate(0, 195)">
+<rect fill="#1b2028" height="80" rx="12" width="700" x="50" y="0"/>
+<!-- 90% stat -->
+<g transform="translate(80, 15)">
+<text fill="#ccac65" font-size="36" font-weight="700" x="0" y="32">90%</text>
+<text fill="#ffffff" font-size="12" x="105" y="22">of consumers read</text>
+<text fill="#ffffff" font-size="12" x="105" y="40">reviews before buying</text>
+</g>
+<!-- Divider -->
+<line opacity="0.3" stroke="#ccac65" stroke-width="1" x1="370" x2="370" y1="15" y2="65"/>
+<!-- Star rating visual -->
+<g transform="translate(400, 15)">
+<!-- 5 stars -->
+<g transform="translate(0, 5)">
+<polygon fill="#ccac65" points="10,0 13,7 20,7 14,12 16,19 10,15 4,19 6,12 0,7 7,7"/>
+<polygon fill="#ccac65" points="35,0 38,7 45,7 39,12 41,19 35,15 29,19 31,12 25,7 32,7"/>
+<polygon fill="#ccac65" points="60,0 63,7 70,7 64,12 66,19 60,15 54,19 56,12 50,7 57,7"/>
+<polygon fill="#ccac65" points="85,0 88,7 95,7 89,12 91,19 85,15 79,19 81,12 75,7 82,7"/>
+<polygon fill="#ccac65" points="110,0 113,7 120,7 114,12 116,19 110,15 104,19 106,12 100,7 107,7"/>
+</g>
+<text fill="#ffffff" font-size="12" x="135" y="20">Good reviews increase</text>
+<text fill="#ccac65" font-size="14" font-weight="700" x="135" y="38">conversions and trust</text>
+</g>
+</g>
+<!-- Section 2: Ce caracteristici are o recenzie bună -->
+<g transform="translate(0, 310)">
+<text fill="#1b2028" font-size="20" font-weight="700" text-anchor="middle" x="400" y="0">What makes a review good?</text>
+<text fill="#111111" font-size="13" opacity="0.7" text-anchor="middle" x="400" y="24">4 characteristics that make a difference</text>
+<rect fill="#ffffff" height="210" rx="12" stroke="#ccac65" stroke-width="1.5" width="700" x="50" y="45"/>
+<!-- Characteristic 1: Claritate -->
+<g transform="translate(75, 65)">
+<rect fill="#f1f7f5" height="80" rx="8" width="310" x="0" y="0"/>
+<!-- Eye icon -->
+<g transform="translate(18, 22)">
+<ellipse cx="16" cy="12" fill="none" rx="15" ry="10" stroke="#ccac65" stroke-width="1.5"/>
+<circle cx="16" cy="12" fill="#ccac65" opacity="0.5" r="5"/>
+<circle cx="16" cy="12" fill="#ccac65" r="2"/>
+</g>
+<text fill="#1b2028" font-size="14" font-weight="700" x="58" y="28">Clarity</text>
+<text fill="#111111" font-size="11" x="58" y="48">Coherent expression, without errors</text>
+<text fill="#111111" font-size="11" x="58" y="64">grammatical or ambiguous phrasing</text>
+</g>
+<!-- Characteristic 2: Detalii concrete -->
+<g transform="translate(415, 65)">
+<rect fill="#f1f7f5" height="80" rx="8" width="310" x="0" y="0"/>
+<!-- List/detail icon -->
+<g transform="translate(18, 20)">
+<rect fill="none" height="20" rx="3" stroke="#ccac65" stroke-width="1.5" width="24" x="2" y="2"/>
+<line stroke="#ccac65" stroke-width="1.2" x1="8" x2="22" y1="9" y2="9"/>
+<line stroke="#ccac65" stroke-width="1.2" x1="8" x2="18" y1="15" y2="15"/>
+<circle cx="5" cy="9" fill="#ccac65" r="1"/>
+<circle cx="5" cy="15" fill="#ccac65" r="1"/>
+</g>
+<text fill="#1b2028" font-size="14" font-weight="700" x="58" y="28">Specific details</text>
+<text fill="#111111" font-size="11" x="58" y="48">Which product/service was used,</text>
+<text fill="#111111" font-size="11" x="58" y="64">which aspects were appreciated</text>
+</g>
+<!-- Characteristic 3: Ton echilibrat -->
+<g transform="translate(75, 160)">
+<rect fill="#f1f7f5" height="80" rx="8" width="310" x="0" y="0"/>
+<!-- Balance icon -->
+<g transform="translate(18, 18)">
+<line stroke="#ccac65" stroke-width="1.5" x1="14" x2="14" y1="4" y2="22"/>
+<line stroke="#ccac65" stroke-width="1.5" x1="4" x2="24" y1="10" y2="10"/>
+<polygon fill="none" points="4,10 0,20 8,20" stroke="#ccac65" stroke-width="1.2"/>
+<polygon fill="none" points="24,10 20,20 28,20" stroke="#ccac65" stroke-width="1.2"/>
+<line stroke="#ccac65" stroke-width="1.5" x1="8" x2="20" y1="22" y2="22"/>
+</g>
+<text fill="#1b2028" font-size="14" font-weight="700" x="58" y="28">Balanced tone</text>
+<text fill="#111111" font-size="11" x="58" y="48">Honest personal experience,</text>
+<text fill="#111111" font-size="11" x="58" y="64">without exaggeration or superlatives</text>
+</g>
+<!-- Characteristic 4: Context -->
+<g transform="translate(415, 160)">
+<rect fill="#f1f7f5" height="80" rx="8" width="310" x="0" y="0"/>
+<!-- Location/context icon -->
+<g transform="translate(18, 18)">
+<circle cx="14" cy="10" fill="none" r="8" stroke="#ccac65" stroke-width="1.5"/>
+<circle cx="14" cy="10" fill="#ccac65" opacity="0.5" r="3"/>
+<line stroke="#ccac65" stroke-width="1.5" x1="14" x2="14" y1="18" y2="24"/>
+<line stroke="#ccac65" stroke-width="1.2" x1="8" x2="20" y1="24" y2="24"/>
+</g>
+<text fill="#1b2028" font-size="14" font-weight="700" x="58" y="28">Context</text>
+<text fill="#111111" font-size="11" x="58" y="48">Mention of the occasion: birthday,</text>
+<text fill="#111111" font-size="11" x="58" y="64">corporate event, everyday visit</text>
+</g>
+</g>
+<!-- Section 3: Greșeli frecvente - do's vs don'ts -->
+<g transform="translate(0, 600)">
+<text fill="#1b2028" font-size="20" font-weight="700" text-anchor="middle" x="400" y="0">Good review vs. poor review</text>
+<!-- Good review card -->
+<rect fill="#ffffff" height="280" rx="12" stroke="#ccac65" stroke-width="1.5" width="340" x="50" y="30"/>
+<rect fill="#ccac65" height="45" rx="12" width="340" x="50" y="30"/>
+<rect fill="#ccac65" height="18" width="340" x="50" y="58"/>
+<circle cx="82" cy="52" fill="#1b2028" r="13"/>
+<path d="M76 52 L80 56 L89 47" fill="none" stroke="#ccac65" stroke-width="2"/>
+<text fill="#1b2028" font-size="16" font-weight="700" x="105" y="58">Good review</text>
+<!-- Good example -->
+<g transform="translate(70, 95)">
+<!-- Quote marks -->
+<text fill="#ccac65" font-size="28" font-weight="700" opacity="0.4" x="0" y="14">"</text>
+<rect fill="#f1f7f5" height="95" rx="6" width="300" x="0" y="25"/>
+<text fill="#111111" font-size="11" font-style="italic" x="15" y="45">I ordered a Lenovo laptop.</text>
+<text fill="#111111" font-size="11" font-style="italic" x="15" y="61">The purchase process was simple,</text>
+<text fill="#111111" font-size="11" font-style="italic" x="15" y="77">delivery was fast, and the product arrived</text>
+<text fill="#111111" font-size="11" font-style="italic" x="15" y="93">well packaged. The price was competitive.</text>
+<text fill="#ccac65" font-size="28" font-weight="700" opacity="0.4" x="275" y="108">"</text>
+</g>
+<!-- Why it works -->
+<g transform="translate(70, 220)">
+<text fill="#ccac65" font-size="11" font-weight="700" x="0" y="0">WHY IT WORKS:</text>
+<g transform="translate(0, 15)">
+<circle cx="5" cy="5" fill="#ccac65" opacity="0.3" r="4"/>
+<circle cx="5" cy="5" fill="#ccac65" r="2"/>
+<text fill="#111111" font-size="11" x="15" y="9">Specific product mentioned</text>
+</g>
+<g transform="translate(0, 35)">
+<circle cx="5" cy="5" fill="#ccac65" opacity="0.3" r="4"/>
+<circle cx="5" cy="5" fill="#ccac65" r="2"/>
+<text fill="#111111" font-size="11" x="15" y="9">Details about the process and result</text>
+</g>
+<g transform="translate(0, 55)">
+<circle cx="5" cy="5" fill="#ccac65" opacity="0.3" r="4"/>
+<circle cx="5" cy="5" fill="#ccac65" r="2"/>
+<text fill="#111111" font-size="11" x="15" y="9">Natural tone, without exaggeration</text>
+</g>
+</g>
+<!-- Bad review card -->
+<rect fill="#ffffff" height="280" opacity="0.8" rx="12" stroke="#1b2028" stroke-width="1.5" width="340" x="410" y="30"/>
+<rect fill="#1b2028" height="45" rx="12" width="340" x="410" y="30"/>
+<rect fill="#1b2028" height="18" width="340" x="410" y="58"/>
+<circle cx="442" cy="52" fill="#ccac65" r="13"/>
+<line stroke="#1b2028" stroke-width="2.5" x1="436" x2="448" y1="46" y2="58"/>
+<line stroke="#1b2028" stroke-width="2.5" x1="448" x2="436" y1="46" y2="58"/>
+<text fill="#ccac65" font-size="16" font-weight="700" x="465" y="58">Poor review</text>
+<!-- Bad example -->
+<g transform="translate(430, 95)">
+<text fill="#1b2028" font-size="28" font-weight="700" opacity="0.2" x="0" y="14">"</text>
+<rect fill="#f1f7f5" height="95" rx="6" width="300" x="0" y="25"/>
+<text fill="#111111" font-size="15" x="15" y="50">Really great!!! 👍👍👍</text>
+<text fill="#111111" font-size="15" x="15" y="75">100% RECOMMEND!!!!</text>
+<text fill="#1b2028" font-size="28" font-weight="700" opacity="0.2" x="275" y="108">"</text>
+</g>
+<!-- Why it fails -->
+<g transform="translate(430, 220)">
+<text fill="#1b2028" font-size="11" font-weight="700" x="0" y="0">WHY IT DOESN'T WORK:</text>
+<g transform="translate(0, 15)">
+<circle cx="5" cy="5" fill="#1b2028" opacity="0.2" r="4"/>
+<circle cx="5" cy="5" fill="#1b2028" opacity="0.6" r="2"/>
+<text fill="#111111" font-size="11" x="15" y="9">No specific details</text>
+</g>
+<g transform="translate(0, 35)">
+<circle cx="5" cy="5" fill="#1b2028" opacity="0.2" r="4"/>
+<circle cx="5" cy="5" fill="#1b2028" opacity="0.6" r="2"/>
+<text fill="#111111" font-size="11" x="15" y="9">Excessive emojis and CAPITAL LETTERS</text>
+</g>
+<g transform="translate(0, 55)">
+<circle cx="5" cy="5" fill="#1b2028" opacity="0.2" r="4"/>
+<circle cx="5" cy="5" fill="#1b2028" opacity="0.6" r="2"/>
+<text fill="#111111" font-size="11" x="15" y="9">Doesn't help other customers decide</text>
+</g>
+</g>
+</g>
+<!-- Section 4: Structura ideală -->
+<g transform="translate(0, 940)">
+<text fill="#1b2028" font-size="20" font-weight="700" text-anchor="middle" x="400" y="0">The ideal structure of a good review</text>
+<text fill="#111111" font-size="13" opacity="0.7" text-anchor="middle" x="400" y="24">3 simple steps any customer can follow</text>
+<rect fill="#ffffff" height="130" rx="12" stroke="#ccac65" stroke-width="1.5" width="700" x="50" y="45"/>
+<!-- Step 1 -->
+<g transform="translate(75, 65)">
+<circle cx="20" cy="25" fill="#ccac65" opacity="0.15" r="20"/>
+<text fill="#ccac65" font-size="20" font-weight="700" text-anchor="middle" x="20" y="31">1</text>
+<text fill="#1b2028" font-size="13" font-weight="700" x="52" y="22">Context</text>
+<text fill="#111111" font-size="11" x="52" y="40">What was purchased</text>
+<text fill="#111111" font-size="11" x="52" y="54">or which service was used</text>
+</g>
+<!-- Arrow -->
+<g transform="translate(255, 87)">
+<line stroke="#ccac65" stroke-width="2" x1="0" x2="25" y1="0" y2="0"/>
+<polygon fill="#ccac65" points="30,0 22,-4 22,4"/>
+</g>
+<!-- Step 2 -->
+<g transform="translate(300, 65)">
+<circle cx="20" cy="25" fill="#ccac65" opacity="0.15" r="20"/>
+<text fill="#ccac65" font-size="20" font-weight="700" text-anchor="middle" x="20" y="31">2</text>
+<text fill="#1b2028" font-size="13" font-weight="700" x="52" y="22">What they liked and why</text>
+<text fill="#111111" font-size="11" x="52" y="40">Quality, communication,</text>
+<text fill="#111111" font-size="11" x="52" y="54">price, delivery, experience</text>
+</g>
+<!-- Arrow -->
+<g transform="translate(500, 87)">
+<line stroke="#ccac65" stroke-width="2" x1="0" x2="25" y1="0" y2="0"/>
+<polygon fill="#ccac65" points="30,0 22,-4 22,4"/>
+</g>
+<!-- Step 3 -->
+<g transform="translate(545, 65)">
+<circle cx="20" cy="25" fill="#ccac65" opacity="0.15" r="20"/>
+<text fill="#ccac65" font-size="20" font-weight="700" text-anchor="middle" x="20" y="31">3</text>
+<text fill="#1b2028" font-size="13" font-weight="700" x="52" y="22">Recommendation</text>
+<text fill="#111111" font-size="11" x="52" y="40">Would they recommend it to others?</text>
+<text fill="#111111" font-size="11" x="52" y="54">Under what conditions?</text>
+</g>
+<!-- Bottom accent -->
+<rect fill="#ccac65" height="18" opacity="0.1" rx="4" width="650" x="75" y="145"/>
+<text fill="#1b2028" font-size="10" font-weight="600" text-anchor="middle" x="400" y="158">Context + Details + Recommendation = A review that helps and inspires</text>
+</g>
+<!-- Section 5: Beneficii pentru afaceri -->
+<g transform="translate(0, 1135)">
+<text fill="#1b2028" font-size="20" font-weight="700" text-anchor="middle" x="400" y="0">Benefits of good reviews for businesses</text>
+<rect fill="#1b2028" height="180" rx="12" width="700" x="50" y="30"/>
+<!-- Benefit 1 -->
+<g transform="translate(80, 55)">
+<rect fill="#ffffff" height="135" opacity="0.08" rx="10" width="145" x="0" y="0"/>
+<!-- Trust shield -->
+<g transform="translate(52, 12)">
+<path d="M18 2 L32 9 L32 22 Q32 32 18 38 Q4 32 4 22 L4 9 Z" fill="none" stroke="#ccac65" stroke-width="1.5"/>
+<path d="M13 20 L17 24 L25 15" fill="none" stroke="#ccac65" stroke-width="2"/>
+</g>
+<text fill="#ccac65" font-size="13" font-weight="700" text-anchor="middle" x="72" y="65">Trust</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="85">Customers have more</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="100">confidence</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="115">in genuine feedback</text>
+</g>
+<!-- Benefit 2 -->
+<g transform="translate(245, 55)">
+<rect fill="#ffffff" height="135" opacity="0.08" rx="10" width="145" x="0" y="0"/>
+<!-- SEO / Google icon -->
+<g transform="translate(52, 12)">
+<circle cx="16" cy="16" fill="none" r="12" stroke="#ccac65" stroke-width="1.5"/>
+<line stroke="#ccac65" stroke-linecap="round" stroke-width="2" x1="25" x2="34" y1="25" y2="34"/>
+<text fill="#ccac65" font-size="11" font-weight="700" text-anchor="middle" x="16" y="21">G</text>
+</g>
+<text fill="#ccac65" font-size="13" font-weight="700" text-anchor="middle" x="72" y="65">Local SEO</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="85">Contributes to</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="100">Google Maps and</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="115">local searches</text>
+</g>
+<!-- Benefit 3 -->
+<g transform="translate(410, 55)">
+<rect fill="#ffffff" height="135" opacity="0.08" rx="10" width="145" x="0" y="0"/>
+<!-- Feedback / message icon -->
+<g transform="translate(48, 10)">
+<rect fill="none" height="22" rx="4" stroke="#ccac65" stroke-width="1.5" width="28" x="2" y="2"/>
+<polygon fill="none" points="10,24 16,30 22,24" stroke="#ccac65" stroke-width="1.5"/>
+<line stroke="#ccac65" stroke-width="1" x1="10" x2="22" y1="11" y2="11"/>
+<line stroke="#ccac65" stroke-width="1" x1="10" x2="18" y1="16" y2="16"/>
+</g>
+<text fill="#ccac65" font-size="13" font-weight="700" text-anchor="middle" x="72" y="65">Feedback</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="85">Identifies strengths</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="100">and areas</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="115">for improvement</text>
+</g>
+<!-- Benefit 4 -->
+<g transform="translate(575, 55)">
+<rect fill="#ffffff" height="135" opacity="0.08" rx="10" width="145" x="0" y="0"/>
+<!-- Conversion / arrow up icon -->
+<g transform="translate(52, 12)">
+<rect fill="none" height="24" rx="3" stroke="#ccac65" stroke-width="1.5" width="24" x="4" y="8"/>
+<line stroke="#ccac65" stroke-width="2" x1="16" x2="16" y1="28" y2="14"/>
+<polyline fill="none" points="10,20 16,14 22,20" stroke="#ccac65" stroke-width="2"/>
+</g>
+<text fill="#ccac65" font-size="13" font-weight="700" text-anchor="middle" x="72" y="65">Conversions</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="85">Visitors become</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="100">customers based on</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="72" y="115">positive reviews</text>
+</g>
+</g>
+<!-- Section 6: Exemple pe domenii - visual grid -->
+<g transform="translate(0, 1385)">
+<text fill="#1b2028" font-size="20" font-weight="700" text-anchor="middle" x="400" y="0">29 examples of good reviews by industry</text>
+<text fill="#111111" font-size="13" opacity="0.7" text-anchor="middle" x="400" y="24">Every industry needs specific details</text>
+<rect fill="#ffffff" height="810" rx="12" stroke="#ccac65" stroke-width="1.5" width="700" x="50" y="45"/>
+<!-- Row 1 -->
+<!-- Restaurant -->
+<g transform="translate(75, 70)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<!-- Fork & knife icon -->
+<g transform="translate(10, 6)">
+<line stroke="#1b2028" stroke-width="1.5" x1="6" x2="6" y1="4" y2="16"/>
+<line stroke="#1b2028" stroke-width="1" x1="4" x2="4" y1="4" y2="9"/>
+<line stroke="#1b2028" stroke-width="1" x1="8" x2="8" y1="4" y2="9"/>
+<line stroke="#1b2028" stroke-width="1.5" x1="15" x2="14" y1="4" y2="16"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Restaurant</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Fast service, food</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">fresh, warm atmosphere.</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">I recommend the pasta with seafood</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">de mare."</text>
+</g>
+<!-- Magazin online -->
+<g transform="translate(295, 70)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<!-- Cart icon -->
+<g transform="translate(10, 6)">
+<path d="M4 4 L7 4 L10 15 L18 15" fill="none" stroke="#1b2028" stroke-width="1.5"/>
+<circle cx="11" cy="18" fill="#1b2028" r="1.5"/>
+<circle cx="17" cy="18" fill="#1b2028" r="1.5"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Online shop</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Simple process, fast delivery,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">well-packaged product. The price</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">is lower than on other</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">website-uri."</text>
+</g>
+<!-- Clinică dentară -->
+<g transform="translate(515, 70)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<!-- Medical cross icon -->
+<g transform="translate(10, 6)">
+<rect fill="none" height="16" rx="1" stroke="#1b2028" stroke-width="1.3" width="8" x="6" y="3"/>
+<rect fill="none" height="8" rx="1" stroke="#1b2028" stroke-width="1.3" width="16" x="2" y="7"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Dental clinic</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Spotless premises, modern equipment</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">equipment and a calm dentist who</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">explains things clearly to</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">pacientului."</text>
+</g>
+<!-- Row 2 -->
+<!-- Agenție SEO -->
+<g transform="translate(75, 200)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 6)">
+<circle cx="10" cy="10" fill="none" r="7" stroke="#1b2028" stroke-width="1.3"/>
+<line stroke="#1b2028" stroke-width="1.5" x1="15" x2="20" y1="15" y2="20"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">SEO agency</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"In 6 months, we reached the first</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">page of Google. Clear reports,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">regular communication and a</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">well-organised team."</text>
+</g>
+<!-- Mecanic auto -->
+<g transform="translate(295, 200)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 6)">
+<circle cx="10" cy="10" fill="none" r="7" stroke="#1b2028" stroke-width="1.3"/>
+<line stroke="#1b2028" stroke-width="1.3" x1="10" x2="10" y1="6" y2="10"/>
+<line stroke="#1b2028" stroke-width="1.3" x1="10" x2="14" y1="10" y2="13"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Car mechanic</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Problem identified quickly,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">optimal solution, transparent</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">costs and efficient</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">efficient."</text>
+</g>
+<!-- Firmă web design -->
+<g transform="translate(515, 200)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 6)">
+<text fill="#1b2028" font-size="13" font-weight="700" x="2" y="15">&lt;/&gt;</text>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="35" y="23">Web design</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Website modern, responsive,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">SEO-optimised. Training after</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">launch and technical support</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">gratuit 30 de zile."</text>
+</g>
+<!-- Row 3 -->
+<!-- Firmă mutări -->
+<g transform="translate(75, 330)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 5)">
+<rect fill="none" height="12" rx="2" stroke="#1b2028" stroke-width="1.3" width="16" x="2" y="6"/>
+<circle cx="7" cy="18" fill="none" r="2.5" stroke="#1b2028" stroke-width="1.2"/>
+<circle cx="15" cy="18" fill="none" r="2.5" stroke="#1b2028" stroke-width="1.2"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Removals company</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Au venit la timp, au</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">packed everything carefully.</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">Furniture in perfect condition.</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">Serviciu impecabil."</text>
+</g>
+<!-- Fotograf -->
+<g transform="translate(295, 330)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 6)">
+<rect fill="none" height="12" rx="2" stroke="#1b2028" stroke-width="1.3" width="16" x="2" y="5"/>
+<circle cx="10" cy="11" fill="none" r="3" stroke="#1b2028" stroke-width="1.2"/>
+<rect fill="none" height="3" rx="1" stroke="#1b2028" stroke-width="1" width="8" x="6" y="3"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Wedding photographer</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Poze de poveste! Materiale</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">delivered quickly; every image</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">captures genuine emotion.</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">Profesionist discret."</text>
+</g>
+<!-- Avocat -->
+<g transform="translate(515, 330)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 5)">
+<rect fill="none" height="14" rx="1" stroke="#1b2028" stroke-width="1.3" width="16" x="2" y="4"/>
+<line stroke="#1b2028" stroke-width="1" x1="6" x2="14" y1="8" y2="8"/>
+<line stroke="#1b2028" stroke-width="1" x1="6" x2="14" y1="11" y2="11"/>
+<line stroke="#1b2028" stroke-width="1" x1="6" x2="11" y1="14" y2="14"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Solicitor</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Clar, direct, a explicat toate</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">stages of the process. I felt</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">I was in safe hands.</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">Professionalism and reliability."</text>
+</g>
+<!-- Row 4 -->
+<!-- Construcții -->
+<g transform="translate(75, 460)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 5)">
+<polygon fill="none" points="10,3 2,12 18,12" stroke="#1b2028" stroke-width="1.3"/>
+<rect fill="none" height="8" stroke="#1b2028" stroke-width="1.2" width="12" x="4" y="12"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Construction</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Work completed in accordance</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">with the contract. Organised team,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">regular communication</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">parcursul proiectului."</text>
+</g>
+<!-- Contabilitate -->
+<g transform="translate(295, 460)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 5)">
+<rect fill="none" height="14" rx="1" stroke="#1b2028" stroke-width="1.3" width="14" x="2" y="4"/>
+<line stroke="#1b2028" stroke-width="1" x1="5" x2="13" y1="8" y2="8"/>
+<line stroke="#1b2028" stroke-width="1" x1="5" x2="13" y1="11" y2="11"/>
+<line stroke="#1b2028" stroke-width="1" x1="5" x2="10" y1="14" y2="14"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Accounting</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Servicii bine organizate,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">clear explanations, documents</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">delivered on time. Improved</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">financial organisation."</text>
+</g>
+<!-- Cursuri online -->
+<g transform="translate(515, 460)">
+<rect fill="#f1f7f5" height="110" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="32" rx="8" width="210" x="0" y="0"/>
+<rect fill="#ccac65" height="12" width="210" x="0" y="22"/>
+<g transform="translate(10, 5)">
+<polygon fill="none" points="3,4 18,11 3,18" stroke="#1b2028" stroke-width="1.3"/>
+</g>
+<text fill="#1b2028" font-size="12" font-weight="700" x="30" y="23">Online courses</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="52">"Materiale structurate logic,</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="65">up-to-date information. The platform</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="78">is reliable, with support</text>
+<text fill="#111111" font-size="10" font-style="italic" x="12" y="91">with quick support responses."</text>
+</g>
+<!-- +17 more domains note -->
+<rect fill="#1b2028" height="45" rx="22" width="400" x="200" y="595"/>
+<text fill="#ccac65" font-size="13" font-weight="600" text-anchor="middle" x="400" y="622">+ 17 more industries in the full article</text>
+<!-- Domain tags row -->
+<g transform="translate(75, 660)">
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="0" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="45" y="16">Florist</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="100" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="145" y="16">Fitness</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="200" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="245" y="16">Nursery</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="300" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="345" y="16">Transport</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="400" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="445" y="16">Cleaning</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="500" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="545" y="16">Electronics</text>
+</g>
+<g transform="translate(120, 695)">
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="100" x="0" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="50" y="16">Consultancy</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="115" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="160" y="16">Accommodation</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="220" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="265" y="16">Apps</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="110" x="325" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="380" y="16">Digital marketing</text>
+<rect fill="#ccac65" height="24" opacity="0.15" rx="12" width="90" x="450" y="0"/>
+<text fill="#1b2028" font-size="10" text-anchor="middle" x="495" y="16">Car servicing</text>
+</g>
+</g>
+<!-- Section 7: Quick tips for business owners -->
+<g transform="translate(0, 2290)">
+<text fill="#1b2028" font-size="20" font-weight="700" text-anchor="middle" x="400" y="0">Tips for business owners</text>
+<rect fill="#1b2028" height="170" rx="12" width="700" x="50" y="25"/>
+<g transform="translate(80, 55)">
+<circle cx="8" cy="8" fill="#ccac65" r="8"/>
+<path d="M5 8 L7 10.5 L12 5.5" fill="none" stroke="#1b2028" stroke-width="1.5"/>
+<text fill="#ffffff" font-size="12" x="25" y="13">Respond professionally to every review - positive or negative</text>
+</g>
+<g transform="translate(80, 85)">
+<circle cx="8" cy="8" fill="#ccac65" r="8"/>
+<path d="M5 8 L7 10.5 L12 5.5" fill="none" stroke="#1b2028" stroke-width="1.5"/>
+<text fill="#ffffff" font-size="12" x="25" y="13">Encourage satisfied customers to leave reviews with specific details</text>
+</g>
+<g transform="translate(80, 115)">
+<circle cx="8" cy="8" fill="#ccac65" r="8"/>
+<path d="M5 8 L7 10.5 L12 5.5" fill="none" stroke="#1b2028" stroke-width="1.5"/>
+<text fill="#ffffff" font-size="12" x="25" y="13">Reviews contribute to local SEO - indexing in Google Maps and local searches</text>
+</g>
+<g transform="translate(80, 145)">
+<circle cx="8" cy="8" fill="#ccac65" r="8"/>
+<path d="M5 8 L7 10.5 L12 5.5" fill="none" stroke="#1b2028" stroke-width="1.5"/>
+<text fill="#ffffff" font-size="12" x="25" y="13">Review frequency matters as much as the total number</text>
+</g>
+</g>
+<!-- Footer CTA -->
+<g transform="translate(0, 2510)">
+<rect fill="#1b2028" height="70" rx="12" width="700" x="50" y="0"/>
+<text fill="#ffffff" font-size="15" font-weight="600" text-anchor="middle" x="260" y="28">Want more reviews?</text>
+<rect fill="#ccac65" height="38" rx="19" width="310" x="390" y="12"/>
+<text fill="#1b2028" font-size="13" font-weight="700" text-anchor="middle" x="545" y="37">Read the full article → goai.ro</text>
+</g>
+<!-- Brand -->
+<text fill="#111111" font-size="10" opacity="0.45" text-anchor="middle" x="400" y="2620">© 2025 GO AI Promovare • goai.ro • Alba Iulia</text>
+</svg>

@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-use-claude-and-chatgpt-for-advanced-keyword-research.json";
+const title = "How to use Claude and ChatGPT for advanced keyword research";
+const description = "How to use Claude and ChatGPT for advanced keyword research without ending up with a list of 200 plausible phrases and zero search volume: this is the difference between using language...";
+const date = "2026-06-21";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

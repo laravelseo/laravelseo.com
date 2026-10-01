@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-create-a-sales-funnel-that-converts-in-2025.json";
+const title = "How to create a sales funnel that converts in 2025";
+const description = "How to create a sales funnel that converts in 2025 , drawing on what we have learned by tracking the figures for dozens of service sites and shops: most visitors do not buy on their first...";
+const date = "2025-06-17";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>
