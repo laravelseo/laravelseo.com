@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-what-core-web-vitals-means-and-how-it-affects-seo.json";
+const title = "What Core Web Vitals Means and How It Affects SEO";
+const description = "What Core Web Vitals means and how it affects SEO. In today's digital era, where online competition is increasingly fierce, user experience optimization has become an essential factor in...";
+const date = "2025-07-03";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

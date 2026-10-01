@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-product-description-examples-for-online-stores-15-templates-by-category.json";
+const title = "Product description examples for online stores: 15 templates by category";
+const description = "Product description examples for online stores: 15 templates by category is the guide you land on when product pages are filled in in a hurry, with text copied from the manufacturer, and...";
+const date = "2026-09-03";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="8 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-automations-with-claude-for-a-small-business-8-concrete-examples.json";
+const title = "Automations with Claude for a small business: 8 concrete examples";
+const description = "Automations with Claude for a small business: 8 concrete examples. In a small business, a good automation with Claude is not a project of several months, but a workflow set up in an...";
+const date = "2026-09-07";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

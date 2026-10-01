@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-google-detects-automatically-generated-content.json";
+const title = "How Google detects automatically generated content";
+const description = "How Google detects automatically generated content is usually the wrong question: Google is not looking for \"text written by a machine\", but content with no value for the reader, and the...";
+const date = "2025-07-05";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

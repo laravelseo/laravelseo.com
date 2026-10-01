@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-examples-of-good-reviews-how-to-build-trust-through-authentic-feedback.json";
+const title = "Examples of good reviews: How to build trust through authentic feedback";
+const description = "Examples of good reviews: How to build trust through authentic feedback. What are reviews and why do they matter? Reviews are opinions expressed by customers after using a product or...";
+const date = "2025-05-30";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

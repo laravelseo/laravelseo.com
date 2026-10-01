@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-seo-in-2026-and-its-direct-impact-on-seo-services.json";
+const title = "SEO in 2026 and its direct impact on SEO services";
+const description = "SEO in 2026 and its direct impact on SEO services , written for companies buying or evaluating optimisation services who want to know what has changed from the standard offer of three years...";
+const date = "2025-12-29";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-seo-rules-changes-in-2026.json";
+const title = "SEO Rules Changes in 2026";
+const description = "SEO Rules Changes in 2026: Complete Guide for Visibility in the Age of Artificial Intelligence. Currently, the way Google displays search results is undergoing a major transformation,...";
+const date = "2025-12-30";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

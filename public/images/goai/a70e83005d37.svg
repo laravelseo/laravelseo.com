@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="1200" viewBox="0 0 800 1200" width="800" xmlns="http://www.w3.org/2000/svg">
+<!-- Background -->
+<rect fill="#f1f7f5" height="1200" width="800"/>
+<!-- Header -->
+<rect fill="#1b2028" height="120" width="800" x="0" y="0"/>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" x="400" y="50">SEO content strategy</text>
+<text fill="#ccac65" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" x="400" y="85">effective in 2026</text>
+<!-- Section 1: Cercetarea cuvintelor cheie -->
+<g id="section1">
+<rect fill="#ffffff" height="200" rx="10" stroke="#ccac65" stroke-width="2" width="700" x="50" y="160"/>
+<!-- Icon: Search -->
+<circle cx="120" cy="215" fill="#ccac65" r="30"/>
+<circle cx="120" cy="215" fill="none" r="18" stroke="#f1f7f5" stroke-width="3"/>
+<line stroke="#f1f7f5" stroke-linecap="round" stroke-width="3" x1="132" x2="145" y1="227" y2="240"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="22" font-weight="bold" x="180" y="200">1. Keyword research</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="230">• Head terms - high volume, high competition</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="255">• Long-tail - clear intent, higher conversion</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="280">• Question keywords - informational content</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="305">• Search intent analysis (informational/commercial)</text>
+</g>
+<!-- Arrow Down -->
+<path d="M 400 370 L 400 410" fill="none" marker-end="url(#arrowhead)" stroke="#ccac65" stroke-width="3"/>
+<!-- Section 2: Structurare Pillar + Cluster -->
+<g id="section2">
+<rect fill="#ffffff" height="220" rx="10" stroke="#ccac65" stroke-width="2" width="700" x="50" y="420"/>
+<!-- Icon: Network/Structure -->
+<circle cx="120" cy="490" fill="#ccac65" r="30"/>
+<circle cx="110" cy="480" fill="#f1f7f5" r="6"/>
+<circle cx="130" cy="480" fill="#f1f7f5" r="6"/>
+<circle cx="110" cy="500" fill="#f1f7f5" r="6"/>
+<circle cx="130" cy="500" fill="#f1f7f5" r="6"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="110" x2="120" y1="480" y2="490"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="130" x2="120" y1="480" y2="490"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="110" x2="120" y1="500" y2="490"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="130" x2="120" y1="500" y2="490"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="22" font-weight="bold" x="180" y="460">2. Structure Pillar Pages + Topic Clusters</text>
+<rect fill="#ccac65" height="50" opacity="0.2" rx="5" width="250" x="180" y="475"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="190" y="495">Pillar Page</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="190" y="515">Comprehensive guide to a broad topic</text>
+<rect fill="#1b2028" height="90" opacity="0.1" rx="5" width="250" x="180" y="535"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="16" font-weight="bold" x="190" y="555">Cluster Content</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="190" y="575">• Articles on subtopics</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="190" y="595">• Internal links to the pillar page</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="190" y="615">• Demonstrates authority on the topic</text>
+</g>
+<!-- Arrow Down -->
+<path d="M 400 650 L 400 690" fill="none" marker-end="url(#arrowhead)" stroke="#ccac65" stroke-width="3"/>
+<!-- Section 3: Calendar Editorial -->
+<g id="section3">
+<rect fill="#ffffff" height="180" rx="10" stroke="#ccac65" stroke-width="2" width="700" x="50" y="700"/>
+<!-- Icon: Calendar -->
+<rect fill="#ccac65" height="50" rx="5" width="50" x="95" y="745"/>
+<rect fill="#1b2028" height="12" rx="5" width="50" x="95" y="745"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="105" x2="115" y1="770" y2="770"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="105" x2="115" y1="780" y2="780"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="125" x2="135" y1="770" y2="770"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="125" x2="135" y1="780" y2="780"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="22" font-weight="bold" x="180" y="735">3. Editorial calendar</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="765">• Plan 3+ months ahead</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="790">• Realistic frequency (2-4 articles/month)</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="815">• Keyword + intent for each article</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="840">• Clear responsibilities (writing, editing, publishing)</text>
+</g>
+<!-- Arrow Down -->
+<path d="M 400 890 L 400 930" fill="none" marker-end="url(#arrowhead)" stroke="#ccac65" stroke-width="3"/>
+<!-- Section 4: Creare Conținut -->
+<g id="section4">
+<rect fill="#ffffff" height="160" rx="10" stroke="#ccac65" stroke-width="2" width="700" x="50" y="940"/>
+<!-- Icon: Document -->
+<rect fill="#ccac65" height="50" rx="3" width="40" x="100" y="985"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="108" x2="132" y1="995" y2="995"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="108" x2="132" y1="1005" y2="1005"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="108" x2="132" y1="1015" y2="1015"/>
+<line stroke="#f1f7f5" stroke-width="2" x1="108" x2="125" y1="1025" y2="1025"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="22" font-weight="bold" x="180" y="975">4. Create quality content</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="1005">• Demonstrable practical experience (E-E-A-T)</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="1030">• In-depth topic coverage</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="180" y="1055">• Clear structure, originality, regular updates</text>
+</g>
+<!-- Footer with metrics -->
+<rect fill="#1b2028" height="80" width="800" x="0" y="1120"/>
+<g id="metrics">
+<circle cx="120" cy="1160" fill="#ccac65" r="25"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="120" y="1168">5</text>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="14" x="160" y="1165">Measurement: rankings, traffic,</text>
+<circle cx="400" cy="1160" fill="#ccac65" r="25"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="400" y="1168">→</text>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="14" x="440" y="1165">engagement, conversions,</text>
+<circle cx="680" cy="1160" fill="#ccac65" r="25"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="680" y="1168">↻</text>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="14" x="600" y="1185">backlinks</text>
+</g>
+<!-- Arrow marker definition -->
+<defs>
+<marker id="arrowhead" markerHeight="10" markerWidth="10" orient="auto" refX="9" refY="3">
+<polygon fill="#ccac65" points="0 0, 10 3, 0 6"/>
+</marker>
+</defs>
+</svg>

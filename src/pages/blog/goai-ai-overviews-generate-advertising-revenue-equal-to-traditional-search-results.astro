@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-ai-overviews-generate-advertising-revenue-equal-to-traditional-search-results.json";
+const title = "AI Overviews generate advertising revenue equal to traditional search results";
+const description = "Google claims that AI Overviews generate advertising revenue equal to traditional search results. What this means for your marketing strategy What are AI Overviews and how do they work? AI...";
+const date = "2025-05-27";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

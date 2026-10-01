@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-effective-digital-marketing-strategies-for-small-businesses-in-2025.json";
+const title = "Effective digital marketing strategies for small businesses in 2025";
+const description = "Effective digital marketing strategies for small businesses in 2025 , written from the perspective of an agency working with companies of 2-20 employees in Romania: the budget is limited,...";
+const date = "2025-06-16";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

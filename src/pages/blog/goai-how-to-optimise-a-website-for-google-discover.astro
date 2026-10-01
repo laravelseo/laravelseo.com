@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-to-optimise-a-website-for-google-discover.json";
+const title = "How to optimise a website for Google Discover";
+const description = "How to optimise a website for Google Discover , the article feed in the Google app and Chrome on phones that displays content without users searching for anything. For content sites,...";
+const date = "2025-07-27";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

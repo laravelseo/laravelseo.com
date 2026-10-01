@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-google-ai-and-its-impact-on-seo.json";
+const title = "Google AI and Its Impact on SEO";
+const description = "Google AI and its impact on SEO, content and digital automation. At present, artificial intelligence tools developed by Google directly influence the way users search for information, make...";
+const date = "2026-01-05";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="6 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

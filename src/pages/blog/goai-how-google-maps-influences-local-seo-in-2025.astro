@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-google-maps-influences-local-seo-in-2025.json";
+const title = "How Google Maps influences local SEO in 2025";
+const description = "How Google Maps influences local SEO in 2025 : for a business with a location (practice, shop, restaurant, repair workshop, office), Google Maps and the local pack (the three businesses...";
+const date = "2025-07-08";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-what-is-seo-and-how-it-can-help-you.json";
+const title = "What is SEO and how it can help you";
+const description = "What is SEO and how it can help you grow your business in the online environment. If you have a business or a website, you've probably heard about SEO. Maybe you read somewhere that it's...";
+const date = "2026-02-06";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="16 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

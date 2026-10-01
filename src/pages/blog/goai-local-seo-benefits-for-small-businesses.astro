@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-local-seo-benefits-for-small-businesses.json";
+const title = "Local SEO Benefits for Small Businesses";
+const description = "Local SEO optimization benefits for small businesses. Local SEO optimization is a subset of search engine optimization strategies that focuses on improving a business's online visibility in...";
+const date = "2025-06-01";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

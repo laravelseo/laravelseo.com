@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-what-an-seo-services-contract-contains-and-how-to-check-what-you-receive-month-by-month.json";
+const title = "What an SEO services contract contains and how to check what you receive month by month";
+const description = "What an SEO services contract contains and how to check what you receive month by month. A well-drafted SEO services contract does not promise guaranteed rankings, but describes exactly...";
+const date = "2026-09-12";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

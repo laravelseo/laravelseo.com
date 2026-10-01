@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-how-google-ads-works-and-how-it-complements-your-seo-strategy.json";
+const title = "How Google Ads works and how it complements your SEO strategy";
+const description = "A website's digital marketing strategy is built on two main pillars: organic traffic obtained through SEO optimization and paid traffic generated through Google Ads campaigns. Although...";
+const date = "2026-03-17";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="8 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

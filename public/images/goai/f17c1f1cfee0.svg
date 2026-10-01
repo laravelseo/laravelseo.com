@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg font-family="'Segoe UI', Arial, sans-serif" height="1260" viewBox="0 0 900 1260" width="900" xmlns="http://www.w3.org/2000/svg">
+<!-- Fundal -->
+<rect fill="#f1f7f5" height="1260" width="900"/>
+<!-- Header -->
+<rect fill="#1b2028" height="120" width="900"/>
+<text fill="#ccac65" font-size="12" font-weight="700" letter-spacing="2" text-anchor="middle" x="450" y="46">SEO OPTIMISATION</text>
+<text fill="#ffffff" font-size="24" font-weight="700" text-anchor="middle" x="450" y="78">Google Consent Mode v2</text>
+<text fill="#ccac65" font-size="14" text-anchor="middle" x="450" y="104">What it means for your website and SEO strategy</text>
+<!-- ===== SECȚIUNEA 1: 4 parametri ===== -->
+<text fill="#1b2028" font-size="15" font-weight="700" text-anchor="middle" x="450" y="148">The 4 consent parameters</text>
+<line stroke="#ccac65" stroke-width="1.5" x1="60" x2="840" y1="158" y2="158"/>
+<!-- Card 1 -->
+<rect fill="#ffffff" height="105" rx="8" stroke="#e0e0e0" stroke-width="1.5" width="180" x="50" y="172"/>
+<text fill="#ccac65" font-size="22" text-anchor="middle" x="140" y="200">📊</text>
+<text fill="#1b2028" font-size="11" font-weight="700" text-anchor="middle" x="140" y="222">analytics_storage</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="140" y="242">Cookies for</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="140" y="258">website behaviour</text>
+<!-- Card 2 -->
+<rect fill="#ffffff" height="105" rx="8" stroke="#e0e0e0" stroke-width="1.5" width="180" x="248" y="172"/>
+<text fill="#ccac65" font-size="22" text-anchor="middle" x="338" y="200">📢</text>
+<text fill="#1b2028" font-size="11" font-weight="700" text-anchor="middle" x="338" y="222">ad_storage</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="338" y="242">Cookies for</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="338" y="258">advertising and remarketing</text>
+<!-- Card 3 - NOU -->
+<rect fill="#ffffff" height="105" rx="8" stroke="#ccac65" stroke-width="2" width="180" x="446" y="172"/>
+<rect fill="#ccac65" height="18" rx="4" width="180" x="446" y="172"/>
+<text fill="#1b2028" font-size="9" font-weight="700" text-anchor="middle" x="536" y="184">NEW IN V2</text>
+<text fill="#ccac65" font-size="22" text-anchor="middle" x="536" y="214">👤</text>
+<text fill="#1b2028" font-size="11" font-weight="700" text-anchor="middle" x="536" y="236">ad_user_data</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="536" y="254">User data sent</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="536" y="270">to Google Ads</text>
+<!-- Card 4 - NOU -->
+<rect fill="#ffffff" height="105" rx="8" stroke="#ccac65" stroke-width="2" width="206" x="644" y="172"/>
+<rect fill="#ccac65" height="18" rx="4" width="206" x="644" y="172"/>
+<text fill="#1b2028" font-size="9" font-weight="700" text-anchor="middle" x="747" y="184">NEW IN V2</text>
+<text fill="#ccac65" font-size="22" text-anchor="middle" x="747" y="214">🎯</text>
+<text fill="#1b2028" font-size="11" font-weight="700" text-anchor="middle" x="747" y="236">ad_personalization</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="747" y="254">Personalisation of</text>
+<text fill="#111111" font-size="10" text-anchor="middle" x="747" y="270">advertisements</text>
+<!-- ===== SECȚIUNEA 2: Flux modelare ===== -->
+<text fill="#1b2028" font-size="15" font-weight="700" text-anchor="middle" x="450" y="318">How conversion modelling works</text>
+<line stroke="#ccac65" stroke-width="1.5" x1="60" x2="840" y1="328" y2="328"/>
+<!-- Box 1 -->
+<rect fill="#1b2028" height="75" rx="8" width="168" x="50" y="342"/>
+<text fill="#ccac65" font-size="20" text-anchor="middle" x="134" y="370">🙋</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="134" y="392">User rejects</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="134" y="407">cookies</text>
+<line stroke="#ccac65" stroke-width="2" x1="218" x2="262" y1="379" y2="379"/>
+<polygon fill="#ccac65" points="262,374 274,379 262,384"/>
+<!-- Box 2 -->
+<rect fill="#1b2028" height="75" rx="8" width="168" x="274" y="342"/>
+<text fill="#ccac65" font-size="20" text-anchor="middle" x="358" y="370">📡</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="358" y="392">Anonymised signals</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="358" y="407">sent to Google</text>
+<line stroke="#ccac65" stroke-width="2" x1="442" x2="486" y1="379" y2="379"/>
+<polygon fill="#ccac65" points="486,374 498,379 486,384"/>
+<!-- Box 3 -->
+<rect fill="#1b2028" height="75" rx="8" width="168" x="498" y="342"/>
+<text fill="#ccac65" font-size="20" text-anchor="middle" x="582" y="370">🤖</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="582" y="392">AI modelling</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="582" y="407">of behaviour</text>
+<line stroke="#ccac65" stroke-width="2" x1="666" x2="710" y1="379" y2="379"/>
+<polygon fill="#ccac65" points="710,374 722,379 710,384"/>
+<!-- Box 4 -->
+<rect fill="#ccac65" height="75" rx="8" width="128" x="722" y="342"/>
+<text fill="#1b2028" font-size="20" text-anchor="middle" x="786" y="370">📈</text>
+<text fill="#1b2028" font-size="11" font-weight="700" text-anchor="middle" x="786" y="392">Reporting</text>
+<text fill="#1b2028" font-size="11" font-weight="700" text-anchor="middle" x="786" y="407">accurately in GA4</text>
+<!-- ===== SECȚIUNEA 3: Pași implementare ===== -->
+<text fill="#1b2028" font-size="15" font-weight="700" text-anchor="middle" x="450" y="460">Steps for correct implementation</text>
+<line stroke="#ccac65" stroke-width="1.5" x1="60" x2="840" y1="470" y2="470"/>
+<!-- Pas 1 -->
+<circle cx="88" cy="504" fill="#ccac65" r="20"/>
+<text fill="#1b2028" font-size="14" font-weight="700" text-anchor="middle" x="88" y="510">1</text>
+<text fill="#1b2028" font-size="12" font-weight="700" x="122" y="500">Choose a Google-certified CMP</text>
+<text fill="#111111" font-size="11" x="122" y="518">E.g. Cookiebot, Usercentrics, OneTrust - check Google's official list</text>
+<line stroke="#ccac65" stroke-dasharray="4,3" stroke-width="2" x1="88" x2="88" y1="524" y2="538"/>
+<!-- Pas 2 -->
+<circle cx="88" cy="556" fill="#ccac65" r="20"/>
+<text fill="#1b2028" font-size="14" font-weight="700" text-anchor="middle" x="88" y="562">2</text>
+<text fill="#1b2028" font-size="12" font-weight="700" x="122" y="552">Install the CMP script before any other Google script</text>
+<text fill="#111111" font-size="11" x="122" y="570">Loading order is essential for correct operation</text>
+<line stroke="#ccac65" stroke-dasharray="4,3" stroke-width="2" x1="88" x2="88" y1="576" y2="590"/>
+<!-- Pas 3 -->
+<circle cx="88" cy="608" fill="#ccac65" r="20"/>
+<text fill="#1b2028" font-size="14" font-weight="700" text-anchor="middle" x="88" y="614">3</text>
+<text fill="#1b2028" font-size="12" font-weight="700" x="122" y="604">Set the default state to "denied" for visitors from the EU</text>
+<text fill="#111111" font-size="11" x="122" y="622">The region parameter: RO, EU ensures GDPR compliance</text>
+<line stroke="#ccac65" stroke-dasharray="4,3" stroke-width="2" x1="88" x2="88" y1="628" y2="642"/>
+<!-- Pas 4 -->
+<circle cx="88" cy="660" fill="#ccac65" r="20"/>
+<text fill="#1b2028" font-size="14" font-weight="700" text-anchor="middle" x="88" y="666">4</text>
+<text fill="#1b2028" font-size="12" font-weight="700" x="122" y="656">Configure the "granted" update when the user consents</text>
+<text fill="#111111" font-size="11" x="122" y="674">The CMP automatically sends the update command after consent via the banner</text>
+<line stroke="#ccac65" stroke-dasharray="4,3" stroke-width="2" x1="88" x2="88" y1="680" y2="694"/>
+<!-- Pas 5 -->
+<circle cx="88" cy="712" fill="#ccac65" r="20"/>
+<text fill="#1b2028" font-size="14" font-weight="700" text-anchor="middle" x="88" y="718">5</text>
+<text fill="#1b2028" font-size="12" font-weight="700" x="122" y="708">Check with Tag Assistant, GTM Preview and the Google Ads report</text>
+<text fill="#111111" font-size="11" x="122" y="726">Simulate consent and refusal, and confirm the signals are sent correctly</text>
+<!-- ===== SECȚIUNEA 4: Consecințe ===== -->
+<text fill="#1b2028" font-size="15" font-weight="700" text-anchor="middle" x="450" y="776">Consequences of not implementing it</text>
+<line stroke="#ccac65" stroke-width="1.5" x1="60" x2="840" y1="786" y2="786"/>
+<!-- Card consecință 1 -->
+<rect fill="#1b2028" height="128" rx="8" width="248" x="50" y="800"/>
+<text fill="#ccac65" font-size="26" text-anchor="middle" x="174" y="832">⚠️</text>
+<text fill="#ccac65" font-size="12" font-weight="700" text-anchor="middle" x="174" y="858">Remarketing blocked</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="174" y="880">Remarketing lists are no longer</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="174" y="896">populated with users</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="174" y="912">from Romania and the EU</text>
+<!-- Card consecință 2 -->
+<rect fill="#1b2028" height="128" rx="8" width="248" x="326" y="800"/>
+<text fill="#ccac65" font-size="26" text-anchor="middle" x="450" y="832">📉</text>
+<text fill="#ccac65" font-size="12" font-weight="700" text-anchor="middle" x="450" y="858">Incomplete GA4 data</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="450" y="880">Conversions may be underreported</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="450" y="896">by up to 40% compared with reality</text>
+<text fill="#ccac65" font-size="10" font-weight="700" text-anchor="middle" x="450" y="912">- distorted business decisions</text>
+<!-- Card consecință 3 -->
+<rect fill="#1b2028" height="128" rx="8" width="248" x="602" y="800"/>
+<text fill="#ccac65" font-size="26" text-anchor="middle" x="726" y="832">⚖️</text>
+<text fill="#ccac65" font-size="12" font-weight="700" text-anchor="middle" x="726" y="858">Risk of ANSPDCP fine</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="726" y="880">Up to 4% of annual global</text>
+<text fill="#f1f7f5" font-size="10" text-anchor="middle" x="726" y="896">turnover or</text>
+<text fill="#ccac65" font-size="10" font-weight="700" text-anchor="middle" x="726" y="912">20 milioane EUR</text>
+<!-- ===== SECȚIUNEA 5: Impact SEO ===== -->
+<text fill="#1b2028" font-size="15" font-weight="700" text-anchor="middle" x="450" y="976">The direct link to SEO optimisation</text>
+<line stroke="#ccac65" stroke-width="1.5" x1="60" x2="840" y1="986" y2="986"/>
+<!-- Card stânga -->
+<rect fill="#1b2028" height="152" rx="8" width="380" x="50" y="1000"/>
+<text fill="#ccac65" font-size="12" font-weight="700" text-anchor="middle" x="240" y="1026">Accurate data = sound SEO decisions</text>
+<circle cx="76" cy="1050" fill="#ccac65" r="5"/>
+<text fill="#f1f7f5" font-size="11" x="92" y="1054">Identify pages with genuine organic traffic</text>
+<circle cx="76" cy="1076" fill="#ccac65" r="5"/>
+<text fill="#f1f7f5" font-size="11" x="92" y="1080">See undistorted conversion sources</text>
+<circle cx="76" cy="1102" fill="#ccac65" r="5"/>
+<text fill="#f1f7f5" font-size="11" x="92" y="1106">Real behaviour on category pages</text>
+<circle cx="76" cy="1128" fill="#ccac65" r="5"/>
+<text fill="#f1f7f5" font-size="11" x="92" y="1132">SEO ROI calculated using complete data</text>
+<!-- Card dreapta -->
+<rect fill="#ffffff" height="152" rx="8" stroke="#ccac65" stroke-width="1.5" width="400" x="450" y="1000"/>
+<text fill="#1b2028" font-size="12" font-weight="700" text-anchor="middle" x="650" y="1026">Example: online shop in Cluj</text>
+<text fill="#111111" font-size="11" x="470" y="1050">SEO-optimised "office furniture" category.</text>
+<text fill="#111111" font-size="11" x="470" y="1070">Without Consent Mode v2 → you see ~60%</text>
+<text fill="#111111" font-size="11" x="470" y="1090">of actual conversions in GA4.</text>
+<text fill="#111111" font-size="11" x="470" y="1112">With modelling enabled → Google estimates</text>
+<text fill="#ccac65" font-size="11" font-weight="700" x="470" y="1132">"dark conversions" for an accurate ROI.</text>
+<!-- Footer CTA -->
+<rect fill="#1b2028" height="64" width="900" x="0" y="1196"/>
+<text fill="#ccac65" font-size="13" font-weight="700" text-anchor="middle" x="450" y="1222">Implement Google Consent Mode v2</text>
+<text fill="#ffffff" font-size="11" text-anchor="middle" x="450" y="1244">before any other SEO optimisation or Google Ads campaign</text>
+</svg>

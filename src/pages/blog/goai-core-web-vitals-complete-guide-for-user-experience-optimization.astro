@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-core-web-vitals-complete-guide-for-user-experience-optimization.json";
+const title = "Core Web Vitals: Complete Guide for User Experience Optimization";
+const description = "Core Web Vitals: Complete guide for user experience optimization and SEO performance improvement What are Core Web Vitals? Core Web Vitals are a set of performance indicators established by...";
+const date = "2025-05-27";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

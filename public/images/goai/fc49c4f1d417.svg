@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 800 1400" xmlns="http://www.w3.org/2000/svg">
+<!-- Background -->
+<rect fill="#f1f7f5" height="1400" width="800"/>
+<!-- Header -->
+<rect fill="#1b2028" height="120" width="800" x="0" y="0"/>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="36" font-weight="bold" text-anchor="middle" x="400" y="70">Progressive Web Apps</text>
+<text fill="#ccac65" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" x="400" y="100">The complete guide for businesses in Romania</text>
+<!-- Section 1: Ce este PWA -->
+<g transform="translate(50, 160)">
+<circle cx="40" cy="40" fill="#ccac65" r="35"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" x="40" y="50">PWA</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" font-weight="bold" x="120" y="35">What is a PWA?</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="16" x="120" y="65">A website that works like a mobile app</text>
+</g>
+<!-- Features boxes -->
+<g transform="translate(50, 260)">
+<!-- Feature 1 -->
+<rect fill="#ffffff" height="140" rx="8" stroke="#ccac65" stroke-width="2" width="210" x="0" y="0"/>
+<circle cx="105" cy="40" fill="#ccac65" r="25"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" x="105" y="50">📱</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" x="105" y="85">Installable</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="105" y="110">On the</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="105" y="128">home screen</text>
+<!-- Feature 2 -->
+<rect fill="#ffffff" height="140" rx="8" stroke="#ccac65" stroke-width="2" width="210" x="245" y="0"/>
+<circle cx="350" cy="40" fill="#ccac65" r="25"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" x="350" y="50">⚡</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" x="350" y="85">Fast</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="350" y="110">Loading</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="350" y="128">instantaneously</text>
+<!-- Feature 3 -->
+<rect fill="#ffffff" height="140" rx="8" stroke="#ccac65" stroke-width="2" width="210" x="490" y="0"/>
+<circle cx="595" cy="40" fill="#ccac65" r="25"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="28" text-anchor="middle" x="595" y="50">📡</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" x="595" y="85">Offline</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="595" y="110">Works</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="595" y="128">without internet</text>
+</g>
+<!-- Section 2: Componente tehnice -->
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" font-weight="bold" x="50" y="460">Key technical components</text>
+<g transform="translate(50, 490)">
+<!-- Component 1: Manifest -->
+<rect fill="#ccac65" height="100" rx="8" width="220" x="0" y="0"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="110" y="30">Manifest.json</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="110" y="55">Defines the app's appearance and</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="110" y="75">behaviour</text>
+<!-- Arrow -->
+<path d="M 230 50 L 260 50" fill="none" stroke="#ccac65" stroke-width="3"/>
+<polygon fill="#ccac65" points="260,50 250,45 250,55"/>
+<!-- Component 2: Service Worker -->
+<rect fill="#ccac65" height="100" rx="8" width="220" x="270" y="0"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="380" y="30">Service Worker</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="380" y="55">Manages cache and</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="380" y="75">offline operation</text>
+<!-- Arrow -->
+<path d="M 500 50 L 530 50" fill="none" stroke="#ccac65" stroke-width="3"/>
+<polygon fill="#ccac65" points="530,50 520,45 520,55"/>
+<!-- Component 3: HTTPS -->
+<rect fill="#ccac65" height="100" rx="8" width="160" x="540" y="0"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="620" y="30">HTTPS</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="620" y="55">Security</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="620" y="75">mandatory</text>
+</g>
+<!-- Section 3: Avantaje vs Native App -->
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" font-weight="bold" x="50" y="650">PWA vs Native Apps</text>
+<g transform="translate(50, 680)">
+<!-- PWA Column -->
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="175" y="0">PWA</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#ccac65" stroke-width="2" width="250" x="50" y="20"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="70" y="45">Cost:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="70" y="65">2,000 - 8,000 EUR</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#ccac65" stroke-width="2" width="250" x="50" y="95"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="70" y="120">Development:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="70" y="140">One version</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#ccac65" stroke-width="2" width="250" x="50" y="170"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="70" y="195">Distribution:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="70" y="215">Direct via link</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#ccac65" stroke-width="2" width="250" x="50" y="245"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="70" y="270">Updates:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="70" y="290">Automatic, instant</text>
+<!-- Native App Column -->
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" x="525" y="0">Native apps</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#1b2028" stroke-width="2" width="250" x="400" y="20"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="420" y="45">Cost:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="420" y="65">20,000 - 100,000 EUR</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#1b2028" stroke-width="2" width="250" x="400" y="95"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="420" y="120">Development:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="420" y="140">iOS + Android separately</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#1b2028" stroke-width="2" width="250" x="400" y="170"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="420" y="195">Distribution:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="420" y="215">App Store + Play Store</text>
+<rect fill="#ffffff" height="60" rx="6" stroke="#1b2028" stroke-width="2" width="250" x="400" y="245"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="15" font-weight="bold" x="420" y="270">Updates:</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="14" x="420" y="290">Approval + download</text>
+</g>
+<!-- Section 4: Cazuri de utilizare -->
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" font-weight="bold" x="50" y="1020">Ideal use cases</text>
+<g transform="translate(50, 1050)">
+<!-- Use case 1 -->
+<rect fill="#ffffff" height="120" rx="8" stroke="#ccac65" stroke-width="2" width="160" x="0" y="0"/>
+<circle cx="80" cy="35" fill="#ccac65" r="22"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" x="80" y="45">🛒</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="80" y="75">Shops</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="80" y="95">online</text>
+<!-- Use case 2 -->
+<rect fill="#ffffff" height="120" rx="8" stroke="#ccac65" stroke-width="2" width="160" x="180" y="0"/>
+<circle cx="260" cy="35" fill="#ccac65" r="22"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" x="260" y="45">📅</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="260" y="75">Platforms</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="260" y="95">for bookings</text>
+<!-- Use case 3 -->
+<rect fill="#ffffff" height="120" rx="8" stroke="#ccac65" stroke-width="2" width="160" x="360" y="0"/>
+<circle cx="440" cy="35" fill="#ccac65" r="22"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" x="440" y="45">📰</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="440" y="75">Content</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="440" y="95">publishers</text>
+<!-- Use case 4 -->
+<rect fill="#ffffff" height="120" rx="8" stroke="#ccac65" stroke-width="2" width="160" x="540" y="0"/>
+<circle cx="620" cy="35" fill="#ccac65" r="22"/>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" x="620" y="45">📊</text>
+<text fill="#1b2028" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" x="620" y="75">Dashboards</text>
+<text fill="#111111" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" x="620" y="95">for data</text>
+</g>
+<!-- Section 5: Call to Action -->
+<rect fill="#1b2028" height="120" rx="12" width="700" x="50" y="1220"/>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" x="400" y="1260">Turn your website into a PWA</text>
+<text fill="#ccac65" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" x="400" y="1290">Save costs and offer customers a modern experience</text>
+<text fill="#f1f7f5" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" x="400" y="1320">www.goai.ro/progressive-web-apps</text>
+</svg>

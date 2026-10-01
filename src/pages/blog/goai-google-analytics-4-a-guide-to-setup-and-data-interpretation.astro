@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-google-analytics-4-a-guide-to-setup-and-data-interpretation.json";
+const title = "Google Analytics 4: A Guide to Setup and Data Interpretation";
+const description = "Google Analytics 4: A Guide to Setup and Data Interpretation. The move from Universal Analytics to Google Analytics 4 fundamentally changed how website owners collect and interpret traffic...";
+const date = "2026-03-14";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="9 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

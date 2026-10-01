@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-geo-and-aeo-how-to-optimize-content-for-ai-generated-answers.json";
+const title = "GEO and AEO: how to optimize content for AI-generated answers";
+const description = "GEO and AEO: how to optimize content for AI-generated answers , two names for the same reality in 2026: engines answer instead of listing. Generative Engine Optimization targets citations...";
+const date = "2026-05-07";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

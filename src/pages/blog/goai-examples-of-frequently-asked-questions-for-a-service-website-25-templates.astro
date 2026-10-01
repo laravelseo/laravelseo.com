@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-examples-of-frequently-asked-questions-for-a-service-website-25-templates.json";
+const title = "Examples of frequently asked questions for a service website: 25 templates";
+const description = "Examples of frequently asked questions for a service website: 25 templates. GOAI's 2026 editorial selection helps you prepare answers about your offering and working together, using your...";
+const date = "2026-09-06";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="8 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

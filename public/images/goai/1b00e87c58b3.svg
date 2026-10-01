@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg height="2820" viewBox="0 0 1200 2820" width="1200" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Space+Mono:wght@400;700&amp;display=swap');
+    </style>
+<linearGradient id="headerGrad" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#1b2028"/>
+<stop offset="100%" stop-color="#252d38"/>
+</linearGradient>
+<linearGradient id="goldGrad" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#ccac65"/>
+<stop offset="100%" stop-color="#b8993f"/>
+</linearGradient>
+<linearGradient id="cardShadow" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#ccac65" stop-opacity="0.08"/>
+<stop offset="100%" stop-color="#ccac65" stop-opacity="0"/>
+</linearGradient>
+<filter height="115%" id="softShadow" width="110%" x="-5%" y="-5%">
+<feDropShadow dx="0" dy="4" flood-color="#1b2028" flood-opacity="0.08" stdDeviation="8"/>
+</filter>
+<filter height="120%" id="goldGlow" width="120%" x="-10%" y="-10%">
+<feDropShadow dx="0" dy="0" flood-color="#ccac65" flood-opacity="0.3" stdDeviation="6"/>
+</filter>
+</defs>
+<!-- Background -->
+<rect fill="#f1f7f5" height="2820" width="1200"/>
+<!-- Subtle dot pattern -->
+<pattern height="40" id="dots" patternUnits="userSpaceOnUse" width="40" x="0" y="0">
+<circle cx="20" cy="20" fill="#ccac65" opacity="0.12" r="1"/>
+</pattern>
+<rect fill="url(#dots)" height="2820" width="1200"/>
+<!-- ==================== HEADER ==================== -->
+<rect fill="url(#headerGrad)" height="320" rx="0" width="1200" x="0" y="0"/>
+<!-- Decorative header lines -->
+<line opacity="0.5" stroke="#ccac65" stroke-width="2" x1="80" x2="200" y1="60" y2="60"/>
+<line opacity="0.5" stroke="#ccac65" stroke-width="2" x1="1000" x2="1120" y1="60" y2="60"/>
+<circle cx="80" cy="60" fill="#ccac65" opacity="0.5" r="3"/>
+<circle cx="1120" cy="60" fill="#ccac65" opacity="0.5" r="3"/>
+<!-- Claude AI icon -->
+<circle cx="600" cy="100" fill="none" r="32" stroke="#ccac65" stroke-width="2.5"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="28" font-weight="700" text-anchor="middle" x="600" y="112">AI</text>
+<!-- Title -->
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="42" font-weight="700" letter-spacing="-0.5" text-anchor="middle" x="600" y="175">What is Claude AI and how to use it</text>
+<!-- Subtitle -->
+<text fill="#ccac65" font-family="'DM Sans', sans-serif" font-size="18" font-weight="500" letter-spacing="3" text-anchor="middle" text-transform="uppercase" x="600" y="215">MODELS · COSTS · RECOMMENDATIONS</text>
+<!-- Source -->
+<rect fill="#ccac65" fill-opacity="0.15" height="36" rx="18" width="320" x="440" y="248"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" text-anchor="middle" x="600" y="272">www.goai.ro</text>
+<!-- Decorative bottom border -->
+<rect fill="#ccac65" height="2" opacity="0.2" width="1040" x="80" y="308"/>
+<rect fill="#ccac65" height="6" opacity="0.6" rx="3" width="160" x="520" y="306"/>
+<!-- ==================== SECTION 1: THREE MODELS ==================== -->
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="28" font-weight="700" text-anchor="middle" x="600" y="390">The three Claude models</text>
+<rect fill="#ccac65" height="3" rx="1.5" width="120" x="540" y="402"/>
+<!-- OPUS Card -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="380" rx="16" width="340" x="80" y="435"/>
+<rect fill="url(#headerGrad)" height="90" rx="16" width="340" x="80" y="435"/>
+<rect fill="url(#headerGrad)" height="16" width="340" x="80" y="509"/>
+<!-- Opus icon -->
+<circle cx="140" cy="468" fill="#ccac65" opacity="0.2" r="20"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="16" font-weight="700" text-anchor="middle" x="140" y="475">O</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="20" font-weight="700" x="175" y="470">Claude Opus 4.6</text>
+<!-- Badge sub titlu -->
+<rect fill="#ccac65" fill-opacity="0.2" height="24" rx="12" width="90" x="175" y="482"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="220" y="499">TOP-TIER</text>
+<!-- Opus details -->
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" x="110" y="555">Context:</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" x="175" y="555">1M tokens</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" x="110" y="578">Max output:</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" x="200" y="578">128K tokens</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="110" x2="390" y1="596" y2="596"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="110" y="618">Complex reasoning, coding</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="110" y="638">advanced, document analysis,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="110" y="658">autonomous agentic workflows</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="110" x2="390" y1="676" y2="676"/>
+<!-- Opus tags -->
+<rect fill="#1b2028" fill-opacity="0.06" height="26" rx="13" width="85" x="110" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="152" y="708">Legal</text>
+<rect fill="#1b2028" fill-opacity="0.06" height="26" rx="13" width="100" x="205" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="255" y="708">Software</text>
+<rect fill="#1b2028" fill-opacity="0.06" height="26" rx="13" width="78" x="315" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="354" y="708">Agents</text>
+<!-- Opus price -->
+<rect fill="#ccac65" fill-opacity="0.08" height="56" rx="10" width="280" x="110" y="732"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="18" font-weight="700" text-anchor="middle" x="250" y="762">$5 input / $25 output</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="10" opacity="0.6" text-anchor="middle" x="250" y="780">per million tokens</text>
+<!-- SONNET Card -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="380" rx="16" width="340" x="430" y="435"/>
+<rect fill="#ccac65" height="90" rx="16" width="340" x="430" y="435"/>
+<rect fill="#ccac65" height="16" width="340" x="430" y="509"/>
+<!-- Sonnet icon -->
+<circle cx="490" cy="468" fill="#ffffff" opacity="0.25" r="20"/>
+<text fill="#ffffff" font-family="'Space Mono', monospace" font-size="16" font-weight="700" text-anchor="middle" x="490" y="475">S</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="20" font-weight="700" x="525" y="470">Claude Sonnet 4.5</text>
+<!-- Badge sub titlu -->
+<rect fill="#ffffff" fill-opacity="0.25" height="24" rx="12" width="100" x="525" y="482"/>
+<text fill="#ffffff" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="575" y="499">BALANCED</text>
+<!-- Sonnet details -->
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" x="460" y="555">Context:</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" x="525" y="555">200K tokens</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" x="460" y="578">Max output:</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" x="550" y="578">64K tokens</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="460" x2="740" y1="596" y2="596"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="460" y="618">Content, SEO articles,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="460" y="638">intermediate programming, debugging,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="460" y="658">automated customer support</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="460" x2="740" y1="676" y2="676"/>
+<!-- Sonnet tags -->
+<rect fill="#ccac65" fill-opacity="0.12" height="26" rx="13" width="95" x="460" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="507" y="708">Marketing</text>
+<rect fill="#ccac65" fill-opacity="0.12" height="26" rx="13" width="60" x="565" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="595" y="708">SEO</text>
+<rect fill="#ccac65" fill-opacity="0.12" height="26" rx="13" width="90" x="635" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="680" y="708">eCommerce</text>
+<!-- Sonnet price -->
+<rect fill="#ccac65" fill-opacity="0.08" height="56" rx="10" width="280" x="460" y="732"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="18" font-weight="700" text-anchor="middle" x="600" y="762">$3 input / $15 output</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="10" opacity="0.6" text-anchor="middle" x="600" y="780">per million tokens</text>
+<!-- HAIKU Card -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="380" rx="16" width="340" x="780" y="435"/>
+<rect fill="#1b2028" fill-opacity="0.6" height="90" rx="16" width="340" x="780" y="435"/>
+<rect fill="#1b2028" fill-opacity="0.6" height="16" width="340" x="780" y="509"/>
+<!-- Haiku icon -->
+<circle cx="840" cy="468" fill="#ccac65" opacity="0.2" r="20"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="16" font-weight="700" text-anchor="middle" x="840" y="475">H</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="20" font-weight="700" x="875" y="470">Claude Haiku 4.5</text>
+<!-- Badge sub titlu -->
+<rect fill="#ccac65" fill-opacity="0.2" height="24" rx="12" width="75" x="875" y="482"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="912" y="499">FAST</text>
+<!-- Haiku details -->
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" x="810" y="555">Context:</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" x="875" y="555">200K tokens</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="600" x="810" y="578">Max output:</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" x="900" y="578">64K tokens</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="810" x2="1090" y1="596" y2="596"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="810" y="618">Message classification, summaries,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="810" y="638">data extraction, chatbots,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" font-weight="500" x="810" y="658">fast automation</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="810" x2="1090" y1="676" y2="676"/>
+<!-- Haiku tags -->
+<rect fill="#1b2028" fill-opacity="0.06" height="26" rx="13" width="85" x="810" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="852" y="708">Chatbot</text>
+<rect fill="#1b2028" fill-opacity="0.06" height="26" rx="13" width="100" x="905" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="955" y="708">Clasificare</text>
+<rect fill="#1b2028" fill-opacity="0.06" height="26" rx="13" width="80" x="1015" y="690"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="11" font-weight="600" text-anchor="middle" x="1055" y="708">Volume</text>
+<!-- Haiku price -->
+<rect fill="#ccac65" fill-opacity="0.08" height="56" rx="10" width="280" x="810" y="732"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="18" font-weight="700" text-anchor="middle" x="950" y="762">$1 input / $5 output</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="10" opacity="0.6" text-anchor="middle" x="950" y="780">per million tokens</text>
+<!-- ==================== SECTION 2: SUBSCRIPTION PLANS ==================== -->
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="28" font-weight="700" text-anchor="middle" x="600" y="890">Subscription plans</text>
+<rect fill="#ccac65" height="3" rx="1.5" width="120" x="540" y="902"/>
+<!-- Plan: FREE -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="200" rx="14" width="245" x="80" y="935"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="202" y="975">Free</text>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="32" font-weight="700" text-anchor="middle" x="202" y="1010">$0</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.6" text-anchor="middle" x="202" y="1030">/month</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="110" x2="295" y1="1045" y2="1045"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="202" y="1070">Limited Sonnet access</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="202" y="1090">No Opus or Extended</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="202" y="1110">Thinking</text>
+<!-- Plan: PRO -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="200" rx="14" stroke="#ccac65" stroke-width="2" width="245" x="345" y="935"/>
+<rect fill="#ccac65" height="24" rx="12" width="100" x="418" y="923"/>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="11" font-weight="700" text-anchor="middle" x="468" y="940">RECOMMENDED</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="467" y="975">Pro</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="32" font-weight="700" text-anchor="middle" x="467" y="1010">$20</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.6" text-anchor="middle" x="467" y="1030">/month</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="375" x2="560" y1="1045" y2="1045"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="467" y="1070">All models + Opus</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="467" y="1090">5x usage, Claude Code</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="467" y="1110">Google Workspace</text>
+<!-- Plan: MAX 5x -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="200" rx="14" width="245" x="610" y="935"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="732" y="975">Max 5x</text>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="32" font-weight="700" text-anchor="middle" x="732" y="1010">$100</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.6" text-anchor="middle" x="732" y="1030">/month</text>
+<line stroke="#f1f7f5" stroke-width="1.5" x1="640" x2="825" y1="1045" y2="1045"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="732" y="1070">5x more than Pro</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="732" y="1090">Priority access</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" text-anchor="middle" x="732" y="1110">Daily professionals</text>
+<!-- Plan: MAX 20x -->
+<rect fill="url(#headerGrad)" height="200" rx="14" width="245" x="875" y="935"/>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" text-anchor="middle" x="997" y="975">Max 20x</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="32" font-weight="700" text-anchor="middle" x="997" y="1010">$200</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.7" text-anchor="middle" x="997" y="1030">/month</text>
+<line opacity="0.15" stroke="#ffffff" stroke-width="1" x1="905" x2="1090" y1="1045" y2="1045"/>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.85" text-anchor="middle" x="997" y="1070">20x more than Pro</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.85" text-anchor="middle" x="997" y="1090">Maximum access to everything</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.85" text-anchor="middle" x="997" y="1110">Full features</text>
+<!-- ==================== SECTION 3: COST COMPARISON BAR CHART ==================== -->
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="28" font-weight="700" text-anchor="middle" x="600" y="1225">API price comparison - cost per million tokens</text>
+<rect fill="#ccac65" height="3" rx="1.5" width="230" x="485" y="1237"/>
+<!-- Chart area -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="350" rx="16" width="1040" x="80" y="1270"/>
+<!-- Legend -->
+<rect fill="#ccac65" height="14" rx="3" width="14" x="420" y="1290"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" x="442" y="1302">Input</text>
+<rect fill="#1b2028" height="14" rx="3" width="14" x="510" y="1290"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" x="532" y="1302">Output</text>
+<rect fill="#1b2028" height="14" opacity="0.15" rx="3" width="14" x="610" y="1290"/>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" opacity="0.7" x="632" y="1302">prices in $ / 1M tokens</text>
+<!-- Y-axis labels -->
+<text fill="#111111" font-family="'Space Mono', monospace" font-size="11" opacity="0.5" text-anchor="end" x="135" y="1575">$0</text>
+<text fill="#111111" font-family="'Space Mono', monospace" font-size="11" opacity="0.5" text-anchor="end" x="135" y="1515">$5</text>
+<text fill="#111111" font-family="'Space Mono', monospace" font-size="11" opacity="0.5" text-anchor="end" x="135" y="1455">$10</text>
+<text fill="#111111" font-family="'Space Mono', monospace" font-size="11" opacity="0.5" text-anchor="end" x="135" y="1395">$15</text>
+<text fill="#111111" font-family="'Space Mono', monospace" font-size="11" opacity="0.5" text-anchor="end" x="135" y="1335">$25</text>
+<!-- Grid lines -->
+<line stroke="#f1f7f5" stroke-width="1" x1="145" x2="1080" y1="1570" y2="1570"/>
+<line stroke="#f1f7f5" stroke-width="1" x1="145" x2="1080" y1="1510" y2="1510"/>
+<line stroke="#f1f7f5" stroke-width="1" x1="145" x2="1080" y1="1450" y2="1450"/>
+<line stroke="#f1f7f5" stroke-width="1" x1="145" x2="1080" y1="1390" y2="1390"/>
+<line stroke="#f1f7f5" stroke-width="1" x1="145" x2="1080" y1="1330" y2="1330"/>
+<!-- Opus bars -->
+<!-- Input: $5 → height proportional -->
+<rect fill="#ccac65" height="60" rx="4" width="40" x="195" y="1510"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="215" y="1503">$5</text>
+<!-- Output: $25 → full height -->
+<rect fill="#1b2028" height="240" rx="4" width="40" x="240" y="1330"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="260" y="1323">$25</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="237" y="1598">Opus 4.6</text>
+<!-- Sonnet bars -->
+<!-- Input: $3 -->
+<rect fill="#ccac65" height="36" rx="4" width="40" x="385" y="1534"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="405" y="1527">$3</text>
+<!-- Output: $15 -->
+<rect fill="#1b2028" height="180" rx="4" width="40" x="430" y="1390"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="450" y="1383">$15</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="427" y="1578">Sonnet 4.5</text>
+<!-- Haiku bars -->
+<!-- Input: $1 -->
+<rect fill="#ccac65" height="12" rx="4" width="40" x="575" y="1558"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="595" y="1551">$1</text>
+<!-- Output: $5 -->
+<rect fill="#1b2028" height="60" rx="4" width="40" x="620" y="1510"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="640" y="1483">$5</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" font-weight="600" text-anchor="middle" x="617" y="1578">Haiku 4.5</text>
+<!-- GPT-5.2 bars (comparison) -->
+<!-- Input: $1.75 -->
+<rect fill="#ccac65" height="21" opacity="0.5" rx="4" width="40" x="765" y="1549"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="785" y="1542">$1.75</text>
+<!-- Output: $14 -->
+<rect fill="#1b2028" height="168" opacity="0.35" rx="4" width="40" x="810" y="1402"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="11" font-weight="700" opacity="0.6" text-anchor="middle" x="830" y="1395">$14</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" font-weight="500" opacity="0.6" text-anchor="middle" x="807" y="1578">GPT-5.2</text>
+<!-- Gemini bars (comparison) -->
+<!-- Input: $2 -->
+<rect fill="#ccac65" height="24" opacity="0.5" rx="4" width="40" x="955" y="1546"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="11" font-weight="700" text-anchor="middle" x="975" y="1539">$2</text>
+<!-- Output: $12 -->
+<rect fill="#1b2028" height="144" opacity="0.35" rx="4" width="40" x="1000" y="1426"/>
+<text fill="#1b2028" font-family="'Space Mono', monospace" font-size="11" font-weight="700" opacity="0.6" text-anchor="middle" x="1020" y="1419">$12</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12" font-weight="500" opacity="0.6" text-anchor="middle" x="997" y="1578">Gemini 3 Pro</text>
+<!-- ==================== SECTION 4: BEST FOR... ==================== -->
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="28" font-weight="700" text-anchor="middle" x="600" y="1680">Which model for which task?</text>
+<rect fill="#ccac65" height="3" rx="1.5" width="180" x="510" y="1692"/>
+<!-- Grid: 2 rows x 3 columns -->
+<!-- Row 1 -->
+<!-- Card: Articole SEO -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="155" rx="14" width="340" x="80" y="1720"/>
+<rect fill="#ccac65" fill-opacity="0.15" height="40" rx="10" width="40" x="100" y="1740"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="20" text-anchor="middle" x="120" y="1767">✎</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" x="155" y="1757">Articles and content</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" font-weight="700" x="155" y="1775">→ Sonnet 4.5</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="100" y="1850">Follows complex SEO rules,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="100" y="1810">maintains consistency across long texts,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="100" y="1830">best quality-to-cost ratio.</text>
+<!-- Card: Programare -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="155" rx="14" width="340" x="430" y="1700"/>
+<rect fill="#ccac65" fill-opacity="0.15" height="40" rx="10" width="40" x="450" y="1720"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="20" text-anchor="middle" x="470" y="1768">&lt;/&gt;</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" x="505" y="1737">Advanced coding</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" font-weight="700" x="505" y="1755">→ Opus 4.6</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="450" y="1790">30-minute sessions, refactoring,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="450" y="1810">complex debugging, navigating</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="450" y="1830">large codebases.</text>
+<!-- Card: Chatbot -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="155" rx="14" width="340" x="780" y="1700"/>
+<rect fill="#ccac65" fill-opacity="0.15" height="40" rx="10" width="40" x="800" y="1720"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="20" text-anchor="middle" x="820" y="1747">💬</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" x="855" y="1737">Chatbot and support</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" font-weight="700" x="855" y="1755">→ Haiku 4.5</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="800" y="1790">Fast responses, low cost,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="800" y="1810">ideal for automated FAQs</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="800" y="1830">and high interaction volumes.</text>
+<!-- Row 2 -->
+<!-- Card: Analiză documente -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="155" rx="14" width="340" x="80" y="1895"/>
+<rect fill="#ccac65" fill-opacity="0.15" height="40" rx="10" width="40" x="100" y="1915"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="20" text-anchor="middle" x="120" y="1942">📄</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" x="155" y="1932">Document analysis</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" font-weight="700" x="155" y="1950">→ Opus 4.6</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="100" y="2025">Legal and financial documents,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="100" y="1985">1M-token context allows</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="100" y="2005">processing hundreds of pages.</text>
+<!-- Card: Automatizare -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="155" rx="14" width="340" x="430" y="1875"/>
+<rect fill="#ccac65" fill-opacity="0.15" height="40" rx="10" width="40" x="450" y="1895"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="20" text-anchor="middle" x="470" y="1922">⚙</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" x="505" y="1912">Automation and classification</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" font-weight="700" x="505" y="1930">→ Haiku 4.5</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="450" y="1965">Email sorting, ticket classification,</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="450" y="1985">rapid data extraction</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="450" y="2005">at the lowest cost.</text>
+<!-- Card: Coding mediu -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="155" rx="14" width="340" x="780" y="1875"/>
+<rect fill="#ccac65" fill-opacity="0.15" height="40" rx="10" width="40" x="800" y="1895"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="20" text-anchor="middle" x="820" y="1922">⌨</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="15" font-weight="700" x="855" y="1912">Everyday coding</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" font-weight="700" x="855" y="1930">→ Sonnet 4.5</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="800" y="1965">Code completion, reviews, targeted bug fixes</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="800" y="1985">Good quality at an</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="12.5" x="800" y="2005">affordable price for teams.</text>
+<!-- ==================== SECTION 5: COST OPTIMIZATION ==================== -->
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="28" font-weight="700" text-anchor="middle" x="600" y="2130">Cost optimisation strategies</text>
+<rect fill="#ccac65" height="3" rx="1.5" width="220" x="490" y="2142"/>
+<!-- Strategy 1 -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="95" rx="14" width="1040" x="80" y="2175"/>
+<rect fill="#ccac65" fill-opacity="0.12" height="48" rx="24" width="48" x="105" y="2218"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="22" font-weight="700" text-anchor="middle" x="129" y="2230">1</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" x="175" y="2198">Intelligent model routing</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" x="175" y="2242">Send simple tasks to Haiku, medium ones to Sonnet and only complex ones to Opus.</text>
+<rect fill="#ccac65" fill-opacity="0.12" height="32" rx="16" width="130" x="960" y="2203"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" text-anchor="middle" x="1025" y="2224">-30% → -50%</text>
+<!-- Strategy 2 -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="95" rx="14" width="1040" x="80" y="2285"/>
+<rect fill="#ccac65" fill-opacity="0.12" height="48" rx="24" width="48" x="105" y="2328"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="22" font-weight="700" text-anchor="middle" x="129" y="2340">2</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" x="175" y="2308">Prompt Caching</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" x="175" y="2352">Reuse repetitive instructions (system prompt). Input costs drop dramatically after the first request.</text>
+<rect fill="#ccac65" fill-opacity="0.12" height="32" rx="16" width="130" x="960" y="2313"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" text-anchor="middle" x="1025" y="2334">-90% input</text>
+<!-- Strategy 3 -->
+<rect fill="#ffffff" filter="url(#softShadow)" height="95" rx="14" width="1040" x="80" y="2395"/>
+<rect fill="#ccac65" fill-opacity="0.12" height="48" rx="24" width="48" x="105" y="2438"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="22" font-weight="700" text-anchor="middle" x="129" y="2450">3</text>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="16" font-weight="700" x="175" y="2418">Batch API</text>
+<text fill="#111111" font-family="'DM Sans', sans-serif" font-size="13" x="175" y="2462">Process tasks in batches (product descriptions, reports) when an immediate response isn't needed.</text>
+<rect fill="#ccac65" fill-opacity="0.12" height="32" rx="16" width="130" x="960" y="2423"/>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="13" font-weight="700" text-anchor="middle" x="1025" y="2444">-50% cost</text>
+<!-- ==================== SECTION 6: RECOMMENDATION STRIP ==================== -->
+<rect fill="url(#headerGrad)" height="130" rx="16" width="1040" x="80" y="2540"/>
+<!-- Left section -->
+<text fill="#ccac65" font-family="'DM Sans', sans-serif" font-size="14" font-weight="600" letter-spacing="2" x="130" y="2585">RECOMMENDATION FOR ENTREPRENEURS</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="22" font-weight="700" x="130" y="2620">Pro plan ($20/month) + Sonnet 4.5</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="14" opacity="0.7" x="130" y="2645">Covers over 90% of content, productivity and communication needs.</text>
+<!-- CTA -->
+<rect fill="#ccac65" height="50" rx="25" width="170" x="920" y="2580"/>
+<text fill="#1b2028" font-family="'DM Sans', sans-serif" font-size="14" font-weight="700" text-anchor="middle" x="1005" y="2611">claude.ai/pricing</text>
+<!-- ==================== FOOTER ==================== -->
+<rect fill="url(#headerGrad)" height="110" width="1200" x="0" y="2710"/>
+<line opacity="0.3" stroke="#ccac65" stroke-width="1" x1="80" x2="1120" y1="2690" y2="2690"/>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="14" opacity="0.7" text-anchor="middle" x="600" y="2755">Infographic based on the article on www.goai.ro</text>
+<text fill="#ccac65" font-family="'Space Mono', monospace" font-size="12" text-anchor="middle" x="600" y="2780">goai.ro/ce-este-claude-ai-si-cum-se-foloseste</text>
+<text fill="#ffffff" font-family="'DM Sans', sans-serif" font-size="11" opacity="0.4" text-anchor="middle" x="600" y="2805">Prices valid February 2026 · Data may be updated by Anthropic</text>
+</svg>

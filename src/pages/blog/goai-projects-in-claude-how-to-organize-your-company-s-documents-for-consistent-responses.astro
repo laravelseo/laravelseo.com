@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-projects-in-claude-how-to-organize-your-company-s-documents-for-consistent-responses.json";
+const title = "Projects in Claude: how to organize your company's documents for consistent responses";
+const description = "Projects in Claude: how to organize your company's documents for consistent responses. When your team works with Claude on several client accounts or several departments at the same time, a...";
+const date = "2026-09-05";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="7 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

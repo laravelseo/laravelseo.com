@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-online-visibility-in-2026-is-changing.json";
+const title = "Online visibility in 2026 is changing";
+const description = "Search behavior has fragmented. An increasing portion of searches end without clicks, and users search directly on platforms like Instagram, YouTube, or TikTok. Meanwhile, artificial...";
+const date = "2026-01-01";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="5 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>

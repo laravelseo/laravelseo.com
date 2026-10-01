@@ -7,9 +7,11 @@ interface Props {
   date: string;
   image?: string;
   author?: string;
+  dateModified?: string;
+  sourceUrl?: string;
 }
 
-const { title, description, date, image = "/og-image.png", author = SITE.author } = Astro.props;
+const { title, description, date, image = "/og-image.png", author = SITE.author, dateModified, sourceUrl } = Astro.props;
 
 const schema = {
   "@context": "https://schema.org",
@@ -21,7 +23,8 @@ const schema = {
     "name": author,
   },
   "datePublished": date,
-  "dateModified": date,
+  "dateModified": dateModified ?? date,
+  ...(sourceUrl ? { "isBasedOn": sourceUrl, "inLanguage": "en" } : {}),
   "image": new URL(image, SITE.url).href,
   "publisher": {
     "@type": "Organization",

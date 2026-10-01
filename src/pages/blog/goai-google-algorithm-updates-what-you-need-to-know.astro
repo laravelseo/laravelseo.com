@@ -1,0 +1,11 @@
+---
+import BlogPost from "../../layouts/BlogPost.astro";
+import article from "../../data/goai/goai-google-algorithm-updates-what-you-need-to-know.json";
+const title = "Google Algorithm Updates: What You Need to Know?";
+const description = "Google Algorithm Updates: What You Need to Know? In the digital era, Google algorithm updates play an essential role in how websites are indexed and ranked in search results. These updates...";
+const date = "2025-07-06";
+---
+
+<BlogPost title={title} description={description} date={date} category="SEO" readTime="4 min read" image={article.image} sourceAuthor={article.sourceAuthor} sourceUrl={article.sourceUrl} sourceUpdatedAt={article.sourceUpdatedAt}>
+  <div class="goai-content" set:html={article.body} />
+</BlogPost>
