@@ -5,7 +5,7 @@
   <canvas id="seo-canvas"></canvas>
 
   <div class="relative z-10 max-w-7xl mx-auto px-8 flex items-center" style="min-height:100vh; padding-top:80px; padding-bottom:80px;">
-    <div style="max-width:500px; width:50%;">
+    <div class="hero-text" style="max-width:500px; width:50%;">
 
       <div class="badge">
         <span class="badge-dot"></span>
@@ -238,6 +238,10 @@
   padding: 60px 32px 60px 0;
   pointer-events: none;
 }
+@media (max-width: 1023px) {
+  .dash-wrap { display: none; }
+  .hero-text { width: 100% !important; max-width: 100% !important; }
+}
 .dash-mockup {
   background: rgba(12,14,42,0.92);
   border: 1px solid rgba(124,58,237,0.4);
@@ -428,3 +432,4 @@ const canvas = document.getElementById('seo-canvas') as HTMLCanvasElement;
   animate();
 })();
 </script>
+
