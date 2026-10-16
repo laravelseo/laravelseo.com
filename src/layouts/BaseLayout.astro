@@ -32,7 +32,7 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
     <meta name="robots" content={robots} />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://assets.calendly.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://assets.calendly.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://calendly.com; connect-src 'self' https://ai.izdrail.com https://*.google-analytics.com https://*.analytics.google.com https://*.hotjar.com wss://*.hotjar.com;"
+      content="default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.hotjar.com https://script.hotjar.com https://assets.calendly.com 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://assets.calendly.com https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://calendly.com; connect-src 'self' https://ai.izdrail.com https://*.google-analytics.com https://*.analytics.google.com https://*.hotjar.com wss://*.hotjar.com;"
     />
     <meta name="author" content={author} />
 
@@ -46,7 +46,7 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Sora:wght@400;500;600;700;800&display=swap"
     />
 
     <!-- Primary Meta Tags -->
@@ -79,9 +79,11 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
     <style is:inline>
       /* Critical CSS for above-the-fold content */
       body {
-        background-color: #020617;
+        background: linear-gradient(135deg, #0f172a 0%, #2a1030 100%);
+        background-attachment: fixed;
         color: #f1f5f9;
         font-family:
+          "Nunito",
           ui-sans-serif,
           system-ui,
           -apple-system,
@@ -105,7 +107,7 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
     </style>
   </head>
   <body
-    class="flex min-h-screen flex-col bg-slate-950 font-sans text-slate-100 antialiased"
+    class="flex min-h-screen flex-col font-sans text-slate-100 antialiased"
   >
     <Header currentPathname={currentPathname} />
     <main class="flex-1">
@@ -152,3 +154,4 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
     <NetworkExtras />
 </body>
 </html>
+
