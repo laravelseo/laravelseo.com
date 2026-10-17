@@ -1,0 +1,80 @@
+---
+export const prerender = true;
+
+import Tutorial from "../../layouts/Tutorial.astro";
+---
+
+<Tutorial
+  title="Read an audit report - Laravel SEO Tutorials"
+  description="A tab-by-tab guide to the Laravel SEO audit report: Overview, SEO, Performance, Security, Lighthouse, Black SEO and the Site Crawler."
+  heading="Read an audit report"
+  intro="Each audit report is organised into tabs so you can go from the headline score to the exact check that failed. This guide walks through every tab using a real report."
+>
+  <figure>
+    <img
+      src="/images/app/report-detail.png"
+      alt="The audit report for drupalcompany.com: score 91 out of 100, one high issue, one medium, four low, 27 tests passed"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>A real report: drupalcompany.com scoring 91/100, 23 hours after the crawl.</figcaption>
+  </figure>
+
+  <h2>Overview</h2>
+  <p>
+    The landing tab. You get the score ring, the page's title and meta description as Google would see them, and the
+    issue summary: how many <strong>high</strong>, <strong>medium</strong> and <strong>low</strong> issues were found
+    and how many tests passed. Underneath sit the raw page stats: load time, page weight, resource count and whether
+    the connection is secure.
+  </p>
+  <p>
+    In the report above: 1 high issue, 1 medium, 4 low, 27 tests passed, a 0.43 second load time and a 9.15 kB page.
+    That is what a healthy site looks like.
+  </p>
+
+  <h2>SEO</h2>
+  <p>
+    The on-page checks: title and meta description length, headings structure, image alt attributes, links,
+    canonicals, Open Graph tags and indexability. The counter on the tab tells you how many issues live there before
+    you open it.
+  </p>
+
+  <h2>Performance</h2>
+  <p>
+    What slows the page down: response time, page size, number of requests, compression and caching headers. Fix
+    these first when the score drops; they are usually the cheapest wins.
+  </p>
+
+  <h2>Security</h2>
+  <p>
+    HTTPS configuration and the response headers that protect visitors: HSTS, content-type options, frame
+    protection and friends. A missing header shows up here with the exact name to add.
+  </p>
+
+  <h2>Lighthouse</h2>
+  <p>
+    A full Google Lighthouse audit of the same URL, inside the report, so you do not have to run it separately.
+    You can also run Lighthouse as a <a href="/tutorials/free-tools">free standalone tool</a> without an account.
+  </p>
+
+  <h2>Black SEO</h2>
+  <p>
+    Checks for patterns search engines penalise: hidden text, keyword stuffing, sneaky redirects and similar
+    black-hat signals. Useful when you inherit a site and want to know what the previous SEO actually did.
+  </p>
+
+  <h2>Site Crawler</h2>
+  <p>
+    Crawls the site beyond the single page you scanned, following links within the limits you set, and reports
+    broken links and dead ends. Maximum pages and crawl depth are configurable, and you can import a sitemap to
+    seed the crawl.
+  </p>
+
+  <h2>What to do with a bad score</h2>
+  <ol>
+    <li>Fix the <strong>high</strong> issues first; they move the score the most.</li>
+    <li>Re-run the audit on the same URL after deploying the fix.</li>
+    <li>Compare the new report with the old one in your reports list to confirm the issue count went down.</li>
+  </ol>
+</Tutorial>

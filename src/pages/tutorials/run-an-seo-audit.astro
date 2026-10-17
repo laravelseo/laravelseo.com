@@ -1,0 +1,75 @@
+---
+export const prerender = true;
+
+import Tutorial from "../../layouts/Tutorial.astro";
+---
+
+<Tutorial
+  title="Run your first SEO audit - Laravel SEO Tutorials"
+  description="How to run a full SEO audit in the Laravel SEO app: create a report, read the score, and use AI analysis to explain the results."
+  heading="Run your first SEO audit"
+  intro="An audit checks a URL against the full battery of SEO, performance and security tests and gives you a 0-100 score with every issue grouped by severity. This takes about a minute."
+>
+  <h2>1. Open the reports page</h2>
+  <p>
+    Log in at <a href="https://app.laravelseo.com/login" target="_blank" rel="noopener noreferrer">app.laravelseo.com</a>
+    and go to <strong>Reports</strong> in the left menu. The box at the top is where every audit starts.
+  </p>
+  <figure>
+    <img
+      src="/images/app/reports.png"
+      alt="The reports page with the URL input, Analyze button, and a list of past reports with their scores"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>The reports page: one input, one Analyze button, and your history underneath.</figcaption>
+  </figure>
+
+  <h2>2. Paste a URL and click Analyze</h2>
+  <p>
+    Enter the full URL of the page you want to check, for example <code>https://yoursite.com</code>, and press
+    <strong>Analyze</strong>. The app crawls the page and runs its checks: meta tags, headings, links, images,
+    response headers, page weight, security headers and more.
+  </p>
+  <p>
+    Reports run on a queue in the background, so a big page does not time out. When it finishes, the report appears
+    in your list with its score and a label: <strong>Good</strong>, <strong>Decent</strong> or <strong>Bad</strong>.
+  </p>
+
+  <h2>3. Read the score</h2>
+  <p>
+    Your dashboard keeps a running split of report quality across everything you have scanned, so you can see at a
+    glance whether things are getting better or worse.
+  </p>
+  <figure>
+    <img
+      src="/images/app/dashboard.png"
+      alt="The dashboard overview showing 22 bad, 86 decent and 49 good reports with the latest reports and projects"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>The dashboard overview: quality split plus the latest reports and projects.</figcaption>
+  </figure>
+
+  <h2>4. Let the AI explain the result</h2>
+  <p>
+    Inside any report, the <strong>AI Analyze</strong> action turns the raw checks into a plain-language readout:
+    what is actually hurting the page and what to fix first. Use it when a report lists many issues and you need a
+    priority order rather than a checklist.
+  </p>
+
+  <h2>5. Keep, share or lock the report</h2>
+  <ul>
+    <li>Reports stay in your account and can be exported from the reports list.</li>
+    <li>You can edit a report's title and notes from its <strong>Edit</strong> page.</li>
+    <li>A report can be password-protected, so only people you give the password to can open it.</li>
+    <li>Adding the same domain again creates a fresh report, which is how you track progress after each fix.</li>
+  </ul>
+
+  <p>
+    Next: <a href="/tutorials/read-an-audit-report">read an audit report</a> tab by tab, or learn how to
+    <a href="/tutorials/monitor-site-health">monitor whole site lists</a>.
+  </p>
+</Tutorial>

@@ -9,6 +9,8 @@ export const SITE = {
 export const NAVIGATION = [
   { name: 'Home', href: '/' },
   { name: 'Features', href: '/capabilities' },
+  { name: 'Tools', href: '/tools' },
+  { name: 'Tutorials', href: '/tutorials' },
   { name: 'Blog', href: '/blog' },
   { name: 'SEO Agent', href: '/agent' },
   { name: 'Contact', href: '/contact' },

@@ -1,0 +1,88 @@
+---
+export const prerender = true;
+
+import Tutorial from "../../layouts/Tutorial.astro";
+import { TOOL_COUNT } from "../../data/tools";
+---
+
+<Tutorial
+  title="Use the free tools, no account needed - Laravel SEO Tutorials"
+  description="A tour of the free Laravel SEO tools anyone can use without an account: website status, SSL, DNS, WHOIS, redirect checker, Lighthouse and the developer and content utilities."
+  heading="Use the free tools, no account needed"
+  intro={`The app ships with ${TOOL_COUNT} one-off tools that anyone can use straight from the browser. No signup, no API key: open the tool, paste a domain or some text, read the result.`}
+>
+  <h2>Find a tool</h2>
+  <p>
+    Everything lives at
+    <a href="https://app.laravelseo.com/tools" target="_blank" rel="noopener noreferrer">app.laravelseo.com/tools</a>.
+    The search box filters the list as you type, and the tools are grouped into <strong>Research</strong>,
+    <strong>Developer</strong> and <strong>Content</strong>.
+  </p>
+  <figure>
+    <img
+      src="/images/app/tools-index.png"
+      alt="The tools index with its search box and the Research category"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>The tools index: search plus three categories.</figcaption>
+  </figure>
+
+  <h2>Example: is this site down for everyone?</h2>
+  <ol>
+    <li>Open the <a href="https://app.laravelseo.com/tools/website-status-checker" target="_blank" rel="noopener noreferrer">Website status checker</a>.</li>
+    <li>Type the domain, for example <code>laravelcompany.com</code>, and press <strong>Search</strong>.</li>
+    <li>The result shows whether the site is online, the HTTP status code and how long it took to respond.</li>
+  </ol>
+  <figure>
+    <img
+      src="/images/app/tool-website-status.png"
+      alt="Website status checker result for laravelcompany.com: online, HTTP 200, 0.35 seconds"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>laravelcompany.com: online, 200, 0.35 seconds.</figcaption>
+  </figure>
+
+  <h2>Example: check a certificate before it expires</h2>
+  <ol>
+    <li>Open the <a href="https://app.laravelseo.com/tools/ssl-checker" target="_blank" rel="noopener noreferrer">SSL checker</a>.</li>
+    <li>Enter the domain and press <strong>Search</strong>.</li>
+    <li>You get the certificate status, issuer, signature algorithm and the exact issue and expiry dates.</li>
+  </ol>
+  <figure>
+    <img
+      src="/images/app/tool-ssl-checker.png"
+      alt="SSL checker result for laravelseo.com: valid certificate from Google Trust Services, expiring 2027-01-02"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>laravelseo.com: valid certificate, with the expiry date spelled out.</figcaption>
+  </figure>
+
+  <h2>Example: audit a page with Lighthouse</h2>
+  <p>
+    The <a href="https://app.laravelseo.com/tools/lighthouse" target="_blank" rel="noopener noreferrer">Lighthouse SEO audit</a>
+    runs Google Lighthouse against any URL and returns the scores and failing audits, without you installing anything.
+  </p>
+  <figure>
+    <img
+      src="/images/app/tool-lighthouse.png"
+      alt="The Lighthouse SEO audit tool, waiting for a URL"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>Paste a URL, press Search, get the Lighthouse breakdown.</figcaption>
+  </figure>
+
+  <h2>The rest of the toolbox</h2>
+  <p>
+    DNS, WHOIS, IP and redirect checks sit next to developer utilities (minifiers, JSON validator, UTM builder,
+    generators) and content helpers (word counter, slug converter, case converter and more). The full list with
+    one-line descriptions is on the <a href="/tools">tools directory</a>.
+  </p>
+</Tutorial>

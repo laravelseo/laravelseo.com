@@ -1,0 +1,65 @@
+---
+export const prerender = true;
+
+import Tutorial from "../../layouts/Tutorial.astro";
+---
+
+<Tutorial
+  title="Automate with the API - Laravel SEO Tutorials"
+  description="How to trigger SEO scans and pull reports from scripts using the Laravel SEO public scan endpoint and the authenticated v1 API."
+  heading="Automate with the API"
+  intro="Everything the app does in the browser can be driven from your own code. There are two levels: a public scan endpoint that queues an audit without an account, and an authenticated v1 API for managing projects and reports."
+>
+  <h2>Queue a scan without an account</h2>
+  <p>The public endpoint takes a domain and queues a full audit:</p>
+  <pre><code>curl -X POST https://app.laravelseo.com/api/v1/public/scan \
+  -H "Content-Type: application/json" \
+  -d '&lbrace;"domain": "example.com"&rbrace;'</code></pre>
+  <p>The response tells you the scan was queued and gives you the report id:</p>
+  <pre><code>&lbrace;
+  "message": "Scan queued successfully.",
+  "domain": "example.com",
+  "report_id": 219,
+  "status": "pending"
+&rbrace;</code></pre>
+  <p>
+    Poll <code>GET /api/v1/public/scan/&lbrace;domain&rbrace;</code> to follow the scan's status until the report is ready.
+  </p>
+
+  <h2>Get an API key</h2>
+  <p>
+    Log in, go to <strong>Account &rarr; API</strong> and generate a key. Send it with every v1 request as a bearer
+    token. Keys are tied to your account, so every project and report you touch over the API is the same one you see
+    in the dashboard.
+  </p>
+
+  <h2>The v1 resources</h2>
+  <ul>
+    <li><strong>Projects</strong>: list and delete the projects in your account (<code>GET /api/v1/projects</code>).</li>
+    <li><strong>Reports</strong>: full management of audit reports (<code>/api/v1/reports</code>), including creating new ones.</li>
+    <li><strong>Account</strong>: read your account details (<code>GET /api/v1/account</code>).</li>
+  </ul>
+  <p>
+    Requests are throttled per key, which keeps batch jobs polite. The full endpoint reference lives in the app
+    itself under <strong>Developers</strong> in the footer, with a page per resource covering parameters and
+    responses.
+  </p>
+  <figure>
+    <img
+      src="/images/app/dashboard.png"
+      alt="The Laravel SEO dashboard: the same reports and projects the API exposes"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>What the API exposes is exactly what the dashboard shows.</figcaption>
+  </figure>
+
+  <h2>A typical automation</h2>
+  <ol>
+    <li>Nightly job: <code>POST /api/v1/public/scan</code> for each domain you watch.</li>
+    <li>Poll the scan status until the report is ready.</li>
+    <li>Pull the report over the v1 API and store the score.</li>
+    <li>Alert when a score drops below your floor, then read the report's high issues to see why.</li>
+  </ol>
+</Tutorial>

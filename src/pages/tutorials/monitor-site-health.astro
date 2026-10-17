@@ -1,0 +1,55 @@
+---
+export const prerender = true;
+
+import Tutorial from "../../layouts/Tutorial.astro";
+---
+
+<Tutorial
+  title="Monitor site health at scale - Laravel SEO Tutorials"
+  description="How to use the Sites monitor in the Laravel SEO app: bulk liveness checks, statuses, groups, platforms and CSV export."
+  heading="Monitor site health at scale"
+  intro="One-off audits tell you about one page. The Sites section checks whole lists of domains for liveness and status, which is how you watch a network of sites without opening each one."
+>
+  <figure>
+    <img
+      src="/images/app/sites.png"
+      alt="The Sites page running a health check over 997 sites, with alive and dead statuses, PR, group and platform columns"
+      width="1280"
+      height="720"
+      loading="lazy"
+    />
+    <figcaption>A health check running over a list of 997 sites.</figcaption>
+  </figure>
+
+  <h2>What a check tells you</h2>
+  <p>Every row in the list carries:</p>
+  <ul>
+    <li><strong>Status</strong>: Alive or Dead, with the HTTP status code the site returned (200, 403 and so on).</li>
+    <li><strong>When it was last checked</strong>, so you know how fresh the reading is.</li>
+    <li><strong>Group</strong>: the category the site belongs to in your list.</li>
+    <li><strong>Platform</strong>: the software the site runs on when it can be detected.</li>
+  </ul>
+
+  <h2>Run a check</h2>
+  <ol>
+    <li>Open <strong>Sites</strong> in the left menu.</li>
+    <li>Click <strong>Check sites</strong> to check sites that have no recent reading, or <strong>Re-check all</strong> to refresh the whole list.</li>
+    <li>The progress bar at the top shows how many sites were checked and how many came back alive, dead or with errors.</li>
+  </ol>
+  <p>
+    A site only counts as alive when it actually serves a page. A domain that resolves but returns nothing useful is
+    marked dead, which is what you want when you are cleaning a large list.
+  </p>
+
+  <h2>Filter and export</h2>
+  <p>
+    Use the status filter and search box to narrow the list, then <strong>Export alive (CSV)</strong> to download
+    just the live sites. That export is the clean input for the next step of whatever you are doing with the list.
+  </p>
+
+  <h2>Sitemaps</h2>
+  <p>
+    The <strong>Sitemaps</strong> entry under Sites manages the sitemaps for your properties, including pinging
+    search engines when a sitemap changes.
+  </p>
+</Tutorial>

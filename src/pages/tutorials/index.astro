@@ -1,0 +1,88 @@
+---
+export const prerender = true;
+
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import BreadcrumbSchema from "../../components/BreadcrumbSchema.astro";
+
+const tutorials = [
+  {
+    href: "/tutorials/run-an-seo-audit",
+    title: "Run your first SEO audit",
+    desc: "Paste a URL, get a 0-100 score with every issue grouped by severity. Covers reports, projects and the AI analysis.",
+    img: "/images/app/reports.png",
+    alt: "The reports list in the Laravel SEO app, showing scores for recent audits",
+  },
+  {
+    href: "/tutorials/read-an-audit-report",
+    title: "Read an audit report",
+    desc: "What each tab of the report means: Overview, SEO, Performance, Security, Lighthouse, Black SEO and the Site Crawler.",
+    img: "/images/app/report-detail.png",
+    alt: "An audit report for drupalcompany.com scoring 91 out of 100",
+  },
+  {
+    href: "/tutorials/monitor-site-health",
+    title: "Monitor site health at scale",
+    desc: "Bulk-check whole site lists for liveness and status codes, filter by group or platform, and export the alive ones.",
+    img: "/images/app/sites.png",
+    alt: "The sites monitor checking a list of 997 sites",
+  },
+  {
+    href: "/tutorials/free-tools",
+    title: "Use the free tools, no account needed",
+    desc: "35 one-off checkers and utilities anyone can use: status, SSL, DNS, WHOIS, redirects, Lighthouse and more.",
+    img: "/images/app/tool-ssl-checker.png",
+    alt: "The SSL checker showing a valid certificate for laravelseo.com",
+  },
+  {
+    href: "/tutorials/developer-api",
+    title: "Automate with the API",
+    desc: "Trigger scans and pull reports from your own scripts with the public scan endpoint and the authenticated v1 API.",
+    img: "/images/app/dashboard.png",
+    alt: "The Laravel SEO dashboard",
+  },
+];
+---
+
+<BaseLayout
+  title="Tutorials - Laravel SEO"
+  description="Step-by-step guides for the Laravel SEO app: run an SEO audit, read the report, monitor site health, use the free tools and automate with the API."
+>
+  <BreadcrumbSchema
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Tutorials", href: "/tutorials" },
+    ]}
+  />
+
+  <section class="bg-slate-900 py-16 md:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">Tutorials</h1>
+        <p class="text-slate-300 text-lg">
+          Hands-on guides for everything the product does, with screenshots from the live app at
+          <a href="https://app.laravelseo.com" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-300">app.laravelseo.com</a>.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {tutorials.map((t) => (
+          <a
+            href={t.href}
+            class="p-4 bg-slate-800/50 rounded-xl border border-slate-700/50 hover:border-violet-500/50 hover:bg-slate-800 transition-all group flex flex-col"
+          >
+            <img
+              src={t.img}
+              alt={t.alt}
+              width="1280"
+              height="720"
+              loading="lazy"
+              class="rounded-lg border border-slate-700 w-full h-auto mb-4"
+            />
+            <h2 class="text-white font-bold group-hover:text-violet-300 transition-colors">{t.title}</h2>
+            <p class="text-slate-400 text-sm mt-1">{t.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

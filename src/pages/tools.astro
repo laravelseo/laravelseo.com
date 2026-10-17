@@ -1,0 +1,111 @@
+---
+export const prerender = true;
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BreadcrumbSchema from "../components/BreadcrumbSchema.astro";
+import { TOOL_CATEGORIES, TOOL_COUNT, APP_TOOLS_BASE } from "../data/tools";
+---
+
+<BaseLayout
+  title={`${TOOL_COUNT} Free SEO Tools & Web Utilities - Laravel SEO`}
+  description={`Free SEO and webmaster tools that run in your browser with no account: website status, SSL, DNS, WHOIS, redirect checker, Lighthouse audit, minifiers, validators and text utilities.`}
+>
+  <BreadcrumbSchema
+    items={[
+      { name: "Home", href: "/" },
+      { name: "Tools", href: "/tools" },
+    ]}
+  />
+
+  <section class="bg-slate-900 py-16 md:py-20">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-4">
+          {TOOL_COUNT} free SEO tools and web utilities
+        </h1>
+        <p class="text-slate-300 text-lg mb-2">
+          Every tool below is live right now at
+          <a href={APP_TOOLS_BASE} target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-300">app.laravelseo.com/tools</a>.
+          No account, no signup: open a tool, paste a domain or some text, get the result.
+        </p>
+        <p class="text-slate-400">
+          Need full audits, monitoring and history instead of one-off checks?
+          <a href="https://app.laravelseo.com/login" target="_blank" rel="noopener noreferrer" class="text-violet-400 hover:text-violet-300">Log in to the app</a>
+          or read the <a href="/tutorials" class="text-violet-400 hover:text-violet-300">tutorials</a>.
+        </p>
+      </div>
+
+      <figure class="mt-10 max-w-5xl">
+        <img
+          src="/images/app/tools-index.png"
+          alt="The tools index at app.laravelseo.com, showing the Research category with website status, SSL, DNS and WHOIS checkers"
+          width="1280"
+          height="720"
+          loading="lazy"
+          class="rounded-xl border border-slate-700 w-full h-auto"
+        />
+        <figcaption class="text-slate-500 text-sm mt-2">The live tools index, with search and categories.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  {TOOL_CATEGORIES.map((category, i) => (
+    <section class={`py-14 ${i % 2 === 0 ? "bg-slate-800" : "bg-slate-900"}`} aria-labelledby={`cat-${category.name}`}>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id={`cat-${category.name}`} class="text-2xl font-bold text-white mb-2">{category.name}</h2>
+        <p class="text-slate-400 mb-8 max-w-3xl">{category.blurb}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {category.tools.map((tool) => (
+            <a
+              href={`${APP_TOOLS_BASE}/${tool.slug}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-5 bg-slate-900/60 rounded-xl border border-slate-700/50 hover:border-violet-500/50 hover:bg-slate-800 transition-all group"
+            >
+              <div class="flex items-center justify-between">
+                <h3 class="text-white font-semibold group-hover:text-violet-300 transition-colors">{tool.name}</h3>
+                <svg class="w-4 h-4 text-slate-500 group-hover:text-violet-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </div>
+              <p class="text-slate-400 text-sm mt-1">{tool.desc}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="bg-slate-800 border-t border-slate-700 py-14">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-2xl font-bold text-white mb-4">See a tool before you open it</h2>
+      <p class="text-slate-300 max-w-2xl mx-auto mb-8">
+        Two of the Research tools in action: a status check on laravelcompany.com and an SSL check on laravelseo.com.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <figure>
+          <img
+            src="/images/app/tool-website-status.png"
+            alt="Website status checker result for laravelcompany.com: online, HTTP 200, 0.35 seconds load time"
+            width="1280"
+            height="720"
+            loading="lazy"
+            class="rounded-xl border border-slate-700 w-full h-auto"
+          />
+          <figcaption class="text-slate-500 text-sm mt-2">Website status checker: online, 200, 0.35s.</figcaption>
+        </figure>
+        <figure>
+          <img
+            src="/images/app/tool-ssl-checker.png"
+            alt="SSL checker result for laravelseo.com: valid certificate issued by Google Trust Services"
+            width="1280"
+            height="720"
+            loading="lazy"
+            class="rounded-xl border border-slate-700 w-full h-auto"
+          />
+          <figcaption class="text-slate-500 text-sm mt-2">SSL checker: issuer, validity dates and algorithm.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
