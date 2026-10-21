@@ -55,7 +55,7 @@ export const POST: APIRoute = async ({ request }) => {
       },
       body: JSON.stringify({
         from: 'contact@laravelseo.com',
-        to: 'support@laravelseo.com',
+        to: 'info@laravelseo.com',
         subject: `New message from laravelseo.com – ${name}`,
         html: emailHtml
       })
