@@ -4,14 +4,15 @@ import ArticleSchema from "../../components/ArticleSchema.astro";
 import BreadcrumbSchema from "../../components/BreadcrumbSchema.astro";
 import posts from "../../data/posts.json";
 
-export function getStaticPaths() {
-  return posts.map((post) => ({
-    params: { id: post.post_id },
-    props: { post },
-  }));
-}
+// This route is server-rendered. getStaticPaths props are not available here.
+const post = posts.find((entry) => String(entry.post_id) === Astro.params.id);
 
-const { post } = Astro.props;
+if (!post) {
+  return new Response("Not found", {
+    status: 404,
+    headers: { "Content-Type": "text/plain; charset=utf-8" },
+  });
+}
 
 const platformColors: Record<string, string> = {
   Facebook: "bg-blue-600",
