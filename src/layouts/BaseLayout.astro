@@ -12,11 +12,12 @@ interface Props {
   image?: string;
   robots?: string;
   author?: string;
+  ogType?: string;
 }
 
 const currentPathname = Astro.url.pathname;
 
-const { title = SITE.title, description = SITE.description, image = "/og-image.png", robots = "index, follow", author = SITE.author } = Astro.props;
+const { title = SITE.title, description = SITE.description, image = "/og-image.png", robots = "index, follow", author = SITE.author, ogType = "website" } = Astro.props;
 ---
 
 <!doctype html>
@@ -55,7 +56,7 @@ const { title = SITE.title, description = SITE.description, image = "/og-image.p
     <meta name="description" content={description} />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={new URL(currentPathname, SITE.url).href} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

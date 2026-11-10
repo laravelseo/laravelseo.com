@@ -39,7 +39,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={`${title} | Laravel Seo`} description={description} image={image} author={sourceAuthor}>
+<BaseLayout title={`${title} | Laravel Seo`} description={description} image={image} author={sourceAuthor} ogType="article">
   <ArticleSchema {title} {description} date={date} image={image} author={sourceAuthor} dateModified={sourceUpdatedAt} sourceUrl={sourceUrl} />
   <BreadcrumbSchema items={[
     { name: "Home", href: "/" },
