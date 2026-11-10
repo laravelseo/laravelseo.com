@@ -10,7 +10,7 @@
     "build": "npm run convert:data && astro build && pagefind --site dist --max-fragments 1000",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test tests/"
+    "test": "node --test tests/*.test.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.13",

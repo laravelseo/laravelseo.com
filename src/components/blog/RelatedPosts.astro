@@ -26,7 +26,7 @@ const filtered = posts.filter((p) => p.title !== currentTitle).slice(0, 3);
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {filtered.map((post) => (
           <a
-            href={`/blog/${post.slug}`}
+            href={`/blog/${post.slug}/`}
             class="group block rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition-all duration-300 hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/5"
           >
             <div class="flex items-center gap-3 mb-3">

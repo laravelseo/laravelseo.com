@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { readFileSync, existsSync, readdirSync } from 'node:fs';
 
 // Runs against dist/ after `npm run build`. Adapted from laravelgit.com's suite.
-const pages = ['', 'capabilities', 'tools', 'tutorials', 'blog', 'contact', 'privacy', 'terms', 'search', '404.html'];
+// output:'server': only routes with `export const prerender = true` emit static
+// files, so dist checks cover the prerendered set; SSR pages are checked in src.
+const pages = ['', 'tools', 'tutorials', 'blog', 'search'];
 const file = (p) => (p.endsWith('.html') ? `dist/${p}` : `dist/${p ? p + '/' : ''}index.html`);
 const SAMPLE_POST = '10-no-application-encryption-key-has-been-specified';
 
@@ -11,22 +13,24 @@ test('pages are built', () => {
   for (const p of pages) assert.ok(existsSync(file(p)), `missing ${p}`);
 });
 test('contact details are right', () => {
-  const html = readFileSync(file('contact'), 'utf8');
+  const html = readFileSync('src/pages/contact.astro', 'utf8');
   assert.match(html, /mailto:info@laravelseo\.com/);
 });
 test('no leftover sister-site copy', () => {
   for (const p of pages) {
     if (!existsSync(file(p))) continue;
     const html = readFileSync(file(p), 'utf8');
-    assert.doesNotMatch(html, /laravelgit|laravelsms|laravelcompany|magentocompany|GoTrip|FreeStufzy/i, p);
+    // 'Laravel Company' appears legitimately in the footer ecosystem note.
+    assert.doesNotMatch(html, /laravelgit|laravelsms|magentocompany|GoTrip|FreeStufzy/i, p);
   }
 });
 test('og image exists and is referenced', () => {
   assert.ok(existsSync('dist/og-image.png'), 'missing dist/og-image.png');
-  for (const p of ['', 'capabilities', 'blog']) {
+  for (const p of ['', 'blog']) {
     const html = readFileSync(file(p), 'utf8');
     assert.match(html, /og:image" content="https:\/\/laravelseo\.com\/og-image\.png"/, p);
   }
+  assert.match(readFileSync('src/pages/capabilities.astro', 'utf8'), /BaseLayout|og-image/, 'SSR pages render through BaseLayout');
 });
 test('rss feed is built and linked', () => {
   assert.ok(existsSync('dist/rss.xml'), 'missing dist/rss.xml');

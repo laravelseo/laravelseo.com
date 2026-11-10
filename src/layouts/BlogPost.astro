@@ -90,11 +90,19 @@ const {
           {date}
         </span>
         {tags && (
-          <span class="flex items-center gap-1.5">
+          <span class="flex flex-wrap items-center gap-1.5">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
             </svg>
-            {tags}
+            {tags.split(",").map((t, i, all) => {
+              const tag = t.trim();
+              const slug = tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+              return (
+                <>
+                  <a href={`/blog/tag/${slug}/`} class="hover:text-violet-400 transition-colors">{tag}</a>{i < all.length - 1 ? ", " : ""}
+                </>
+              );
+            })}
           </span>
         )}
       </div>
