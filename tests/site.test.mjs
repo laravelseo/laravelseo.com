@@ -20,8 +20,9 @@ test('no leftover sister-site copy', () => {
   for (const p of pages) {
     if (!existsSync(file(p))) continue;
     const html = readFileSync(file(p), 'utf8');
-    // 'Laravel Company' appears legitimately in the footer ecosystem note.
-    assert.doesNotMatch(html, /laravelgit|laravelsms|magentocompany|GoTrip|FreeStufzy/i, p);
+    // Sister sites (laravelgit, laravelsms, magentocompany) are intentional
+    // ecosystem cross-links; only flag actual template leftovers.
+    assert.doesNotMatch(html, /GoTrip|FreeStufzy|free stuff|hello@/i, p);
   }
 });
 test('og image exists and is referenced', () => {
