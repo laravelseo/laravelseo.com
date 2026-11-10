@@ -7,7 +7,7 @@
   "scripts": {
     "convert:data": "node scripts/csvToJson.js",
     "dev": "npm run convert:data && astro dev",
-    "build": "npm run convert:data && astro build",
+    "build": "npm run convert:data && astro build && pagefind --site dist --max-fragments 1000",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -26,7 +26,10 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "tailwindcss": "^4.1.17",
-    "three": "^0.185.0"
+    "three": "^0.185.0",
+    "@astrojs/rss": "^4.0.19",
+    "marked": "^16.0.0",
+    "pagefind": "^1.6.0"
   },
   "devDependencies": {
     "@types/three": "^0.185.0"

@@ -1,0 +1,82 @@
+---
+title: "Sweetalert 2 Issue on Icon"
+description: "Mastering SweetAlert2 Icons: Troubleshooting the Visual Display Issue As developers building modern web applications, we often rely on libraries like..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["HTML"]
+featured: false
+---
+
+As developers building modern web applications, we often rely on libraries like SweetAlert2 to provide a smooth, engaging user experience for critical notifications. However, even powerful tools can sometimes present unexpected visual glitches. A very common point of confusion arises when dealing with icons—specifically ensuring that `question`, `warning`, and `info` icons render correctly across different environments.
+
+If you are encountering issues where your SweetAlert2 messages don't display the intended icons, you are not alone. This post will dive into why this happens and provide a comprehensive, developer-focused solution to ensure your alerts look exactly as intended.
+
+## Understanding SweetAlert2 Icons
+
+SweetAlert2 (often abbreviated as Swal) is highly flexible, allowing developers to customize the tone of an alert using built-in icons. The issue often isn't with the icon names themselves, but rather how the library is loaded or how the specific CSS environment handles those icons.
+
+The core principle is simple: you must use the exact string identifiers provided by the library. If you are seeing plain text instead of icons, the problem usually lies in one of three areas:
+
+1.  **Library Loading:** The SweetAlert2 script might not be loaded correctly or might be conflicting with other CSS.
+2.  **Version Mismatch:** Using outdated syntax for a newer version (or vice versa).
+3.  **CSS Dependencies:** The icons rely on external CSS/font definitions, and if that dependency is missing, the fallback text is shown instead of the graphical icon.
+
+## The Correct Implementation and Debugging Steps
+
+Let's analyze the code you provided, which demonstrates a correct structure for using SweetAlert2 with custom logic:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+<script>
+    function deleteConfirmation(id) {
+        var urlsite = "https://" + window.location.hostname + "/gudang/public/blok/d/" + id;
+        
+        Swal.fire({
+            title: 'Peringatan',
+            text: 'Anda yakin ingin menghapus data?',
+            icon: "question", // Check this spelling!
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, Hapus!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // redirect to delete data
+                location.replace(urlsite);
+                // notification
+                Swal.fire(
+                    'Sukses!',
+                    'Data Anda berhasil dihapus, mohon tunggu hingga proses selesai!',
+                    'success'
+                )
+            } else {
+                // cancel to deleting data
+                Swal.fire(
+                    'Batal Hapus!',
+                    'Data Anda batal dihapus!',
+                    'error'
+                )
+            }
+        })
+    }
+</script>
+```
+
+From a pure syntax standpoint, the code above is correct for SweetAlert2 v10. If you are still facing issues, focus your debugging efforts here:
+
+### 1. Verify CDN and Loading Order
+
+Ensure that the `<script>` tag loading the SweetAlert2 library is placed early in your HTML document, preferably before any other custom scripts that interact with it. Using a reliable Content Delivery Network (CDN) like the one provided (`https://cdn.jsdelivr.net/npm/sweetalert2@10`) minimizes local setup errors.
+
+### 2. Check Icon Naming and Fallbacks
+
+Always double-check the official SweetAlert2 documentation for the exact string names for icons. While `question`, `warning`, and `info` are standard, if you encounter issues, try using alternative methods or ensure your framework isn't overriding global CSS styles that affect font rendering.
+
+### 3. Context: Frontend Architecture
+
+When building robust applications, especially when integrating frontend UI components with backend logic (like handling data deletion as shown in your example), architectural consistency is key. Whether you are using a full-stack approach built around frameworks like Laravel, understanding the separation between view (frontend) and controller (backend) is crucial. For instance, defining clear API endpoints for operations like data deletion ensures that the data integrity logic resides on the server, which is a core principle of secure application design practiced within the **Laravel** ecosystem.
+
+## Conclusion
+
+Troubleshooting visual display issues in interactive libraries like SweetAlert2 often boils down to checking dependencies and exact syntax rather than complex bugs. By verifying your script loading, confirming icon names, and ensuring proper execution flow, you can resolve these visual glitches quickly. Keep building great user interfaces, and remember that solid architecture—whether you are using Laravel or any other robust framework—is the foundation for flawless front-end experiences.

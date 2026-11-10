@@ -1,0 +1,122 @@
+---
+title: "How to force FormRequest return json in Laravel 5.1?"
+description: "How to Force FormRequest to Return JSON in Laravel 5.1 for API Responses As developers building robust APIs with Laravel, handling validation errors..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Technical SEO", "PHP", "Errors"]
+featured: false
+---
+
+As developers building robust APIs with Laravel, handling validation errors correctly is crucial. When a request fails validation, the default behavior of a `FormRequest` is to redirect the user back to the previous page, flashing input data and error messages. However, when dealing with mobile applications or external APIs, we often need a standardized JSON response instead of a browser redirect.
+
+This post explores how you can force a `FormRequest` to return a JSON response upon validation failure in older Laravel versions, focusing on practical solutions derived from the framework's internal structure.
+
+## The Default Behavior of FormRequest
+
+Understanding where the behavior originates is the first step. As shown in the source code for `Illuminate\Foundation\Http\FormRequest`, the method responsible for determining the response type resides within the `response(array $errors)` method:
+
+```php
+// Illuminate\Foundation\Http\FormRequest class excerpt
+public function response(array $errors)
+{
+    if ($this->ajax() || $this->wantsJson()) {
+        return new JsonResponse($errors, 422);
+    }
+
+    return $this->redirector->to($this->getRedirectUrl())
+                        ->withInput($this->except($this->dontFlash))
+                        ->withErrors($errors, $this->errorBag);
+}
+```
+
+The default behavior is conditional: it returns a `JsonResponse` only if the request explicitly signals it wants JSON (via `ajax()` or `wantsJson()`). To force this JSON output even when these flags are false, we need to manipulate this logic.
+
+## Solution 1: Overwriting the Request Abstract Class (Inheritance Approach)
+
+One approach involves extending the base `FormRequest` class and overriding the core response logic. This method allows us to introduce a flag that dictates the response type for all inheriting requests.
+
+By creating an abstract request class, we can centralize this behavior across our application:
+
+```php
+namespace Laravel5Cg\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\JsonResponse;
+
+abstract class Request extends FormRequest
+{
+    /**
+     * Force response json type when validation fails
+     * @var bool
+     */
+    protected $forceJsonResponse = false;
+
+    /**
+     * Get the proper failed validation response for the request.
+     *
+     * @param  array  $errors
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function response(array $errors)
+    {
+        // Check our custom flag first, combined with default checks
+        if ($this->forceJsonResponse || $this->ajax() || $this->wantsJson()) {
+            return new JsonResponse($errors, 422);
+        }
+
+        // Fallback to default redirect behavior if not forced
+        return $this->redirector->to($this->getRedirectUrl())
+                        ->withInput($this->except($this->dontFlash))
+                        ->withErrors($errors, $this->errorBag);
+    }
+}
+```
+
+For any specific request, you simply set this flag:
+
+```php
+namespace Laravel5Cg\Http\Requests;
+
+use Laravel5Cg\Http\Requests\Request;
+
+class StoreBlogPostRequest extends Request
+{
+    /**
+     * Force response json type when validation fails
+     * @var bool
+     */
+    protected $forceJsonResponse = true; // <-- Set to true here
+    // ... other methods like rules(), authorize()
+}
+```
+
+This solution is effective because it intercepts the standard failure path and forces the desired JSON output based on a request-specific setting. It centralizes the logic, which aligns well with good object-oriented design principles when working within a framework like Laravel (as discussed in documentation related to HTTP handling).
+
+## Solution 2: Adding Middleware to Force Header Change (HTTP Approach)
+
+An alternative strategy is to ensure that the request context signals that JSON is expected by modifying the HTTP headers before the `FormRequest` executes its response logic. This involves creating a custom middleware.
+
+```php
+namespace Laravel5Cg\Http\Middleware;
+
+use Closure;
+use Symfony\Component\HttpFoundation\HeaderBag;
+
+class AddJsonAcceptHeader
+{
+    public function handle($request, Closure $next)
+    {
+        // Force the Accept header to application/json
+        $request->server->set('HTTP_ACCEPT', 'application/json');
+        return $next($request);
+    }
+}
+```
+
+You would then register this middleware globally or specifically on your API routes. While this works, it is less elegant because it relies on manipulating HTTP headers rather than modifying the internal decision-making process of the `FormRequest`.
+
+## Conclusion: Which Approach to Choose?
+
+From a senior developer's perspective, **Solution 1 (Overwriting the Request Abstract Class)** is generally superior for this specific requirement. It keeps the logic encapsulated within the validation layer itself. When building APIs, you want the request object to dictate its own response format based on its context, rather than relying solely on external middleware or headers.
+
+If you are working with modern Laravel, explore using custom Response classes or dedicated API response transformers, which offer cleaner separation of concerns. However, for legacy systems or specific constraints like those in Laravel 5.1, extending the base class provides a powerful and maintainable way to enforce consistent API behavior across your entire application. Always strive for clean code when implementing features; remember that well-structured code leads to more reliable APIs (as promoted by resources like https://laravelcompany.com).

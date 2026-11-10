@@ -1,0 +1,40 @@
+---
+title: "Can't connect to database Laravel Sail"
+description: "Title: Resolving Connection Issues with Laravel Sail and Database Management Tools Introduction: Laravel is an increasingly popular PHP framework, and Sail..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content", "PHP", "Errors"]
+featured: false
+---
+
+Title: Resolving Connection Issues with Laravel Sail and Database Management Tools
+
+Introduction: Laravel is an increasingly popular PHP framework, and Sail (Sailfish) helps to simplify the local development process by creating a containerized environment on your machine for running Laravel applications. However, sometimes issues may arise when trying to connect to a database using third-party management tools like TablePlus. In this comprehensive blog post, we'll discuss how to troubleshoot and fix common connection errors while establishing the database connection with Laravel Sail.
+
+1. Ensure that your .env file is configured correctly:
+   Your .env file should contain the necessary configuration for connecting to the database. Make sure you have set the following settings:
+   - DB_CONNECTION=mysql
+   - DB_HOST=mysql (or the hostname of the database server, if different)
+   - DB_PORT=3306
+   - DB_DATABASE=csv (the name of your database)
+   - DB_USERNAME=root (if not changed by custom usernames)
+   - DB_PASSWORD=(leave blank or provide the password for your database, if set)
+
+2. Review the docker-compose file:
+   The default docker-compose.yml file that comes with Laravel Sail sets up a MySQL container to store the application's data. You can check whether the necessary configurations are in place by reviewing the file and comparing it to your desired settings. Make sure these values align with those in your .env file.
+
+3. Verify containerized environment:
+   Open Docker Desktop and ensure that the Sailfish container is running and connected. Confirm that MySQL is also up and running, using the specified hostname and port. Check to see if any password has been assigned to the database's MySQL server.
+
+4. Troubleshooting steps:
+   If you're still experiencing issues connecting your local environment with TablePlus or other tools, try these steps:
+   1. Ensure that you have properly installed and configured the management tool you are using.
+   2. Re-check your .env file for any conflicting settings (e.g., incorrect hostname, port values, or database credentials).
+   3. Verify the connection to the MySQL container through your terminal with the following command: 'docker exec -it sail mysql -u root -p <mysql_password>' (assuming the default settings in the docker-compose file) and run SELECT * FROM information_schema.tables;
+   4. If you still face challenges, try using a different management tool or check your internet connection and firewall rules to ensure they are not restricting access to local ports.
+
+5. Resolving connection issues:
+   If none of the above steps solve your problem, examine external factors that may impact your database connectivity. Check for any other MySQL instances running on your machine (e.g., older versions installed with Homebrew). Stop or disable these instances by using 'brew services stop mysql' and 'brew services unload mysql'. This should allow you to establish a successful connection between Laravel Sail and the database management tool of your choice.
+
+Conclusion:
+While creating a local development environment through Laravel Sail can simplify the process, it might lead to some unexpected issues when connecting to your database with third-party tools like TablePlus. By following these steps and troubleshooting methods, you should be able to resolve connection issues and smoothly use your database management tool with Laravel projects running on a local environment. Always double-check your configuration settings and ensure that the necessary containers are configured correctly for optimal performance.

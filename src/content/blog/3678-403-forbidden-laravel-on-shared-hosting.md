@@ -1,0 +1,56 @@
+---
+title: "403 Forbidden Laravel on shared hosting"
+description: "Solving the Laravel 403 Forbidden Error on Shared Hosting: A Developer's Guide Dealing with 403 Forbidden errors on shared hosting environments is a common..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Technical SEO", "Errors"]
+featured: false
+---
+
+Dealing with 403 Forbidden errors on shared hosting environments is a common frustration for developers. While local development setups (like using Laravel Valet or Homestead) handle directory permissions and routing automatically, moving an application to shared hosting often exposes underlying configuration issues related to web server setup, file permissions, or the crucial `.htaccess` file.
+
+This post addresses the specific scenario you described—running a Laravel application, including an admin panel like Voyager, on shared hosting where you are encountering a 403 Forbidden error when trying to access protected routes.
+
+---
+
+## Understanding the 403 Forbidden Error in Laravel Context
+
+A 403 Forbidden status code means the server successfully received the request but refuses to authorize it. In the context of a Laravel application, this rarely points to an issue with the login credentials themselves; instead, it almost always indicates a problem with how the web server (Apache or Nginx) is interpreting the URL path and accessing the requested files.
+
+When you are using a specific file structure on shared hosting, the most common cause for this error is related to how the document root is configured, or how Laravel's routing is being applied across the entire directory structure.
+
+## Analyzing Your File Structure and Potential Conflicts
+
+You mentioned your setup: placing the `public` folder inside `/public_html`, with the rest of your project files at the same level. This manual separation is a common approach for shared hosting environments, but it requires meticulous attention to server configuration.
+
+The issue often arises because Laravel relies on specific URL rewriting rules handled by the web server's configuration, which can be easily broken if the root directory isn't perfectly aligned with the application’s public entry point.
+
+## The Solution: Mastering the `.htaccess` File
+
+For Laravel applications deployed on shared hosting, the `.htaccess` file is the single most important element for ensuring clean routing and proper access control. Since you are seeing a 403 error specifically when accessing `/admin/login`, this strongly suggests that the rules governing URL rewriting or security permissions within your web root are misconfigured.
+
+### Step-by-Step Fix
+
+1.  **Verify Public Root:** Ensure that the document root for your domain is correctly pointing to the directory *containing* your `public` folder (i.e., `/public_html`).
+2.  **Inspect `.htaccess`:** Check the `.htaccess` file located inside your Laravel `public` directory. This file governs how requests are handled. If you have manually added or modified rules, they might conflict with the hosting provider's default security settings.
+
+For a standard Laravel deployment, the contents of the `.htaccess` file within the `/public` folder should look something like this (this is a general pattern for clean routing):
+
+```apache
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(.*)$ index.php [L]
+</IfModule>
+```
+
+**Crucial Point:** If you are using Voyager or other packages that rely on specific middleware or route definitions, ensure that any custom routing rules added by those packages are correctly integrated *before* the final entry point (`index.php`).
+
+### Addressing Permissions and Ownership
+
+Beyond `.htaccess`, always double-check file permissions. On shared hosting, incorrect ownership (e.g., files owned by `root` instead of the specific hosting user) can cause access denial errors, manifesting as 403s. Ensure that the web server process has read access to all necessary files within the application directory.
+
+## Conclusion and Best Practices
+
+The 403 Forbidden error in this scenario is typically a configuration or permission issue rather than a code bug within your Voyager setup itself. By focusing on the `.htaccess` file and verifying the permissions of your public assets, you resolve the vast majority of these deployment headaches.
+
+When building robust applications, always adhere to established patterns. For deeper architectural guidance on structuring Laravel projects securely and efficiently, I highly recommend reviewing the official documentation and best practices provided by [Laravel Company](https://laravelcompany.com). By treating shared hosting configurations with this level of attention, you can ensure your application runs smoothly and securely.

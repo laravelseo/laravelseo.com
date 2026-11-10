@@ -1,0 +1,53 @@
+---
+title: "Laravel 5 not finding css files"
+description: "Title: Troubleshooting Laravel 5 and CSS File Inclusion Issues Body: For developers using Laravel 5 with a MAMP setup, it is common to encounter issues where..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "PHP"]
+featured: false
+---
+
+Title: Troubleshooting Laravel 5 and CSS File Inclusion Issues
+
+Body:
+
+For developers using Laravel 5 with a MAMP setup, it is common to encounter issues where the CSS files are not being found or loaded. This problem can arise due to incorrect paths, misconfigured settings, or improperly configured Apache modules. However, by following the steps outlined below, you should be able to resolve this issue and ensure your Laravel 5 project is displaying correctly.
+
+1. Check Your URL Configuration: First, verify that the correct URLs are being used in your application's configuration files. In Laravel 5, the 'url' key in your app.php file usually looks like this:
+
+<pre><code>
+   'url' => env('APP_URL', 'http://localhost'),
+</code></pre>
+
+Your .htaccess file should contain the following line:
+
+<pre><code>
+RewriteBase /laravel-site/laravel-5-app/public
+</code></pre>
+
+Make sure that these URLs match your local setup. If they don't, update them accordingly and clear your browser cache before testing again.
+
+2. Verify Your Web Server Configuration: In some cases, the problem may be related to an incorrectly configured web server or Apache module. Ensure that you have the necessary modules enabled for Laravel 5 to function properly. You can check your Apache configuration file (usually at /etc/apache2/httpd.conf) and look for lines like:
+
+<pre><code>LoadModule rewrite_module modules/mod_rewrite.so
+</code></pre>
+
+Also, enable the following directives in your virtual host or site configuration file (often located at /etc/apache2/sites-available):
+
+<pre><code>
+   AllowOverride All
+   Order allow,deny
+   Allow from all
+</code></pre>
+
+3. Check Your Application Directory Structure: Ensure that your application directories and files are organized correctly. In Laravel 5, the CSS files should be placed within a /css directory in the public folder of your project. For example, if your project is at /laravel-site/laravel-5-app and you have configured your .htaccess file with RewriteBase as described, then your CSS file would be accessible using these paths:
+
+<pre><code>http://localhost:8888/css/app.css</code></pre>
+
+4. Test Your Application: To confirm that the problem is indeed related to file inclusion, try accessing other assets in your application such as JavaScript files or images. If you still experience problems with non-CSS resources, this may be a broader issue with your environment setup or server configuration.
+
+5. Clear Your Cache: Sometimes caching issues can cause unexpected behavior when retrieving CSS files. Try clearing the cache in your browser and refresh the page to see if that resolves the problem. In Laravel 5, you can also clear the cache by visiting /config/cache in your browser or running 'php artisan cache:clear' from your terminal within the project folder.
+
+If none of these solutions address the issue with the CSS file inclusion, it is time to seek more specific help from other developers in online forums or contact Laravel Company directly at https://laravelcompany.com/contact. Providing context about your project and configuration can help to troubleshoot the problem faster.
+
+In conclusion, troubleshooting Laravel 5's CSS file inclusion issues often requires attention to detail and methodical approach. By double-checking your URL configurations, server settings, directory structure and file paths, and clearing caches, you should be able to find and resolve any compatibility problems that might occur between Laravel 5 and your chosen web server configuration.

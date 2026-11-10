@@ -1,0 +1,77 @@
+---
+title: "Laravel Facade error: Non-static method should not be called statically"
+description: "Laravel Facade Error: Understanding \"Non static method should not be called statically\" As a senior developer working within the Laravel ecosystem, we often..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Technical SEO", "PHP", "Errors"]
+featured: false
+---
+
+As a senior developer working within the Laravel ecosystem, we often encounter subtle but frustrating errors that stem from misunderstandings of how PHP objects interact with Laravel's powerful facade system. The error message, **"Non-static method should not be called statically,"** typically signals a conflict between how you’ve defined your methods in a Model and how you are attempting to invoke them using the static facade syntax.
+
+This post will dissect the scenario you presented—attempting to use a custom facade to call a method on an Eloquent model—and explain the fundamental principles of object-oriented programming (OOP) that lead to this error, along with the idiomatic Laravel solutions.
+
+---
+
+## The Root of the Conflict: Static vs. Instance Methods
+
+The core issue lies in the distinction between static methods and instance methods in PHP, which is crucial when dealing with Eloquent Models.
+
+In your example, you defined an `index()` method within your `Nation` model:
+
+```php
+// Inside App\Models\Nation
+function index(){
+   Nation::where(['visible'=>1])->get(); // This line calls a static method on the Model class itself
+}
+```
+
+When you try to call it via the facade: `$nations = Nation::index();`, Laravel expects `index()` to be a method directly callable on the `Nation` class (i.e., a static method). However, because you defined it as a regular instance method within the Model structure, PHP flags this as an invalid static call.
+
+**The fundamental rule is:** Static methods belong to the class itself and can be called without creating an object (`ClassName::method()`). Instance methods require an object instance (`$object->method()`) or are invoked via the class name if they are properly defined as static.
+
+When you try to bridge this gap using custom service providers and facades, you introduce complexity that often masks a simpler architectural solution, making debugging harder.
+
+## The Idiomatic Laravel Solution: Embracing Eloquent Query Builders
+
+In modern Laravel development, especially when dealing with data retrieval from the database, we strive to keep the query logic within the scope where the data is being requested—usually the Controller or a dedicated Service class. This adheres to the principle of Separation of Concerns.
+
+Instead of trying to force a method onto the Model to act as a static facade endpoint, we leverage Eloquent's fluent query builder directly. This approach is cleaner, more readable, and fully utilizes Laravel’s built-in features.
+
+### The Recommended Approach: Direct Querying
+
+If your goal is simply to retrieve data based on specific criteria (like retrieving all visible nations), you should execute the query directly in your controller.
+
+**1. Refactor the Model (Keep it clean):**
+Remove custom methods from models unless they represent a true, reusable relationship or scope. Models should primarily define structure and relationships.
+
+**2. Implement Logic in the Controller:**
+Move the logic that builds the query into the place where the action is executed.
+
+```php
+// In your Controller
+use App\Models\Nation;
+
+class NationController extends Controller
+{
+    public function index()
+    {
+        // This is the clean, idiomatic Laravel way to fetch data.
+        $nations = Nation::where('visible', '>', 1)->get();
+
+        return view('nations.index', compact('nations'));
+    }
+}
+```
+
+This method avoids the need for complex custom providers and facades entirely. It respects how Eloquent is designed, promoting code that is easily understood by other developers familiar with Laravel patterns (as emphasized on the **[Laravel Company documentation](https://laravelcompany.com)**).
+
+## When to Use Facades (And When Not To)
+
+Facades in Laravel are essentially static proxies to underlying classes. They are excellent for accessing global services (like `Auth` or `DB`) where a static call is semantically correct.
+
+If you require a custom, reusable entry point for a complex operation that involves multiple services—and this operation *must* be static (e.g., a standalone command), then creating a dedicated service class and injecting it via the Service Container is often superior to creating a facade. This approach aligns better with dependency injection principles.
+
+**Conclusion**
+
+The "Non-static method should not be called statically" error is a strong hint that you are fighting against PHP's object orientation rules by trying to force static access onto an instance method. For data retrieval tasks, the most robust and maintainable solution in Laravel is to let Eloquent handle the querying directly within your application logic. By avoiding complex custom facade implementations for simple data fetching, you keep your codebase clean, predictable, and aligned with best practices for building scalable applications on the **[Laravel Company platform](https://laravelcompany.com)**.

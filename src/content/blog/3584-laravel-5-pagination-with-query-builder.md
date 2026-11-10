@@ -1,0 +1,73 @@
+---
+title: "Laravel 5 Pagination with Query Builder"
+description: "Mastering Pagination in Laravel: Fixing the \"Call to a member function paginate() on a non object\" Error As developers working with Laravel, we often need to..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Keywords", "PHP", "Errors"]
+featured: false
+---
+
+As developers working with Laravel, we often need to pull complex, joined data from the database and present it to the user in paginated results. The process usually involves using Eloquent models or the Query Builder methods. However, when you dive into writing raw SQL queries using methods like `DB::select()`, you can run into unexpected errors, particularly when trying to apply Laravel's pagination features directly.
+
+This post will diagnose why you are encountering the `Call to a member function paginate() on a non-object` error when attempting to paginate a result set from a raw query in Laravel, and provide the correct, idiomatic solutions.
+
+## The Root Cause: Mixing Data Retrieval with Pagination Methods
+
+The error message is very specific: `Call to a member function paginate() on a non-object`. This happens because the `paginate()` method is designed to be called on an object that implements pagination logic—specifically, an Eloquent Query Builder instance or a result set returned by methods like `->paginate()` on an Eloquent model.
+
+When you use raw SQL construction via `$query = "..."` and then execute it using `$data = DB::connection('qds106')->select($query)`, the result (`$data`) is typically a standard PHP array or collection of results, not a Laravel Query Builder object that inherently knows how to handle limits and offsets for pagination.
+
+The `paginate()` method expects an object that has been configured to understand database limits and offsets. When you call it on an array, PHP throws an error because arrays do not possess a `paginate` method. Removing `paginate(15)` worked because you were simply retrieving the raw data without attempting to apply Laravel’s pagination layer to it.
+
+## The Correct Approach: Using the Query Builder for Pagination
+
+To achieve database querying and pagination simultaneously in a clean, maintainable way within Laravel, you should leverage the methods provided by the Query Builder or Eloquent. This ensures that Laravel handles the complexity of applying `LIMIT` and `OFFSET` correctly, regardless of the underlying database connection.
+
+### Solution 1: Using `DB::table()` for Complex Joins
+
+For complex queries involving multiple tables (like your example joins between `order_confirmation` and `order_summary`), the best practice is to use the `DB::table()` facade. This allows you to define your query structure while retaining full control over the SQL, and crucially, it returns a Query Builder instance that supports pagination.
+
+Here is how you should refactor your code:
+
+```php
+use Illuminate\Support\Facades\DB;
+
+public function getDeliveries($date_from, $date_to)
+{
+    $query = DB::table('order_confirmation')
+        ->join('order_summary', 'order_confirmation.id', '=', 'order_summary.oc_idfk')
+        ->select([
+            'order_confirmation.oc_number as oc',
+            'order_confirmation.count as cnt',
+            'order_confirmation.status as stat',
+            'order_confirmation.po_number as pon',
+            'order_summary.date_delivered as dd',
+            'order_summary.delivery_quantity as dq',
+            'order_summary.is_invoiced as iin',
+            'order_summary.filename as fn',
+            'order_summary.invoice_number as inum',
+            'order_summary.oc_idfk as ocidfk',
+            'order_summary.date_invoiced as di'
+        ])
+        ->where(function ($query) use ($date_from, $date_to) {
+            if (!empty($date_from)) {
+                $query->where('order_summary.date_delivered', '>=', $date_from);
+            }
+            if (!empty($date_to)) {
+                $query->where('order_summary.date_delivered', '<=', $date_to);
+            }
+        })
+        ->orderBy('order_confirmation.id', 'asc');
+
+    // Now, apply pagination directly to the Query Builder instance.
+    $data = $query->paginate(15); 
+    
+    return $data;
+}
+```
+
+Notice how we replaced the raw string concatenation and `DB::select()` with chained methods on `DB::table()`. This method returns a proper query object that knows how to apply limits and offsets when you call `->paginate(15)`. Remember, adhering to these patterns makes your code cleaner and aligns perfectly with Laravel's design philosophy, as promoted by resources like the official documentation at [laravelcompany.com](https://laravelcompany.com).
+
+## Conclusion
+
+The error you faced is a classic symptom of trying to apply Eloquent-specific methods (like `paginate()`) to raw data retrieved via simple selection methods (`select()`). Always ensure that the object you are calling pagination methods on is the actual Query Builder instance generated by Laravel, obtained through `DB::table()` or Eloquent models. By structuring your database interactions this way, you leverage Laravel’s built-in features effectively, resulting in code that is not only functional but also highly readable and robust.

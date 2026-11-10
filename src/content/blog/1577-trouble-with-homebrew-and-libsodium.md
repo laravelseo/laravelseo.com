@@ -1,0 +1,38 @@
+---
+title: "Trouble with homebrew and libsodium"
+description: "Title: Troubleshooting Homebrew and libsodium Issues with Multiple PHP Versions on MacOS Body: In this blog post, we will explore the challenges faced when..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content", "PHP", "Errors"]
+featured: false
+---
+
+Title: Troubleshooting Homebrew and libsodium Issues with Multiple PHP Versions on MacOS
+
+Body: <p>In this blog post, we will explore the challenges faced when using different PHP versions on macOS alongside brew-managed dependencies like libsodium. We'll discuss why the issue occurs, how to fix it, and suggest best practices for avoiding such problems in the future.</p>
+<p><b>Why does this issue occur?</b></p>
+<p>The problem lies primarily in two issues: version mismatching between libsodium's dynamic linker file (dylib) and PHP, as well as the absence of a specific libsodium version on brew. The error message 'Library not loaded: /usr/local/opt/libsodium/lib/libsodium.23.dylib' indicates that Homebrew has installed libsodium@1.0.x (as the latest version is 1.0.19), but the linked PHP version expects a dylib file with a different version number. Since libsodium.26.dylib exists, we cannot directly force Valet to use it by modifying its configuration.</p>
+<p><b>Fixing the issue:</b></p>
+<p>To solve this problem, we can try two approaches:</p>
+
+1. Update libsodium using Composer:
+   <p>First, uninstall libsodium from Homebrew with 'brew uninstall libsodium'. Then, run 'composer global require laravel/envoy' to install the latest version of libsodium via Composer. Now, when you switch back to PHP 7.4 and issue 'valet link', Valet should find and use the correct dylib file from your system.</p>
+   <p><b>Note:</b> Ensure to uninstall Homebrew-managed dependencies of libsodium before installing it via Composer as a single global dependency. If you have multiple PHP versions, you may need to run composer for each version separately.</p>
+
+2. Install libsodium@1.0.x from sources:
+   <p>In case you prefer not using Composer's installation process or if it fails for some reason, you can install the correct libsodium version (1.0.x) manually. Follow these steps:</p>
+   1. Download libsodium source code from https://download.libsodium.org/libsodium/development/libsodium-1.0.23.tar.gz
+   2. Unpack the downloaded archive with 'tar -xvf libsodium-1.0.23.tar.gz'
+   3. Change directory to the unpacked source folder: 'cd libsodium-1.0.23'
+   4. Compile and install libsodium using 'make && make install'. If you receive an error, check whether the required dependencies are installed (check here: https://laravelcompany.com/blog/installing-libsodium-on-macos)
+   5. Link the newly installed libsodium with your PHP version: 'valet link php@7.4 libsodium' (replace 7.4 with your desired PHP version if different)
+   <p>This method requires some developer skills, but it might be necessary in certain scenarios.</p>
+
+<p><b>Best Practices:</b></p>
+<p>To avoid such issues in the future, follow these practices:</p>
+1. Use a consistent version of PHP for your application and always link it when switching between different PHP versions using Valet (e.g., 'valet use php@7.4').
+2. Try to maintain a single libsodium dependency with Homebrew or prefer installing it globally through Composer if possible.
+3. Always check the version numbers of your installed packages and dependencies against their latest versions to ensure compatibility.
+
+Conclusion:
+This blog post has provided a comprehensive understanding of why the issue of libsodium and Homebrew occurs, along with fixing steps and best practices. By following these tips, you can efficiently manage your PHP versions and their dependencies on macOS for optimal performance and project stability. Remember to incorporate natural backlinks to https://laravelcompany.com in relevant sections of your blog posts.

@@ -1,0 +1,59 @@
+---
+title: "Laravel 5.0 folder structure: public vs. resources"
+description: "Laravel 5.0 Folder Structure: Decoding the Difference Between public and resources Migrating an established Laravel application, especially one built on..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content", "JavaScript", "PHP"]
+featured: false
+---
+
+Migrating an established Laravel application, especially one built on older versions like 4.2, often brings architectural shifts that can feel confusing. The transition from a monolithic structure to a more organized framework, as seen in Laravel 5.0, involves changes like the introduction of the `resources` directory alongside the traditional `public` folder.
+
+For many developers, this change—moving assets from `public` into `resources/assets`—raises valid questions about separation of concerns. As a senior developer, understanding *why* these folders exist is more important than simply knowing *where* to put files. Let's dive deep into the actual difference between these crucial directories and establish modern best practices.
+
+## The Historical Context: Understanding `public`
+
+In older versions of Laravel (and many traditional PHP frameworks), the `public` directory served a very specific, security-focused role. It was the root entry point for everything that needed to be accessed directly by a web browser. This included static assets like CSS files, JavaScript bundles, images, and fonts.
+
+**The purpose of the `public` folder is simple: anything placed here is directly accessible via a URL.** Because these files are served directly, they bypass much of the application logic layer, which is fine for static content but poor practice for complex application architecture.
+
+```php
+// Example of linking an asset from the public directory (older style)
+<link href="/css/app.css" rel="stylesheet">
+```
+
+## The Modern Philosophy: Embracing `resources`
+
+Laravel's evolution reflects a shift towards a deeper adherence to Model-View-Controller (MVC) principles and better separation of concerns. This is where the `resources` folder comes into play.
+
+The `resources` directory is designed to house everything related to the application's *source code*, configuration, and presentation logic—the things developers actively work on during development. It contains:
+
+1.  **Views:** The Blade templates (HTML structure).
+2.  **Assets:** Compiled CSS, JavaScript, fonts, etc., that are processed by build tools (like Vite or Webpack).
+3.  **Locales/Translations:** Language files.
+4.  **Configuration Files:** Custom settings for the application.
+
+By grouping these elements in `resources`, Laravel encourages you to treat your frontend assets as part of the core application codebase, rather than treating them as raw static files sitting outside the framework structure. This separation allows tools and build processes to manage assets more intelligently.
+
+## The Actual Difference: Separation of Concerns
+
+The fundamental difference is philosophical, not just structural:
+
+*   **`public`:** For **raw, publicly accessible static files**. It's the web server's direct serving zone.
+*   **`resources`:** For **application-specific code, views, and developer-managed assets**. It’s the source of truth for the application itself.
+
+When you move your CSS/JS into `resources/assets`, you are integrating those assets into the development workflow. This allows Laravel's asset bundling system to manage them alongside your Blade views within a single, cohesive codebase. If you are building a modern application, leveraging these organizational principles is key for scalability and maintainability, which aligns perfectly with the philosophy behind tools like those we see promoted by **[laravelcompany.com](https://laravelcompany.com)**.
+
+## Best Practice Implementation
+
+For contemporary Laravel development, the recommended approach is to consolidate asset management within the `resources` directory:
+
+1.  **Keep Configuration/Database related files outside of `public`.**
+2.  **Place all Views (Blade files) inside `resources/views`.**
+3.  **Place all compiled or source assets (Sass, JS, CSS) inside `resources/assets` (or often just `resources/css` and `resources/js`).**
+
+This structure keeps your application logic tightly coupled with your presentation layer, making navigation easier for new team members and ensuring that asset compilation is handled by the framework's ecosystem rather than relying solely on manual file copying into the public folder.
+
+## Conclusion
+
+The perceived conflict between `public` and `resources` in Laravel 5.0 is a lesson in architectural evolution. The move reflects a maturation of the framework, emphasizing MVC principles over a purely static file structure. By understanding that `public` is for raw delivery and `resources` is for application development, you can build more robust, scalable, and maintainable applications. Embrace this structure to harness the full power of modern Laravel development.

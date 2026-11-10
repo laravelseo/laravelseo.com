@@ -1,0 +1,105 @@
+---
+export const prerender = true;
+
+import { getCollection } from "astro:content";
+import BaseLayout from "../../../../layouts/BaseLayout.astro";
+import BreadcrumbSchema from "../../../../components/BreadcrumbSchema.astro";
+import Card from "../../../../components/ui/Card.astro";
+
+export function tagSlug(tag: string): string {
+  return tag.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+export async function getStaticPaths({ paginate }) {
+  const allPosts = await getCollection("blog");
+  const byTag = new Map();
+  for (const post of allPosts) {
+    for (const t of post.data.tags) {
+      if (!byTag.has(t)) byTag.set(t, []);
+      byTag.get(t).push(post);
+    }
+  }
+  const paths = [];
+  for (const [tag, posts] of byTag) {
+    const sorted = posts.sort(
+      (a, b) =>
+        new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime() ||
+        a.slug.localeCompare(b.slug)
+    );
+    const paginated = paginate(sorted, {
+      pageSize: 12,
+      params: { tag: tagSlug(tag) },
+      props: { tagName: tag, count: sorted.length },
+    });
+    paths.push(...paginated);
+  }
+  return paths;
+}
+
+function readingTime(body: string): number {
+  const words = (body || "")
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/[#*`\[\]()>-]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+const { page, tagName, count } = Astro.props;
+---
+
+<BaseLayout
+  title={`${tagName} articles | Laravel SEO Blog`}
+  description={`${count} Laravel SEO articles tagged ${tagName}.`}
+>
+  <BreadcrumbSchema items={[
+    { name: "Home", href: "/" },
+    { name: "Blog", href: "/blog" },
+    { name: tagName, href: `/blog/tag/${tagSlug(tagName)}/` },
+  ]} />
+
+  <section class="relative py-20 overflow-hidden bg-slate-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-sm text-slate-400 mb-2"><a href="/blog/" class="text-violet-400 hover:text-violet-300 transition-colors">Blog</a> / Tag</p>
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">{tagName}</h1>
+        <p class="text-lg text-slate-300">{count} article{count === 1 ? "" : "s"}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {page.data.map((post) => (
+          <a href={`/blog/${post.slug}/`} class="group block">
+            <Card hover class="h-full p-6 transition-all group-hover:border-violet-500/50">
+              <div class="flex items-center gap-3 mb-4">
+                {post.data.tags.slice(0, 2).map((t) => (
+                  <span class="rounded-full bg-violet-500/10 px-3 py-1 text-xs font-medium text-violet-400">{t}</span>
+                ))}
+                <span class="text-xs text-slate-500">{readingTime(post.body ?? "")} min read</span>
+              </div>
+              <h2 class="mb-3 text-xl font-bold text-white group-hover:text-violet-400 transition-colors">{post.data.title}</h2>
+              <p class="mb-4 text-sm text-slate-400 leading-relaxed line-clamp-3">{post.data.description}</p>
+              <div class="text-sm text-slate-500">
+                {new Date(post.data.pubDate).toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}
+              </div>
+            </Card>
+          </a>
+        ))}
+      </div>
+
+      {page.lastPage > 1 && (
+        <nav class="mt-12 flex items-center justify-center gap-2" aria-label="Tag pagination">
+          {page.url.prev && (
+            <a href={page.url.prev} class="rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800">Previous</a>
+          )}
+          {page.url.next && (
+            <a href={page.url.next} class="rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-slate-800">Next</a>
+          )}
+        </nav>
+      )}
+    </div>
+  </section>
+</BaseLayout>

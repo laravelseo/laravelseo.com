@@ -1,0 +1,71 @@
+---
+title: "Laravel 5 - Remove Parameter From All Request Objects at Controller Level"
+description: "Title: Laravel 5 Removing Parameters from Request Objects for Secure API Operations Introduction: Laravel's request objects have a wealth of information that..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content", "PHP"]
+featured: false
+---
+
+Title: Laravel 5 - Removing Parameters from Request Objects for Secure API Operations
+
+Introduction: Laravel's request objects have a wealth of information that can be leveraged during your application's lifecycle. However, when it comes to your API endpoints, you may want to remove certain parameters for security or data integrity reasons. In this blog post, we'll explore techniques for removing parameters from request objects in Laravel 5 at a class and controller level, without the need of manually unset them individually.
+
+Removing Parameters Application-wide:
+The best way to avoid manual code updates all over your application is by defining custom request classes that handle data sanitization. This allows you to set rules on what data should be accepted and filtered in your API endpoints. Let's create a new class called "CustomAPIRequest" inheriting from Laravel's default Request class:
+
+```php
+namespace App\Http\Requests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Validation\Rule;
+class CustomAPIRequest extends \Illuminate\Foundation\Http\FormRequest {
+    use ValidatesRequests;
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules() {
+        return [
+            'id' => '',
+            'name' => '',
+            .... (other required parameters)
+            'api_token' => Rule::forbidden()
+        ];
+    }
+}
+```
+
+In the code above, we have defined rules for only the required parameters and set the rule "api_token" to be forbidden. This means that your users will not be able to include this parameter in their requests, and it won't appear in the $request object during validation. Now, you can use this request class in all your API endpoints by changing:
+
+```php
+public function user_get_endpoint(Request $request){
+    $request = $request->toArray();
+    return UserModel::where($request)->get()->toArray();
+}
+```
+
+To:
+
+```php
+public function user_get_endpoint(CustomAPIRequest $request){
+    $request = $request->toArray();
+    return UserModel::where($request['validated'])->get()->toArray();
+}
+```
+
+Removing Parameters at Controller Level:
+In case you don't want to use custom request classes, you can also remove the unwanted parameters from your $request objects at the controller level. The following code snippet shows how to filter out the 'api_token' parameter before processing the request:
+
+```php
+public function user_get_endpoint(Request $request){
+    $filteredParams = array_diff_key($request->toArray(), ['api_token']);
+    $request = new Request($filteredParams, $request);
+
+    return UserModel::where($request)->get()->toArray();
+}
+```
+
+Conclusion:
+In this blog post, we have explored two methods for removing unwanted parameters from request objects in Laravel 5. We first introduced the use of custom request classes that allow us to define rules and remove parameters application-wide. Alternatively, you can also filter out parameters at the controller level using code snippets provided above. Regardless of the chosen method, remember that these techniques will help keep your API endpoints more secure while maintaining data integrity in your database tables.

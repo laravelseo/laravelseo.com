@@ -1,0 +1,69 @@
+---
+title: "CORS Issue: No 'Access-Control-Allow-Origin' Header Present on Laravel 10 API Request"
+description: "CORS Issue: No 'Access Control Allow Origin' Header Present on Laravel 10 API Request As developers working with modern decoupled architectures—like a..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "JavaScript", "Errors"]
+featured: false
+---
+
+As developers working with modern decoupled architectures—like a React frontend communicating with a Laravel backend—Cross-Origin Resource Sharing (CORS) issues are an inevitable hurdle. They often feel like a black box, especially when the server seems perfectly fine when accessed directly via tools like Postman, but fails when consumed by a browser-based client like React.
+
+I recently encountered a very similar scenario: setting up CORS in Laravel to allow requests from a React application, yet still facing the dreaded error: `No 'Access-Control-Allow-Origin' header is present on the requested resource.`
+
+This post will dive deep into why this discrepancy occurs and provide a robust, step-by-step guide to resolving it, ensuring your frontend and backend communicate seamlessly.
+
+---
+
+## Understanding the CORS Paradox
+
+The core of the problem lies in understanding *who* is making the request and *how* the browser enforces security policies.
+
+When you use Postman or cURL, you are interacting directly with the server. The server processes the request and sends back the data according to its routing and controller logic. There is no browser involved, so CORS restrictions do not apply.
+
+However, when your React application (running on `http://localhost:19000`) makes a request via Axios, the request is intercepted by the browser. The browser sees that the origin (`localhost:19000`) is different from the API host, triggering the CORS security check. If the server does not explicitly include the necessary response headers (like `Access-Control-Allow-Origin`), the browser blocks the JavaScript from accessing the response data, resulting in the error you see.
+
+The fact that Postman works confirms your Laravel endpoint is functional. The failure points specifically to how Laravel is configured to handle cross-origin responses for web clients versus direct HTTP client requests.
+
+## Deep Dive into Laravel CORS Configuration
+
+We configure CORS primarily through the `config/cors.php` file in a standard Laravel setup. Let’s re-examine your configuration:
+
+```php
+// config/cors.php
+return [
+    'paths' => ['api/*', 'http://localhost:19000', 'sanctum/csrf-cookie'],
+    'allowed_methods' => ['GET', 'POST', 'PUT', 'DELETE'],
+    'allowed_origins' => ['*'], // Allowing all origins
+    'allowed_headers' => ['*'],
+    // ... other settings
+];
+```
+
+While setting `allowed_origins` to `['*']` and `allowed_headers` to `['*']` seems permissive, this configuration is usually handled by middleware. If you are using Laravel Sanctum for API authentication, the interaction between Sanctum, CORS, and standard API responses can sometimes create unexpected conflicts, especially in local development environments using tunnel services like ngrok.
+
+## Practical Solutions to Resolve the Issue
+
+Since server-side configuration isn't yielding the expected result, we need to focus on explicitly ensuring the response headers are present in your Laravel application code.
+
+### 1. Explicitly Setting CORS Headers via Middleware (The Robust Way)
+
+Instead of relying solely on the configuration file, ensure that the necessary headers are actively added to *every* cross-origin response. This is best achieved by leveraging Laravel’s built-in CORS capabilities or manually adding the response headers within your API routing or controller logic.
+
+A cleaner approach, especially when dealing with Sanctum and APIs, is to use Laravel's configuration settings but ensure the middleware stack correctly processes them. If you are using a package like `fruitcake/laravel-cors`, verify that it is correctly installed and loaded.
+
+### 2. Handling Preflight Requests (OPTIONS Method)
+
+Although your specific example uses a simple `GET` request (which doesn't require a preflight `OPTIONS` request), if you ever introduce `POST`, `PUT`, or `DELETE`, the browser first sends an `OPTIONS` request to check if the actual request is allowed. If this initial `OPTIONS` request fails to return the correct headers, the subsequent request is blocked immediately.
+
+Ensure your CORS configuration handles the `OPTIONS` method correctly for all specified paths.
+
+### 3. The Role of Sanctum and API Responses
+
+If you are using Laravel Sanctum for token-based authentication, ensure that your API responses are structured correctly. When a request succeeds, the response payload (the JSON data) must be accompanied by the CORS headers defined by the middleware chain. Review any custom middleware you have added to your API routes to see if they inadvertently suppress or override the standard CORS headers generated by Laravel.
+
+## Conclusion
+
+CORS issues in a Laravel/React stack often stem from a mismatch between direct server access (Postman) and browser-mediated client access (Axios). While `config/cors.php` sets the rules, the actual delivery of those headers must be enforced by the framework's middleware correctly during the request lifecycle.
+
+By ensuring your CORS package is correctly installed, verifying that all necessary methods (`GET`, `POST`, etc.) are allowed, and inspecting any custom middleware that might interfere with response headers, you can successfully bridge the gap between your Laravel API and your React frontend. Remember, robust API design requires thinking not just about data endpoints, but also about the security protocols enforced by the client-server interaction—a core principle emphasized by platforms like [laravelcompany.com](https://laravelcompany.com).

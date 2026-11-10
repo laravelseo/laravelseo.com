@@ -1,0 +1,108 @@
+---
+export const prerender = true;
+
+import { getCollection } from "astro:content";
+import BlogPost from "../../layouts/BlogPost.astro";
+import type { RelatedPost } from "../../components/blog/RelatedPosts.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const sorted = posts.sort(
+    (a, b) =>
+      b.data.pubDate.getTime() - a.data.pubDate.getTime() ||
+      a.slug.localeCompare(b.slug)
+  );
+  // Rank of each post in `sorted`; the related-posts tie-break below
+  // (pubDate desc, slug asc) matches this order exactly, so ranking by
+  // shared-tag count first and position second reproduces a full sort
+  // without comparing every pair of posts.
+  const rank = new Map(sorted.map((p, i) => [p.slug, i]));
+  const byTag = new Map<string, typeof sorted>();
+  for (const p of sorted) {
+    for (const t of p.data.tags) {
+      if (!byTag.has(t)) byTag.set(t, []);
+      byTag.get(t)!.push(p);
+    }
+  }
+  return sorted.map((post, i) => {
+    const newer = i > 0 ? sorted[i - 1] : null;
+    const older = i < sorted.length - 1 ? sorted[i + 1] : null;
+    const sharedCounts = new Map<(typeof sorted)[number], number>();
+    for (const t of post.data.tags) {
+      for (const q of byTag.get(t) ?? []) {
+        if (q.slug !== post.slug) sharedCounts.set(q, (sharedCounts.get(q) ?? 0) + 1);
+      }
+    }
+    const related = [...sharedCounts.entries()]
+      .sort((a, b) => b[1] - a[1] || rank.get(a[0].slug)! - rank.get(b[0].slug)!)
+      .slice(0, 3)
+      .map(([p]) => p);
+    if (related.length < 3) {
+      const picked = new Set(related.map((p) => p.slug));
+      for (const q of sorted) {
+        if (related.length >= 3) break;
+        if (q.slug !== post.slug && !picked.has(q.slug)) related.push(q);
+      }
+    }
+    return {
+      params: { slug: post.slug },
+      props: { post, related, newer, older },
+    };
+  });
+}
+
+function readingTime(body: string): string {
+  const words = (body || "")
+    .replace(/```[\s\S]*?```/g, " ")
+    .replace(/[#*`\[\]()>-]/g, " ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return `${Math.max(1, Math.ceil(words / 200))} min read`;
+}
+
+function formatDate(d: Date): string {
+  return d.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" });
+}
+
+const { post, related, newer, older } = Astro.props;
+const { Content } = await post.render();
+
+const relatedPosts: RelatedPost[] = related.map((p) => ({
+  slug: p.slug,
+  title: p.data.title,
+  description: p.data.description,
+  date: formatDate(new Date(p.data.pubDate)),
+  category: p.data.tags[0] ?? "SEO",
+  readTime: readingTime(p.body ?? ""),
+}));
+---
+
+<BlogPost
+  title={post.data.title}
+  description={post.data.description}
+  date={new Date(post.data.pubDate).toISOString().slice(0, 10)}
+  category={post.data.tags[0]}
+  readTime={readingTime(post.body ?? "")}
+  tags={post.data.tags.join(", ")}
+  image={post.data.image}
+  relatedPosts={relatedPosts}
+  sourceAuthor={post.data.author}
+>
+  <div class="goai-content">
+    <Content />
+  </div>
+  <nav class="mt-16 flex items-center justify-between gap-4 border-t border-slate-800 pt-8" aria-label="More posts">
+    {older ? (
+      <a href={`/blog/${older.slug}/`} class="group max-w-[45%]">
+        <span class="text-xs text-slate-500 uppercase tracking-wider">Older</span>
+        <span class="block text-sm font-medium text-slate-300 group-hover:text-violet-400 transition-colors">{older.data.title}</span>
+      </a>
+    ) : <span />}
+    {newer ? (
+      <a href={`/blog/${newer.slug}/`} class="group max-w-[45%] text-right ml-auto">
+        <span class="text-xs text-slate-500 uppercase tracking-wider">Newer</span>
+        <span class="block text-sm font-medium text-slate-300 group-hover:text-violet-400 transition-colors">{newer.data.title}</span>
+      </a>
+    ) : <span />}
+  </nav>
+</BlogPost>

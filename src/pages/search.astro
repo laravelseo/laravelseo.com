@@ -1,0 +1,66 @@
+---
+export const prerender = true;
+
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Search | Laravel SEO" description="Search the Laravel SEO site and blog." robots="noindex, follow">
+  <link href="/pagefind/pagefind-ui.css" rel="stylesheet" slot="head" />
+
+  <section class="relative py-20 overflow-hidden bg-slate-900">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-white mb-3">Search</h1>
+        <p class="text-lg text-slate-300">Search the Laravel SEO site and blog.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-slate-950 py-14 min-h-[40vh]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl" data-pagefind-ignore="all">
+      <div id="search"></div>
+    </div>
+  </section>
+
+  <script src="/pagefind/pagefind-ui.js" is:inline></script>
+  <script is:inline>
+    window.addEventListener('DOMContentLoaded', () => {
+      new PagefindUI({ element: '#search', showSubResults: true, showImages: false, showFilters: true });
+      const q = new URLSearchParams(window.location.search).get('q');
+      const prefill = (tries) => {
+        const input = document.querySelector('.pagefind-ui__search-input');
+        if (!input) {
+          if (tries > 0) setTimeout(() => prefill(tries - 1), 100);
+          return;
+        }
+        if (q) {
+          input.value = q;
+          input.dispatchEvent(new Event('input', { bubbles: true }));
+        }
+        input.focus();
+      };
+      prefill(10);
+    });
+  </script>
+
+  <style is:inline>
+    :root {
+      --pagefind-ui-scale: 1;
+      --pagefind-ui-primary: #a78bfa;
+      --pagefind-ui-text: #e2e8f0;
+      --pagefind-ui-background: #0f172a;
+      --pagefind-ui-border: #1e293b;
+      --pagefind-ui-tag: #1e293b;
+      --pagefind-ui-border-width: 1px;
+      --pagefind-ui-border-radius: 0.5rem;
+      --pagefind-ui-font: inherit;
+    }
+    .pagefind-ui__result-title,
+    .pagefind-ui__result-link {
+      color: #f1f5f9 !important;
+    }
+    .pagefind-ui__result-excerpt {
+      color: #94a3b8 !important;
+    }
+  </style>
+</BaseLayout>

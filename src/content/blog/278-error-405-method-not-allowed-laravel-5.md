@@ -1,0 +1,46 @@
+---
+title: "Error 405 (Method Not Allowed) Laravel 5"
+description: "Title: Troubleshooting Error 405 (Method Not Allowed) in Laravel 5 Projects with jQuery Body: Error 405 (Method Not Allowed) is a common issue experienced by..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content", "Errors"]
+featured: false
+---
+
+Title: Troubleshooting Error 405 (Method Not Allowed) in Laravel 5 Projects with jQuery
+
+Body: <p>Error 405 (Method Not Allowed) is a common issue experienced by developers working on Laravel 5 projects that involve making requests using jQuery. This error typically occurs when trying to perform a POST request, and while it may seem daunting at first, there are several ways to resolve the problem. In this blog post, we'll walk through different approaches and explain how to fix this issue.</p>
+
+<h2>Understanding HTTP Methods and Laravel Routes</h2>
+Laravel utilizes the Symfony framework, which follows the RESTful architecture principles. These principles dictate the use of specific HTTP methods for performing various actions on resources. For instance, GET is used to retrieve data, PUT or PATCH updates the data, POST creates a new resource, and DELETE removes an existing one. Understanding these concepts is crucial when working with Laravel routes and API endpoints.
+
+<h2>The Issue: Request Verb Mismatch</h2>
+In your code example, you've created a jQuery script that sends POST requests using $.post(), while the route associated with the URL /empresas/eliminar/5 is set to accept DELETE requests. This mismatch of request verbs causes the error 405 (Method Not Allowed) in Laravel.
+
+<h2>Solution 1: Update The Route</h2>
+To fix this issue, you can update your route definition to allow both POST and DELETE methods:
+
+<pre><code>Route::resource('companies', 'CompaniesController');
+</code></pre>
+
+This code snippet adds a new resource for the CompaniesController named companies, allowing CRUD (Create, Read, Update, Delete) operations to be carried out using the appropriate HTTP methods. Now your POST request should work as expected.
+
+<h2>Solution 2: Use Ajax with Laravel Resources</h2>
+Another approach is to use Laravel's resource controller feature instead of creating custom routes for each action. This method allows you to leverage the built-in CRUD functionality provided by Laravel and its resource controllers. Here's an example using your existing code:
+
+<pre><code>Route::resource('companies', 'CompaniesController');
+
+// Controller
+public function delete($id) {
+    // Delete the company with the given ID
+}
+
+// View
+{!! Form::open(['route' => ['companies.destroy', $company->id], 'method' => 'DELETE', 'id' => 'formDelete']) !!}
+    {{Form::close()}}
+</code></pre>
+
+In this case, you would have a dedicated button for each action (create, edit, delete). When clicked, the form submits using the appropriate HTTP method. This helps maintain cleaner and more organized code.
+
+<h2>Conclusion</h2>
+The error 405 (Method Not Allowed) in Laravel 5 projects is commonly caused by a mismatch of request verbs between your jQuery script and the associated route. By understanding HTTP methods, Laravel routes, and best practices for handling CRUD operations, you can troubleshoot and resolve this issue effectively. Always remember to check and double-check your code and ensure consistency among all parts of your application to avoid such errors in the future.

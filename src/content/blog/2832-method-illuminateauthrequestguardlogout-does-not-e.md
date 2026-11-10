@@ -1,0 +1,20 @@
+---
+title: "Method Illuminate\\Auth\\RequestGuard::logout does not exist Laravel Passport"
+description: "Resolving the Mystery: Why RequestGuard::logout Fails in Laravel Passport API Logout When building an API with Laravel Passport , developers often run..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Errors"]
+featured: false
+---
+
+When building an API with **Laravel Passport**, developers often run into confusion regarding how session-based logout mechanisms, designed for traditional web applications, translate into token revocation for stateless APIs. The error you are encountering—"Method Illuminate\Auth\RequestGuard::logout does not exist"—is a classic symptom of trying to apply web guard logic to an API token system.
+
+This post will break down why the default methods fail in your Passport setup and provide the correct, idiomatic way to handle user logout by revoking access tokens within your Laravel Passport API.
+
+## The Misconception: Guards vs. Tokens
+
+The core issue lies in the distinction between session-based authentication (typical for web apps using middleware like `web` or default session guards) and token-based authentication (used by Passport).
+
+In a standard web application, methods like `logout()` rely on managing the user's session state stored on the server. Laravel’s `Auth` system provides these methods because they interact directly with the session guard.
+
+However, Laravel Passport deals primarily with **Access Tokens** and **Refresh Tokens**, which are opaque strings sent between the client and the server, not

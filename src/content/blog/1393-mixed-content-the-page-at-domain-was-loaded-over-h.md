@@ -1,0 +1,28 @@
+---
+title: "Mixed Content: The page at 'domain' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint"
+description: "Title: Resolving \"Mixed Content\" Errors with Laravel Inertia and Resource Controllers The Problem: You are experiencing mixed content errors when trying to..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Technical SEO", "Content", "JavaScript"]
+featured: false
+---
+
+Title: Resolving "Mixed Content" Errors with Laravel Inertia and Resource Controllers
+
+The Problem: You are experiencing mixed content errors when trying to create a new database entry on your production server with the error message "Mixed Content: The page at 'https://strong-moebel.art/admin/gallerie/neu' was loaded over HTTPS, but requested an insecure XMLHttpRequest endpoint 'http://strong-moebel.art/admin/gallerie'. This request has been blocked; the content must be served over HTTPS."
+
+Possible Causes:
+1. Mismatched URLs for development and production environments: Ensure that all your resources are available over secure protocol (HTTPS) by adjusting the app's `APP_URL` accordingly.
+2. Incorrect use of SSL certificates: Check if your web server is properly configured with the correct certificate to enforce HTTPS requests throughout the application.
+3. Disabled Force HTTPS in the Laravel configuration: Verify that the forceSSL configuration in .env file is set to "1" to redirect all HTTP traffic to their secure versions.
+4. Insecure content loading with resources: Ensure your frontend components load only HTTPS resources, and avoid mixing HTTP and HTTPS requests within a single page.
+
+Possible Solutions:
+1. Use absolute URLs for assets in the frontend (HTML) or JS files to ensure they are always loaded over HTTPS.
+2. Implement an nginx reverse proxy to redirect all http traffic to https, ensuring proper SSL termination and providing a consistent security layer across your application.
+3. Replace insecure HTTP components with secure HTTPS counterparts on your resources. Use CDNs (Content Delivery Networks) or other methods for loading images from secured sources.
+4. Test your pages using browser tools like the Audit tab of Chrome DevTools or similar tools to identify mixed content issues and resolve them accordingly.
+5. For Laravel Inertia, use absolute URLs in your Vue components' properties. Replace local URLs with their HTTPS counterparts if required for external API calls, as these could trigger mixed content issues.
+6. Ensure that all your resource controllers are correctly implemented and that only `Route::api` prefix is used to avoid mixing with frontend resources. The `store()`, `update()`, etc., methods on resource controllers should be called from a proper form submission flow (Vue's form.post, Axios's post(), jQuery's .submit() or similar).
+
+In Conclusion: Properly configuring and using HTTPS throughout your Laravel application ensures the security and integrity of your data. By addressing potential causes of mixed content errors and implementing best practices, you can easily resolve these issues in your development workflow while maintaining a secure environment for user data.

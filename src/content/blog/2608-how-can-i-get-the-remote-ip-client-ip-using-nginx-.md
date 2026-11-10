@@ -1,0 +1,32 @@
+---
+title: "How can I get the remote IP / Client IP using NGINX in Docker ?? Also using Laravel"
+description: "Unmasking the Client IP: Getting Real Client Addresses in Dockerized NGINX and Laravel Setups As a senior developer working with modern microservices and..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "PHP"]
+featured: false
+---
+
+As a senior developer working with modern microservices and containerization, you constantly encounter networking puzzles—especially when dealing with reverse proxies like NGINX and application frameworks like Laravel. The issue you are facing, where `$_SERVER['REMOTE_ADDR']` returns internal Docker or internal network IPs instead of the actual public client IP, is extremely common. It highlights the distinction between the *network addressing* visible inside a container and the *actual external client address*.
+
+This post will walk you through why this happens in your setup and provide the most robust, production-ready solution using NGINX to correctly expose the client IP to your Laravel application.
+
+***
+
+## The Root of the Problem: Internal vs. External Addresses
+
+When you run services inside Docker containers, they communicate over internal Docker bridge networks. When a request hits NGINX, NGINX sees the request coming from the container's internal network interface (e.g., `172.19.0.1`). This is what `$_SERVER['REMOTE_ADDR']` reports to PHP.
+
+The problem arises because this address is the IP of the *proxy* (the NGINX container), not the *end-user*. When you are behind a firewall or a complex networking setup, the true client IP must be explicitly passed through by the proxy layer so that downstream applications (like Laravel) can accurately log and process the request origin.
+
+In your scenario—especially when dealing with external firewalls like WatchGuard or FortiGate routers—the network path is fragmented. NGINX needs instructions on which header contains the client's true IP address, and it needs to be configured to trust that information before forwarding it.
+
+## The Solution: Leveraging NGINX for IP Propagation
+
+The standard and most effective way to solve this is by making NGINX aware of the client's originating IP and passing it along as a custom HTTP header. This process is known as "IP propagation."
+
+### Step 1: Configuring NGINX to Capture Client IP
+
+You need to configure your NGINX server block to read the relevant headers provided by the proxy chain (which often includes `X-Forwarded-For`) and use that value instead of the default connection address.
+
+In your NGINX configuration file (`nginx.conf` or a site-specific configuration), you will use the `real

@@ -1,0 +1,107 @@
+---
+title: "Export array to Excelwith Maatwebsite\\Excel"
+description: "Exporting Complex Data to Excel with Maatwebsite\\Excel: A Solution for Laravel Developers As a fellow developer, I understand the frustration of seeing code..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "PHP", "Errors"]
+featured: false
+---
+
+As a fellow developer, I understand the frustration of seeing code that *looks* correct but fails to produce the expected output. Working with data export libraries like Maatwebsite\Excel can sometimes introduce subtle complexities, especially when dealing with nested arrays and custom formatting.
+
+If you are a beginner working with Laravel 8 and Maatwebsite\Excel, you are tackling a fantastic skill. Exporting complex relational data requires careful structuring. Let's dive into the specific issue you are facing with exporting your report data to Excel and how we can fix it.
+
+## Diagnosing the Export Problem
+
+You are attempting to build an array of arrays (`$sheets`) where each inner array represents a row, and you are trying to pass this structure directly to `\Excel::download()`. While this method works well for simple flat data, when dealing with nested structures like your `$ovens` array, the way the library processes these complex objects can sometimes lead to empty or corrupted files.
+
+The key issue often lies in how deeply nested data is serialized or how you are structuring the final collection passed to the download method. When exporting multiple sheets (which your structure suggests), it’s cleaner and more robust to define a dedicated class that tells the Excel library exactly how to map your PHP objects/arrays to the spreadsheet format.
+
+## The Robust Approach: Using `FromCollection`
+
+Instead of manually building an array of arrays and passing it directly, the most idiomatic and stable way to use Maatwebsite\Excel is by implementing one of its built-in interfaces, such as `FromCollection`. This approach separates your data logic from your export logic, making the code cleaner, easier to maintain, and less prone to errors.
+
+Here is a conceptual refactoring based on your existing logic. We will define a dedicated class that handles the transformation of your database results into the desired Excel structure.
+
+### Step 1: Define the Data Transfer Object (DTO) Logic
+
+We'll separate the complex data preparation into a dedicated method or class, ensuring every piece of information is cleanly formatted before export.
+
+```php
+use Maatwebsite\Excel\Concerns\FromCollection;
+use Maatwebsite\Excel\WithStyles; // Useful for advanced styling if needed
+
+class ImmovablesExport implements FromCollection
+{
+    // Assume this method is within your controller or service class
+    public function collection(): \Illuminate\Support\Collection
+    {
+        $data = ImmovablesExport::select('*')
+            ->orderBy('id', 'DESC')
+            ->take(10)
+            ->get();
+
+        $sheets = [];
+
+        foreach ($data as $item) {
+            // --- Data Preparation Logic (Your existing logic, slightly refined) ---
+            $row = [
+                'pesel' => $this->prepareStringToExport($item['pesel'] ?? ''),
+                'name' => $this->prepareStringToExport($item['name'] ?? ''),
+                'surname' => $this->prepareStringToExport($item['surname'] ?? ''),
+                // ... (include all simple fields) ...
+                'street' => $this->prepareStringToExport($item['address']['prefix'] ?? '' . ' ' . $item['address']['name'] ?? ''),
+                'building_number' => $this->prepareStringToExport($item['building_number'] ?? ''),
+                // ... (other fields) ...
+            ];
+
+            // Handling the complex 'ovens' array: Flattening the nested data is crucial.
+            $ovensString = '';
+            if (count($item['ovens']) > 0) {
+                foreach ($item['ovens'] as $oven) {
+                    $ovensString .= $oven['name'] . "(moc: " . $oven['power'] . "),  źródło: " . ($oven['heat_source']['name'] ?? '') . ', funkcje: ' . ($oven['oven_function']['name'] ?? '') . ', klasa: ' . ($oven['oven_class_number']['name'] ?? '') . ', paliwo: ' . ($oven['fuel_type']['name'] ?? '');
+                    $ovensString .= ' '; // Add a space between ovens
+                }
+            }
+
+            $row['ovens'] = $this->prepareStringToExport($ovensString);
+            $row['granted_comments'] = $this->prepareStringToExport($item['granted_comments'] ?? '');
+            $row['inspections'] = $this->prepareStringToExport($item['inspections'] ?? '');
+            $row['oze_installations'] = $this->prepareStringToExport($item['oze_installations'] ?? '');
+
+            $sheets[] = $row; // Add the fully prepared row to the array
+        }
+
+        return collect($sheets);
+    }
+}
+```
+
+### Step 2: Executing the Download
+
+Now, instead of passing a complex structure directly, you pass the collection generated by your class. This leverages Maatwebsite\Excel's built-in capabilities for writing data to files. Remember that Laravel relies heavily on clean architecture; structuring your export logic this way aligns perfectly with best practices found in frameworks like [Laravel](https://laravelcompany.com).
+
+```php
+use Maatwebsite\Excel\Facades\Excel;
+
+// Inside your controller method:
+public function downloadData1(ReportRequest $request)
+{
+    $fileName = 'Raport z ' . now()->format('Y-m-d') . '.xlsx';
+
+    // Use the class we defined to generate the collection
+    $dataCollection = app(ImmovablesExport::class)->collection(); 
+
+    return Excel::download($dataCollection, $fileName, \Maatwebsite\Excel\Excel::XLSX);
+}
+```
+
+## Conclusion: Why This Works
+
+The reason your original attempt might have failed is that manually constructing an array of arrays and passing it to `Excel::download()` can sometimes confuse the underlying serialization process when complex data (like nested structures) is involved.
+
+By refactoring the logic into a dedicated class implementing `FromCollection`, you achieve several benefits:
+
+1.  **Separation of Concerns:** The controller focuses only on handling the HTTP request, while the model/export class handles *how* the data should look in Excel.
+2.  **Robustness:** You are relying on the established contract provided by Maatwebsite\Excel, ensuring that the export is handled correctly, regardless of how complex your internal data structure is.
+3.  **Maintainability:** If you need to change the spreadsheet layout, you only modify the `collection

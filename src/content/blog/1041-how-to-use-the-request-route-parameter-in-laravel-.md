@@ -1,0 +1,49 @@
+---
+title: "How to use the request route parameter in Laravel 5 form request?"
+description: "Title: Effortlessly Retrieve Route Parameters in Laravel 5 Form Requests for Seamless Validation Introduction: In Laravel 5's form requests, utilizing..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content"]
+featured: false
+---
+
+Title: Effortlessly Retrieve Route Parameters in Laravel 5 Form Requests for Seamless Validation
+
+Introduction: In Laravel 5's form requests, utilizing authorization methods is crucial to ensure proper validation and secure access to resources. However, sometimes you may need to use the id from the route parameter within the authorize method itself, but doing so seems unclear. This comprehensive blog post will guide you through the process of retrieving route parameters in Laravel 5's form request for a smoother interaction with your application's resources.
+
+1. Understanding Route Parameters:
+Route parameters are dynamic values which help create more versatile URLs. They allow you to pass data from the web address into controller methods as arguments. In Laravel 5, route parameter names are defined in the routes file and prefixed with a colon, e.g., :id. This enables us to access them easily within the controller's methods using Route::input(':parameter_name').
+
+2. Accessing Route Parameters from Controller Methods:
+As you mentioned, retrieving route parameters in the controller method is an easy task. The code snippet provided below demonstrates how to find a resource with its ID and destroy it.
+<pre><code>public function destroy($id, DeletePivotRequest $request)
+{
+    Resource::findOrFail($id);
+}
+</code></pre>
+
+3. Accessing Route Parameters in Form Requests:
+However, you may want to access the route parameter within your Form Request's authorize method. This can be achieved quite easily with the help of Laravel's built-in request object, which already has a method for retrieving parameters from the current URL. Just follow these steps:
+
+1. In your form request class, add a public property called $routeParameterName and set its value to the parameter name in your routes file that you wish to retrieve, e.g., 'id'.
+2. Access this property within the authorize method of your Form Request. To get its current value:
+<pre><code>public function authorize()
+{
+    if (Auth::user()->can('delete-resource')) {
+        $this->routeParameterName = Route::input($this->routeParameterName); // Get the route parameter value
+        return true;
+    }
+
+    return false;
+}
+</code></pre>
+3. Use this property within your controller method to check if the current user is authorized to access the resource with the given id, as in the following example:
+<pre><code>public function destroy($id, DeletePivotRequest $request)
+{
+    if ($request->authorize()) {
+        Resource::findOrFail($id); // Use the route parameter 'id' securely
+    }
+}
+</code></pre>
+
+Conclusion: By following these simple steps, you can easily access and utilize route parameters in your Form Request's authorize method. This ensures that your application's security is enhanced while still enabling flexible authorization logic for various resources.

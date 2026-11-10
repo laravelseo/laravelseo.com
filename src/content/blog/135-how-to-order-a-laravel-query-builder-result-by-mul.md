@@ -1,0 +1,45 @@
+---
+title: "How to order a Laravel query builder result by multiple columns?"
+description: "Title: Efficiently Order Laravel Query Builder Results by Multiple Columns Introduction: The power of Laravel's query builder lies in its flexibility and..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content"]
+featured: false
+---
+
+Title: Efficiently Order Laravel Query Builder Results by Multiple Columns
+
+Introduction: The power of Laravel's query builder lies in its flexibility and ease of use. One important feature, `orderBy()`, allows you to sort query results based on specific columns. But what happens if you need to order by multiple columns? This blog post will guide you through using Laravel 4 to sort your database table data by various columns while maintaining a clear understanding of the process.
+
+1. Understanding Multi-Column Sorting: Before we dive into the code, let's discuss why and when you would need to order results based on multiple columns. There are several scenarios where this functionality is useful:
+   - Combining different sort orders for better readability or user experience.
+   - Implementing specific business rules or logic in your application.
+   - Aggregating data from various tables and presenting it in a more organized manner.
+
+2. Code Example: This example will show you how to order results using the `orderBy()` method with multiple columns. In this case, we'll sort records by descending `age` column and then ascending `name`.
+   <pre><code>$query = MyModel::orderBy('age', 'DESC')
+                    ->orderBy('name', 'ASC');
+$results = $query->get();
+</code></pre>
+The above code snippet returns all records sorted based on the age (descending) and name (ascending). Note that we are chaining multiple `orderBy()` method calls to specify the desired sort order.
+
+3. Using Multiple Columns in a Single Call: While the previous example is effective, it may not be efficient for complex scenarios or when you need to combine several columns in one statement. In such cases, you can use array notation to pass multiple columns and their respective sort directions within one call. Here's an example with the same sort order as before:
+   <pre><code>$query = MyModel::orderByRaw('age DESC, name ASC')
+                    ->get();
+</code></pre>
+The `orderByRaw()` method allows you to pass your own SQL statement to customize the query. In this case, we're using the `ORDER BY` clause directly in our SQL statement for better readability and performance.
+
+4. Reverse Order: If you need to reverse the order of a particular column but still keep other columns in their original order, you can use the following syntax:
+   <pre><code>$query = MyModel::orderBy('column1', 'ASC')
+                    ->orderBy('column2', 'DESC')
+                    ->orderBy('column3', 'ASC')
+                    ->get();
+</code></pre>
+The query will sort results by `column1` ascending, then reverse the order of `column2`, and finally maintain the default sort order for `column3`.
+
+5. Conclusion: Sorting your Laravel query builder results by multiple columns is a powerful tool in your arsenal as a developer. By understanding the logic behind these scenarios and their usage, you can create more effective code for your applications. The key takeaways from this blog post are:
+   - Always analyze your application's requirements before deciding on a sort order strategy.
+   - Use chainable `orderBy()` calls when dealing with simple cases or varying column orders.
+   - Combine multiple columns in one call using array notation for more complex scenarios.
+
+Finally, remember that efficiency and readability should always be your top priorities whenever working with data sorting in Laravel. By following these guidelines, you can create powerful and well-maintained code that delivers the best user experience possible.

@@ -1,0 +1,57 @@
+---
+title: "How to fix \"Script @php artisan package:discover returned with error code 1\" + \"Class not found\" without internet connection?"
+description: "Fixing Laravel Autoloading Errors Offline: A Guide for Legacy Projects Working on legacy applications, especially those isolated from external networks,..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "PHP", "Errors"]
+featured: false
+---
+
+Working on legacy applications, especially those isolated from external networks, presents unique debugging challenges. When you encounter errors like `Script @php artisan package:discover returned with error code 1` coupled with "Class not found" messages during `composer dump-autoload`, it signals a fundamental mismatch between your application's dependency structure and Composer's autoloading mechanism.
+
+This post addresses how to resolve these critical autoloader issues, specifically focusing on scenarios where an internet connection is unavailable, allowing you to perform necessary fixes locally.
+
+## Understanding the Autoloading Failure
+
+The error you are encountering stems from Laravel's package discovery process (`package:discover`). When Laravel initializes, it scans registered service providers and attempts to load classes defined by installed packages. If Composer's autoloader cannot find essential classes—like `Facade\Ignition\IgnitionServiceProvider`—it halts the process, resulting in an error code 1.
+
+This typically happens when the autoload map is incomplete or outdated. In a standard Laravel setup, this failure often points to missing components related to scaffolding and service container management that are expected during the bootstrapping phase.
+
+## Solution 1: The Offline Workaround via `dont-discover`
+
+Since you are operating without an internet connection, relying on Composer to fetch missing files from Packagist is impossible. Therefore, the most effective strategy is to tell the discovery process to ignore these specific, currently missing classes, allowing the rest of the autoloading to proceed.
+
+As discovered in your experience, adding the problematic packages to the `dont-discover` array within your `composer.json` file provides an immediate, offline solution:
+
+```json
+{
+    "extra": {
+        "laravel": {
+            "dont-discover": [
+                "facade/ignition",
+                "laravel/ui",
+                "nunomaduro/collision"
+            ]
+        }
+    }
+}
+```
+
+**Why this works offline:** By explicitly excluding these packages from the discovery phase, you bypass the need for Composer to attempt loading those specific classes during the initial setup. This allows `composer dump-autoload` to successfully generate an up-to-date autoloader map without needing external network access. This technique is a powerful tool for maintaining local development environments when connectivity is restricted, ensuring you can manage code structure even when offline.
+
+## Solution 2: Rethinking Dependency Placement (`require` vs. `require-dev`)
+
+Your second finding—moving these packages from `require-dev` to the main `require` section of your `composer.json`—is an excellent, long-term structural change. This addresses *why* the classes were missing in the first place.
+
+The distinction between `require` and `require-dev` is crucial for application health:
+
+1.  **`require`:** Dependencies needed for the application to run in production (runtime dependencies).
+2.  **`require-dev`:** Dependencies needed only during development, testing, or building (e.g., testing frameworks, code style tools).
+
+By moving core components like `facade/ignition` and related packages into `require`, you signal that these components are essential for the application's operation, not just development tooling. This change ensures that when other developers or deployment scripts run Composer commands, they expect these dependencies to be present, which aligns with best practices for managing Laravel projects, as advocated by modern framework standards like those discussed on [laravelcompany.com](https://laravelcompany.com).
+
+## Conclusion: Safety and Best Practices
+
+Moving packages from `require-dev` to `require` is generally safe *if* you are certain the application will function correctly in a production environment without those specific development tools being present (which is often true for core framework components once they are properly resolved by Composer).
+
+For legacy systems, always proceed with caution. Before making this change permanently, ensure you have a full backup and thoroughly test the application's runtime behavior. The combination of using `dont-discover` for immediate offline fixes and restructuring your dependencies for long-term stability ensures you can manage complex autoloading issues effectively, regardless of network limitations.

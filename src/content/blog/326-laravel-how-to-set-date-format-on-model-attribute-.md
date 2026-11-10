@@ -1,0 +1,48 @@
+---
+title: "Laravel: how to set date format on model attribute casting?"
+description: "Title: Laravel Model Attribute Casting and Date Formats: A Comprehensive Guide Body: Laravel is an incredibly powerful PHP framework that allows developers..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "PHP"]
+featured: false
+---
+
+Title: Laravel Model Attribute Casting and Date Formats: A Comprehensive Guide
+
+Body:
+
+Laravel is an incredibly powerful PHP framework that allows developers to easily manage their applications' data models through the use of Eloquent ORM. One of the features of Eloquent is model attribute casting, which provides a convenient way for automatically converting values between different types when they are saved or retrieved from the database. This feature makes it easier to work with specific data types in your application without having to write custom getters and setters for each attribute.
+
+Date formats are also an important aspect of working with dates in Laravel, as developers often need to specify how the date must be displayed or stored. While some methods do exist in Laravel that allow you to format a timestamp (date_format() function), there is no built-in way to set a specific date format for model attribute casting directly within the $casts property of your Eloquent models.
+
+So, how can we set the date format on our model attributes using Laravel? To achieve this, you'll first need to understand the difference between the $dateFormat and $dates properties in your model.
+
+The $dateFormat attribute primarily affects how timestamps are displayed when being accessed from your Eloquent model objects. This property should be set as a string containing patterns for date formats, such as 'm/d/Y'. For example:
+
+<pre><code>protected $dateFormat = 'm/d/Y';
+</code></pre>
+
+On the other hand, the $dates property determines which attributes to treat as dates using Eloquent's timestamps functionality. These are typically your application's dates that need to be updated automatically: 'created_at', 'updated_at', and 'deleted_at'. If you do not set these properties in your model, Laravel will assume they should not use timestamps.
+
+Now let's consider the example provided in the question:
+
+<pre><code>protected $casts = [
+    'driver_expiration'     =&gt; 'date',
+];
+</code></pre>
+
+In this case, you are attempting to set the casting type for your 'driver_expiration' attribute as a date. However, since Laravel assumes timestamps should be used by default for these attributes when the $dates property is not defined, it will automatically convert your date into a timestamp format (0000-00-00), resulting in a loss of information and incorrect display.
+
+To rectify this issue, you can use both the $dateFormat and $casts properties together to control how dates are displayed on your model attributes:
+
+<pre><code>protected $dateFormat = 'm/d/Y';
+
+protected $dates = ['driver_expiration'];
+
+protected $casts = [
+    'driver_expiration'     =&gt; 'date',
+];</code></pre>
+
+By defining the $dateFormat to be a custom pattern, such as 'm/d/Y', you ensure that your date attribute will always appear in the desired format. You also need to explicitly include your model attribute ('driver_expiration') within the $dates property for Laravel to recognize it as a timestamp, which is necessary for casting it to be returned and stored as a date type correctly.
+
+In conclusion, Laravel does not have an explicit mechanism to set cast formats directly on your model attributes. However, using a combination of $dateFormat, $casts, and $dates properties can help you achieve the desired result for handling specific data types in your application. Remember that proper planning and understanding of these properties will make it easier to manage dates within your Laravel models effectively.

@@ -1,0 +1,46 @@
+---
+title: "Laravel collection using map and contains"
+description: "Title: Tackling Map and Contains Issues in Laravel Collections for Effective Product Filtration Body: When working with collections in Laravel, developers..."
+pubDate: 2026-06-29
+author: "Stefan Bogdanescu"
+tags: ["Laravel", "Content", "Performance", "PHP"]
+featured: false
+---
+
+Title: Tackling Map and Contains Issues in Laravel Collections for Effective Product Filtration
+
+Body: <p>When working with collections in Laravel, developers often encounter challenges with map and contains in certain scenarios. In this blog post, we'll delve into the intricacies of these functions and provide a comprehensive solution to the common problem described in the example given.</p>
+
+<p><strong>The Problem</strong>: The code snippet provided aims to create an allProducts collection containing various information about the products. For each product, the available value is supposed to be determined by checking if its id is not present in the unavailableProducts' result collection. However, this approach seems to return incorrect results.</p>
+
+<p><strong>The Issue</strong>: The issue arises due to the use of contains method with a nested function within the array declaration of available. This nested function may lead to unexpected behavior when comparing products and their ids. A more straightforward solution involving map and filter is preferable in this case.</p>
+
+<p><strong>A Better Solution</strong>: Let's analyze how we can optimize the code for better performance and accuracy:</p>
+
+```php
+    $unavailableProducts = $this->unavailableProducts()->get();
+    $products = $this->products()->all();
+
+    // Create a new array to store all products with their availability status
+    $allProductsWithAvailability = [];
+
+    // Iterate through the main products collection and assign their availability status
+    foreach ($products as $product) {
+        $isAvailable = in_array($product->id, collect($unavailableProducts)->pluck('product_id')->toArray()) ? false : true;
+
+        // Store the new product array with its availability status
+        $allProductsWithAvailability[] = [
+            'id' => $product->id,
+            'title' => $product->title,
+            'available' => $isAvailable
+        ];
+    }
+
+    return collect($allProductsWithAvailability);
+```
+
+<p><strong>Analysis</strong>: In the improved code above, we first fetch all unavailable products and map them to a collection. Then, we use the get() method to retrieve their ids as an array. Next, we traverse through the main products collection and check if each product's id is present in the list of unavailableProducts. If not, we assign 'true' to its availability status, otherwise 'false'. Finally, we return a new collection with all products including their availability.</p>
+
+<p><strong>Conclusion</strong>: The initial code snippet encountered issues due to misuse of map and contains methods in the nested function. By avoiding this complexity and utilizing more appropriate functions like filter or pluck, we can efficiently create an accurate list of available products. This blog post has provided a comprehensive answer to the problem and showcased best practices for handling such scenarios, leading to improved Laravel collection usage.</p>
+
+<p><strong>Note</strong>: To make the most out of this concept, ensure that you understand the intricacies of map, contains, filter, and other relevant functions in Laravel collections. Remember to keep your code clean, readable, and efficient for a better overall application performance.</p>
