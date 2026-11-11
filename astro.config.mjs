@@ -14,6 +14,9 @@ export default defineConfig({
   })],
   output: 'server',
   adapter: cloudflare(),
+  build: {
+    concurrency: 2,
+  },
   vite: {
     build: {
       rollupOptions: { maxParallelFileOps: 32 },
