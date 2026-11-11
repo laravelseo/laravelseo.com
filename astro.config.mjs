@@ -15,6 +15,9 @@ export default defineConfig({
   output: 'server',
   adapter: cloudflare(),
   vite: {
+    build: {
+      rollupOptions: { maxParallelFileOps: 32 },
+    },
     plugins: [tailwindcss()],
     ssr: {
       external: ["sharp", "detect-libc"]
