@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 export const prerender = false;
 
-export const POST: APIRoute = async ({ request }) => {
+export const POST: APIRoute = async ({ request, locals }) => {
   try {
     const bodyText = await request.text();
     if (!bodyText) {
@@ -28,12 +28,13 @@ export const POST: APIRoute = async ({ request }) => {
       });
     }
 
-    const RESEND_API_KEY = 're_4kt48oeP_BbzKvLDPdSBYuh9ZjQWEDtGZ';
+    // Worker secret (wrangler secret put RESEND_API_KEY), never committed.
+    const RESEND_API_KEY = (locals as any)?.runtime?.env?.RESEND_API_KEY;
 
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY is not configured');
       return new Response(JSON.stringify({ error: 'Server configuration error' }), {
-        status: 500,
+        status: 503,
         headers: { 'Content-Type': 'application/json' }
       });
     }
