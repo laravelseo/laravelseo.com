@@ -28,3 +28,8 @@ pnpm-debug.log*
 
 # Local Cloudflare Wrangler cache
 .wrangler/
+
+/public/search-index.json
+.wrangler/
+
+/dist

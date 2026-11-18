@@ -7,10 +7,11 @@
   "scripts": {
     "convert:data": "node scripts/csvToJson.js",
     "dev": "npm run convert:data && astro dev",
-    "build": "npm run convert:data && astro build && pagefind --site dist --max-fragments 1000",
+    "build": "npm run convert:data && npm run build:search-index && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "test": "node --test tests/*.test.mjs"
+    "test": "node --test tests/*.test.mjs",
+    "build:search-index": "node scripts/build-search-index.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.13",
@@ -30,7 +31,9 @@
     "three": "^0.185.0",
     "@astrojs/rss": "^4.0.19",
     "marked": "^16.0.0",
-    "pagefind": "^1.6.0"
+    "@docsearch/react": "^3.9.0",
+    "@docsearch/css": "^3.9.0",
+    "js-yaml": "^4.1.1"
   },
   "devDependencies": {
     "@types/three": "^0.185.0"

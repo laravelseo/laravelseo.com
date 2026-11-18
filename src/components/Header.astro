@@ -1,4 +1,5 @@
 ---
+import AlgoliaDocSearch from './search/AlgoliaDocSearch';
 import { NAVIGATION } from "@config/site";
 import { Package } from "lucide-react";
 import MobileMenu from "@components/react/MobileMenu";
@@ -49,6 +50,8 @@ const isActiveLink = (href: string): boolean => {
         })
       }
     </div>
+
+    <AlgoliaDocSearch client:only="react" />
 
     <!-- CTA Button -->
     <div class="hidden lg:flex lg:items-center lg:space-x-4">

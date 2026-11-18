@@ -101,11 +101,11 @@ test('blog index cards show reading time', () => {
 test('the search page is built and excluded from indexing', () => {
   const html = readFileSync(file('search'), 'utf8');
   assert.match(html, /noindex/);
-  assert.match(html, /pagefind-ui/);
+  assert.match(html, /open-site-search/);
 });
-test('pagefind index is built', () => {
-  assert.ok(existsSync('dist/pagefind/pagefind-ui.js'), 'missing pagefind UI asset');
-  assert.ok(readdirSync('dist/pagefind').some((f) => f.endsWith('.pf_index') || f === 'pagefind.js'), 'missing pagefind index');
+test('own search index is built', () => {
+  const index = JSON.parse(readFileSync('dist/search-index.json', 'utf8'));
+  assert.ok(index.length > 9500, 'missing full search corpus');
 });
 test('header and footer link the blog and the feed', () => {
   const html = readFileSync(file(''), 'utf8');
