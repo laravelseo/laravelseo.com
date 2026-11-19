@@ -53,6 +53,7 @@ Disallow: /*.css$
 
 # Sitemap
 Sitemap: https://laravelseo.com/sitemap.xml
+Sitemap: https://laravelseo.com/news-sitemap.xml
 
 # Crawl-delay (optional, for politeness)
 Crawl-delay: 1
