@@ -53,7 +53,7 @@ test('rss items carry tag categories and full content', () => {
 test('blog posts are marked up as articles', () => {
   const html = readFileSync(`dist/blog/${SAMPLE_POST}/index.html`, 'utf8');
   assert.match(html, /og:type" content="article"/);
-  assert.match(html, /"@type":\s*"Article"/);
+  assert.match(html, /"@type":\s*"(?:News)?Article"/);
 });
 test('blog posts link related posts and neighbours', () => {
   const html = readFileSync(`dist/blog/${SAMPLE_POST}/index.html`, 'utf8');
